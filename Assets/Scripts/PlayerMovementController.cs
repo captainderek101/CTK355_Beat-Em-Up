@@ -28,23 +28,22 @@ public class PlayerMovementController : MonoBehaviour
 
     [SerializeField] private SpriteRenderer playerBillboard;
 
-    private PlayerInputs inputActions;
+    private PlayerInputs.PlayerActions actions;
     private Vector2 movementInput = Vector2.zero;
     private Vector3 realMovement = Vector3.zero;
 
     private bool primaryMovementEnabled = true;
 
-    private void Awake()
+    private void Start()
     {
-        inputActions = new PlayerInputs();
-        inputActions.Player.Enable();
+        actions = PlayerInputController.Instance.inputActions.Player;
         rightDirection = GetVector3FromEnum(whereIsRight);
         upDirection = GetVector3FromEnum(whereIsUp);
     }
 
     private void Update()
     {
-        bool dodgerollPressed = inputActions.Player.Dodgeroll.WasPressedThisFrame();
+        bool dodgerollPressed = actions.Dodgeroll.WasPressedThisFrame();
         if (dodgerollPressed && primaryMovementEnabled)
         {
             StartCoroutine(DodgerollCoroutine());
@@ -53,7 +52,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        movementInput = inputActions.Player.Move.ReadValue<Vector2>();
+        movementInput = actions.Move.ReadValue<Vector2>();
         realMovement = Vector3.zero;
         realMovement += rightDirection * movementInput.x * horizontalMoveSpeed;
         realMovement += upDirection * movementInput.y * verticalMoveSpeed;
