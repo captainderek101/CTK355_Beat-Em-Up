@@ -3,18 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioPlayer))]
 public class PlayerMovementController : MonoBehaviour
 {
-    public enum AxisDirection
-    {
-        PositiveX,
-        NegativeX,
-        PositiveZ,
-        NegativeZ,
-        PositiveY,
-        NegativeY
-    }
-
     [SerializeField] private AxisDirection whereIsRight = AxisDirection.PositiveX;
     private Vector3 rightDirection;
     [SerializeField] private AxisDirection whereIsUp = AxisDirection.PositiveZ;
@@ -34,11 +25,19 @@ public class PlayerMovementController : MonoBehaviour
 
     private bool primaryMovementEnabled = true;
 
+    private AudioPlayer audioPlayer;
+    private const string dodgerollAudioName = "roll";
+    private const string walkAudioName = "footstep";
+    private const float timeBetweenFootstepSounds = 0.3f;
+    private bool walkSoundActive = false;
+
     private void Start()
     {
         actions = PlayerInputController.Instance.inputActions.Player;
         rightDirection = GetVector3FromEnum(whereIsRight);
         upDirection = GetVector3FromEnum(whereIsUp);
+
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Update()
@@ -59,6 +58,10 @@ public class PlayerMovementController : MonoBehaviour
         if (primaryMovementEnabled)
         {
             gameObject.transform.position += realMovement * Time.fixedDeltaTime;
+            if(realMovement.magnitude > 0.01f && !walkSoundActive)
+            {
+                StartCoroutine(FootstepCoroutine());
+            }
         }
     }
 
@@ -89,6 +92,7 @@ public class PlayerMovementController : MonoBehaviour
         playerBillboard.transform.localScale = new Vector3(1, 0.5f);
         float timeSinceStart = 0;
         float currentSpeed = 0;
+        audioPlayer.PlaySound(dodgerollAudioName);
         while (timeSinceStart < dodgerollDuration)
         {
             currentSpeed = dodgerollSpeedCurve.Evaluate(timeSinceStart / dodgerollDuration);
@@ -98,5 +102,22 @@ public class PlayerMovementController : MonoBehaviour
         }
         primaryMovementEnabled = true;
         playerBillboard.transform.localScale = new Vector3(1, 1);
+    }
+
+    private IEnumerator FootstepCoroutine()
+    {
+        walkSoundActive = true;
+        audioPlayer.PlaySound(walkAudioName);
+        yield return new WaitForSeconds(timeBetweenFootstepSounds);
+        walkSoundActive = false;
+    }
+    public enum AxisDirection
+    {
+        PositiveX,
+        NegativeX,
+        PositiveZ,
+        NegativeZ,
+        PositiveY,
+        NegativeY
     }
 }
