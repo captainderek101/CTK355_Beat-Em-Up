@@ -4,16 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioPlayer))]
-public class PlayerMovementController : MonoBehaviour
+public class PlayerMovementController : MovementController
 {
-    [SerializeField] private AxisDirection whereIsRight = AxisDirection.PositiveX;
-    private Vector3 rightDirection;
-    [SerializeField] private AxisDirection whereIsUp = AxisDirection.PositiveZ;
-    private Vector3 upDirection;
-
-    [SerializeField] private float horizontalMoveSpeed = 1.0f;
-    [SerializeField] private float verticalMoveSpeed = 1.0f;
-
     [SerializeField] private AnimationCurve dodgerollSpeedCurve;
     [SerializeField] private float dodgerollDuration = 1.0f;
 
@@ -23,19 +15,16 @@ public class PlayerMovementController : MonoBehaviour
     private Vector2 movementInput = Vector2.zero;
     private Vector3 realMovement = Vector3.zero;
 
-    private bool primaryMovementEnabled = true;
-
     private AudioPlayer audioPlayer;
     private const string dodgerollAudioName = "roll";
     private const string walkAudioName = "footstep";
     private const float timeBetweenFootstepSounds = 0.3f;
     private bool walkSoundActive = false;
 
-    private void Start()
+    private new void Start()
     {
+        base.Start();
         actions = PlayerInputController.Instance.inputActions.Player;
-        rightDirection = GetVector3FromEnum(whereIsRight);
-        upDirection = GetVector3FromEnum(whereIsUp);
 
         audioPlayer = GetComponent<AudioPlayer>();
     }
@@ -65,27 +54,6 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    private Vector3 GetVector3FromEnum(AxisDirection direction)
-    {
-        switch (direction)
-        {
-            case AxisDirection.PositiveX:
-                return Vector3.right;
-            case AxisDirection.NegativeX:
-                return Vector3.left;
-            case AxisDirection.PositiveZ:
-                return Vector3.forward;
-            case AxisDirection.NegativeZ:
-                return Vector3.back;
-            case AxisDirection.PositiveY:
-                return Vector3.up;
-            case AxisDirection.NegativeY:
-                return Vector3.down;
-            default:
-                return Vector3.zero;
-        }
-    }
-
     private IEnumerator DodgerollCoroutine()
     {
         primaryMovementEnabled = false;
@@ -110,14 +78,5 @@ public class PlayerMovementController : MonoBehaviour
         audioPlayer.PlaySound(walkAudioName);
         yield return new WaitForSeconds(timeBetweenFootstepSounds);
         walkSoundActive = false;
-    }
-    public enum AxisDirection
-    {
-        PositiveX,
-        NegativeX,
-        PositiveZ,
-        NegativeZ,
-        PositiveY,
-        NegativeY
     }
 }
