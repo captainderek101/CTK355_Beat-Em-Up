@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioPlayer))]
 public class PlayerAttackController : AttackController
 {
     private PlayerInputs.PlayerActions actions;
+    private AudioPlayer audioPlayer;
 
     private Vector2 movementInput;
+
+    private const string lightAttackAudioName = "lightAttack";
 
     private void Start()
     {
         actions = PlayerInputController.Instance.inputActions.Player;
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Update()
@@ -18,6 +23,7 @@ public class PlayerAttackController : AttackController
         // TODO: holding down the attack key should let you attack repeatedly!!
         if (actions.LightAttack.WasPressedThisFrame())
         {
+            audioPlayer.PlaySound(lightAttackAudioName);
             Attack();
         }
     }

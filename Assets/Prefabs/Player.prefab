@@ -159,9 +159,15 @@ MonoBehaviour:
     randomizePitchAndVolume: 0
   - name: footstep
     clips:
-    - {fileID: 8300000, guid: ca9c386b055c16e4c9acb68cb06e304f, type: 3}
-    - {fileID: 8300000, guid: 02131c437b2f3264b8070ba5461aca0e, type: 3}
-    - {fileID: 8300000, guid: 3e1c95c132b6d984ba348fd152d250c6, type: 3}
+    - {fileID: 8300000, guid: 70b813301926691448e6130a0d13ff8d, type: 3}
+    - {fileID: 8300000, guid: c2d27a4e3c14a2945bf0bf8987e6a445, type: 3}
+    - {fileID: 8300000, guid: 186013d54ec201d44bc1c84cf06f4c16, type: 3}
+    pitch: 1
+    volume: 0.2
+    randomizePitchAndVolume: 1
+  - name: lightAttack
+    clips:
+    - {fileID: 8300000, guid: f2a4111ba0c2b4242ab7fc5f7786a72d, type: 3}
     pitch: 1
     volume: 0.2
     randomizePitchAndVolume: 1
@@ -205,6 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acfea600821f6246922e12a6554bf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
+  isEnemy: 0
 --- !u!114 &4510184122755170893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 5
   maxHealth: 5
+  currentHealth: 0
+  destroyOnDeath: 1
 --- !u!82 &7156533634202135804
 AudioSource:
   m_ObjectHideFlags: 0
@@ -228,7 +238,7 @@ AudioSource:
   m_GameObject: {fileID: 1747389704131661039}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2778657972921025727, guid: f578a87cab11826489e15f37371c45b2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
