@@ -39,7 +39,7 @@ public class RunAwayFromPlayerStrafeScript : MonoBehaviour
     private void FixedUpdate()
     {
         currentBrainClock -= Time.fixedDeltaTime;
-        if(currentBrainClock <= 0)
+        if(currentBrainClock < 0.01f)
         {
             SetStrafeDirection();
             Vector3 toPlayer = playerTransform.position - transform.position;

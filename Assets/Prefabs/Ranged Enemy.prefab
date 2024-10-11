@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minStrafeDistance: 1
-  minChaseDistance: 2
+  minChaseDistance: 1.5
   brainClockCycle: 0.2
   chanceToChangeDirection: 0.1
   randomMultiplierMin: 0.9

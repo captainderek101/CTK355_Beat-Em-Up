@@ -26,7 +26,7 @@ public class MoveTowardsPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveDirection = transform.position - playerTransform.position;
+        moveDirection = playerTransform.position - transform.position;
         moveDirection.y = 0;
         if (moveDirection.magnitude < distanceToStop )
         {

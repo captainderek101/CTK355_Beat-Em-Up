@@ -10,7 +10,7 @@ public class EnemyMovementController : MovementController
     {
         realMovement = Vector3.zero;
         realMovement += rightDirection * movementInput.x * horizontalMoveSpeed;
-        realMovement += upDirection * movementInput.y * verticalMoveSpeed;
+        realMovement += upDirection * movementInput.z * verticalMoveSpeed;
         if (primaryMovementEnabled)
         {
             gameObject.transform.position += realMovement * Time.fixedDeltaTime;
