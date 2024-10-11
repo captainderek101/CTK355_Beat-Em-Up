@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b78cd2e2ab60244987a1c82fb547c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPrefab: {fileID: 1107040573827765603, guid: 7e11bf41a66ef4b4f8df1304f11798ea, type: 3}
+  attackPrefab: {fileID: 1107040573827765603, guid: 658896be59438a143b83a446d16f291c, type: 3}
   attackCooldown: 2
   maxAttackDistance: 2.5
+  attacksTargetPlayer: 1

@@ -12,11 +12,17 @@ public class AttackController : MonoBehaviour
 
     public bool Attack()
     {
-        StartCoroutine(AttackCoroutine());
+        StartCoroutine(AttackCoroutine(null));
         return readyToAttack;
     }
 
-    private IEnumerator AttackCoroutine()
+    public bool AttackTargeted(Transform target)
+    {
+        StartCoroutine(AttackCoroutine(target));
+        return readyToAttack;
+    }
+
+    private IEnumerator AttackCoroutine(Transform target)
     {
         if (readyToAttack)
         {
@@ -27,7 +33,11 @@ public class AttackController : MonoBehaviour
             {
                 newRotation *= Quaternion.Euler(0, 180, 0);
             }
-            Instantiate(attackPrefab, transform.position, newRotation);
+            GameObject projectile = Instantiate(attackPrefab, transform.position, newRotation);
+            if(target != null && projectile.TryGetComponent<TargetedProjectile>(out TargetedProjectile targeting))
+            {
+                targeting.target = target;
+            }
 
             yield return new WaitForSeconds(attackCooldown);
             readyToAttack = true;

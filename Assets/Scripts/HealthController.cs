@@ -37,6 +37,7 @@ public class HealthController : MonoBehaviour
             if (other.tag == enemyHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
                 health.ChangeHealth(otherHitbox.healthEffect);
+                Destroy(other.gameObject);
             }
         }
         else if(isEnemy)
@@ -44,6 +45,7 @@ public class HealthController : MonoBehaviour
             if (other.tag == playerHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
                 health.ChangeHealth(otherHitbox.healthEffect);
+                Destroy(other);
             }
         }
     }

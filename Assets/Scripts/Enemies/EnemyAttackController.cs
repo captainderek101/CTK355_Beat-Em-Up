@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAttackController : AttackController
 {
     [SerializeField] private float maxAttackDistance = 0.1f;
+    [SerializeField] private bool attacksTargetPlayer = true;
 
     private Transform playerTransform;
 
@@ -27,7 +28,14 @@ public class EnemyAttackController : AttackController
         toPlayer = playerTransform.transform.position - transform.position;
         if(toPlayer.magnitude < maxAttackDistance)
         {
-            Attack();
+            if(attacksTargetPlayer)
+            {
+                AttackTargeted(playerTransform);
+            }
+            else
+            {
+                Attack();
+            }
         }
     }
 }
