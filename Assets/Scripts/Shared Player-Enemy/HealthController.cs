@@ -43,6 +43,7 @@ public class HealthController : MonoBehaviour
             if (other.tag == enemyHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
                 health.ChangeHealth(otherHitbox.healthEffect);
+                UIManager.Instance.SetPlayerHealthUI(health.GetCurrentHealth() / health.GetMaxHealth());
                 Destroy(other.gameObject);
             }
         }

@@ -30,6 +30,16 @@ public class Health : MonoBehaviour
         }
     }
 
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
     private void Die()
     {
         if(death != null)
