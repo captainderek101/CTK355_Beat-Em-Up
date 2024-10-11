@@ -25,6 +25,10 @@ public class EnemyAttackController : AttackController
 
     private void FixedUpdate()
     {
+        if(playerTransform == null)
+        {
+            return;
+        }
         toPlayer = playerTransform.transform.position - transform.position;
         if(toPlayer.magnitude < maxAttackDistance)
         {

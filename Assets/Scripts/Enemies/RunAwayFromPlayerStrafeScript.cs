@@ -38,6 +38,10 @@ public class RunAwayFromPlayerStrafeScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (playerTransform == null)
+        {
+            return;
+        }
         currentBrainClock -= Time.fixedDeltaTime;
         if(currentBrainClock < 0.01f)
         {

@@ -15,11 +15,17 @@ public class HealthController : MonoBehaviour
 
     private Health health;
 
-    private void Start()
+    public DeathEvent deathEvents;
+
+    private void Awake()
     {
         health = GetComponent<Health>();
 
-        if(gameObject.tag == playerTagName)
+        health.death += () =>
+        {
+            deathEvents.Invoke();
+        };
+        if (gameObject.tag == playerTagName)
         {
             isPlayer = true;
         }

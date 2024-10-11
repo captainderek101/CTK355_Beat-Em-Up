@@ -2120,6 +2120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1698629218}
   - component: {fileID: 1698629217}
+  - component: {fileID: 1698629219}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2155,6 +2156,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698629219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698629216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec55b72e77919141a3fb1a2ec94d66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroLimitForLevel: 5
+  currentAggroCount: 0
 --- !u!1 &2058359224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,6 +2181,7 @@ GameObject:
   - component: {fileID: 2058359227}
   - component: {fileID: 2058359226}
   - component: {fileID: 2058359225}
+  - component: {fileID: 2058359228}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2247,6 +2263,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1414862983}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!114 &2058359228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058359224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ba9308e983aac4d96e47f6546c98a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2442054974911687103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2415,10 +2443,6 @@ PrefabInstance:
     - target: {fileID: 5893135532502933013, guid: 979870bf2371e3540b16caa43deabc95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410624720415627785, guid: 979870bf2371e3540b16caa43deabc95, type: 3}
-      propertyPath: maxAttackDistance
-      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

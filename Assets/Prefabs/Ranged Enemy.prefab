@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8647375571670230428}
   - component: {fileID: 1685255899012521586}
   - component: {fileID: 9136946547655550152}
+  - component: {fileID: 7446515397335263002}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -221,3 +222,19 @@ MonoBehaviour:
   attackCooldown: 2
   maxAttackDistance: 2.5
   attacksTargetPlayer: 1
+--- !u!114 &7446515397335263002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527879470585777904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f60b316b48edd43a2eb6d0eb1bf7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAggroDistance: 2
+  minDeaggroDistance: 3
+  aggroed: 0
+  movementComponent: {fileID: 6388310027363371961}

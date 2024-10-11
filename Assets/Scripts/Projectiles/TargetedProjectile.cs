@@ -25,7 +25,7 @@ public class TargetedProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (trackTarget)
+        if (trackTarget && target != null)
         {
             movement = target.position - transform.position;
             movement.y = 0;
