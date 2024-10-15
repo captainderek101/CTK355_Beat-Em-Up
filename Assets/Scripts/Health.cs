@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float initialHealth = 5;
     [SerializeField] private float maxHealth = 5;
     [SerializeField] private float currentHealth;
+    Vector3 checkpointPos;
 
     private void Start()
     {
@@ -29,6 +30,10 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log(gameObject.name + " died!");
-        Destroy(gameObject);
+        transform.position = checkpointPos;
+    }
+    public void UpdateCheckpoint(Vector3 pos)
+    {
+        checkpointPos = pos;
     }
 }
