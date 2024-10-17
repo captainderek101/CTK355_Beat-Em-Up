@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1685255899012521586}
   - component: {fileID: 9136946547655550152}
   - component: {fileID: 7446515397335263002}
+  - component: {fileID: 4657772922782364197}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -168,7 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b78cd2e2ab60244987a1c82fb547c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPrefab: {fileID: 1107040573827765603, guid: 658896be59438a143b83a446d16f291c, type: 3}
+  attackPrefabs:
+  - name: ranged
+    prefab: {fileID: 1107040573827765603, guid: 658896be59438a143b83a446d16f291c, type: 3}
   attackCooldown: 2
   maxAttackDistance: 2.5
   attacksTargetPlayer: 1
@@ -188,6 +191,23 @@ MonoBehaviour:
   minDeaggroDistance: 3
   aggroed: 0
   movementComponent: {fileID: 6388310027363371961}
+--- !u!114 &4657772922782364197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527879470585777904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36f3ce9940545844ad95705922008ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brainClockCycle: 0.3
+  chanceToMoveOnClockCycle: 0.2
+  clockRandomizerAmount: 0.1
+  minMoveTime: 1.5
+  maxMoveTime: 3
 --- !u!1 &8183167492779121575
 GameObject:
   m_ObjectHideFlags: 0

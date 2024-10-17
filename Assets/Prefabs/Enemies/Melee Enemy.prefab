@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2354765010468131817}
   - component: {fileID: 8410624720415627785}
   - component: {fileID: 6110436717163639712}
+  - component: {fileID: 8494296789745483206}
   m_Layer: 0
   m_Name: Melee Enemy
   m_TagString: Enemy
@@ -162,7 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b78cd2e2ab60244987a1c82fb547c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPrefab: {fileID: 1107040573827765603, guid: 7e11bf41a66ef4b4f8df1304f11798ea, type: 3}
+  attackPrefabs:
+  - name: melee
+    prefab: {fileID: 1107040573827765603, guid: 7e11bf41a66ef4b4f8df1304f11798ea, type: 3}
   attackCooldown: 1
   maxAttackDistance: 0.4
   attacksTargetPlayer: 1
@@ -182,6 +185,23 @@ MonoBehaviour:
   minDeaggroDistance: 3
   aggroed: 0
   movementComponent: {fileID: 8643787902521124027}
+--- !u!114 &8494296789745483206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465197915174158027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36f3ce9940545844ad95705922008ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brainClockCycle: 0.3
+  chanceToMoveOnClockCycle: 0.2
+  clockRandomizerAmount: 0.1
+  minMoveTime: 1.5
+  maxMoveTime: 3
 --- !u!1 &4583003053153866965
 GameObject:
   m_ObjectHideFlags: 0

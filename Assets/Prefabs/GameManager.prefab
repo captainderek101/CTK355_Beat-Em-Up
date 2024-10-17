@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6005086809618715678}
   - component: {fileID: 4717794431462099431}
   - component: {fileID: 8935013384111678928}
+  - component: {fileID: 1765862002976393100}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -74,3 +75,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealthSlider: {fileID: 0}
+--- !u!114 &1765862002976393100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706570429176043575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eedd26884c2a52241845bac27aa2a941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

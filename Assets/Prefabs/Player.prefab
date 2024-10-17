@@ -136,7 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02db7796558b8714095a07b516cf74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPrefab: {fileID: 1107040573827765603, guid: 8d2e569514a90f64185a3e870b74f993, type: 3}
+  attackPrefabs:
+  - name: light
+    prefab: {fileID: 1107040573827765603, guid: 8d2e569514a90f64185a3e870b74f993, type: 3}
+  - name: strong
+    prefab: {fileID: 1107040573827765603, guid: 8d2e569514a90f64185a3e870b74f993, type: 3}
   attackCooldown: 0.3
 --- !u!114 &146691553045232611
 MonoBehaviour:

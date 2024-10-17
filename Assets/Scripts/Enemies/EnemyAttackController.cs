@@ -10,6 +10,7 @@ public class EnemyAttackController : AttackController
     private Transform playerTransform;
 
     private Vector3 toPlayer = Vector3.zero;
+    private EnemyAggroController aggroController;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class EnemyAttackController : AttackController
         {
             Debug.LogError("Game State Controller's player is null!");
         }
+        TryGetComponent(out aggroController);
     }
 
     private void FixedUpdate()
@@ -32,6 +34,11 @@ public class EnemyAttackController : AttackController
         toPlayer = playerTransform.transform.position - transform.position;
         if(toPlayer.magnitude < maxAttackDistance)
         {
+            if(aggroController != null && aggroController.aggroed == false)
+            {
+                // Don't attack if not aggroed!
+                return;
+            }
             if(attacksTargetPlayer)
             {
                 AttackTargeted(playerTransform);

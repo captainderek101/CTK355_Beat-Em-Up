@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AttackController : MonoBehaviour
 {
-    [SerializeField] private GameObject attackPrefab;
+    [SerializeField] private NamedAttack[] attackPrefabs;
     [SerializeField] private float attackCooldown = 0.5f;
 
     protected bool readyToAttack = true;
@@ -12,17 +14,23 @@ public class AttackController : MonoBehaviour
 
     public bool Attack()
     {
-        StartCoroutine(AttackCoroutine(null));
-        return readyToAttack;
+        return AttackTargeted(null, attackPrefabs[0].name);
     }
-
+    public bool Attack(string attackName)
+    {
+        return AttackTargeted(null, attackName);
+    }
     public bool AttackTargeted(Transform target)
     {
-        StartCoroutine(AttackCoroutine(target));
+        return AttackTargeted(target, attackPrefabs[0].name);
+    }
+    public bool AttackTargeted(Transform target, string attackName)
+    {
+        StartCoroutine(AttackCoroutine(target, attackPrefabs.Where(x => x.name == attackName).First().prefab));
         return readyToAttack;
     }
 
-    private IEnumerator AttackCoroutine(Transform target)
+    private IEnumerator AttackCoroutine(Transform target, GameObject attackPrefab)
     {
         if (readyToAttack)
         {
@@ -42,5 +50,12 @@ public class AttackController : MonoBehaviour
             yield return new WaitForSeconds(attackCooldown);
             readyToAttack = true;
         }
+    }
+
+    [Serializable]
+    private struct NamedAttack
+    {
+        public string name;
+        public GameObject prefab;
     }
 }

@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/RestAreaBlockout.unity
+    guid: 96a0e9b180f20a04094dc24a5d8157ea
+  - enabled: 1
+    path: Assets/Scenes/Level1Blockout.unity
+    guid: 08afa29f7f4dfcb40a9f22576ba8eff0
+  - enabled: 1
+    path: Assets/Scenes/MovementTest.unity
+    guid: 968c6c95d59234c4c9ee74d00fd82209
   m_configObjects: {}

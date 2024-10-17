@@ -10,7 +10,10 @@ public class PlayerAttackController : AttackController
 
     private Vector2 movementInput;
 
+    private const string lightAttackAttackName = "light";
     private const string lightAttackAudioName = "lightAttack";
+    private const string strongAttackAttackName = "strong";
+    private const string strongAttackAudioName = "lightAttack";
 
     private void Start()
     {
@@ -24,7 +27,12 @@ public class PlayerAttackController : AttackController
         if (actions.LightAttack.WasPressedThisFrame())
         {
             audioPlayer.PlaySound(lightAttackAudioName);
-            Attack();
+            Attack(lightAttackAttackName);
+        }
+        else if (actions.StrongAttack.WasPressedThisFrame())
+        {
+            audioPlayer.PlaySound(strongAttackAudioName);
+            Attack(strongAttackAttackName);
         }
     }
 

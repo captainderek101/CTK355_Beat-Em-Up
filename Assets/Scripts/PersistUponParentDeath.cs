@@ -9,7 +9,7 @@ public class PersistUponParentDeath : MonoBehaviour
         HealthController parentHealthController = GetComponentInParent<HealthController>();
         if (parentHealthController != null)
         {
-            Debug.Log("found parent health controller");
+            //Debug.Log("found parent health controller");
             parentHealthController.deathEvents += () =>
             {
                 transform.parent = null;

@@ -8,10 +8,12 @@ public class EnemyAggroController : MonoBehaviour
     [SerializeField] private float minDeaggroDistance = 3f;
     public bool aggroed = false;
     [SerializeField] private MonoBehaviour movementComponent;
+    private Wander wanderComponent;
     private Transform playerTransform;
 
     private void Start()
     {
+        TryGetComponent(out wanderComponent);
         if(movementComponent == null)
         {
             Debug.LogWarning(gameObject.name + " " + nameof(EnemyAggroController) + " is missing its movement component! This will cause errors!");
@@ -19,6 +21,10 @@ public class EnemyAggroController : MonoBehaviour
         else
         {
             movementComponent.enabled = aggroed;
+            if(wanderComponent != null)
+            {
+                wanderComponent.enabled = !aggroed;
+            }
         }
         if (GameManager.Instance.playerObject != null)
         {
@@ -36,11 +42,19 @@ public class EnemyAggroController : MonoBehaviour
         {
             aggroed = EnemyManager.Instance.TryAggroEnemy();
             movementComponent.enabled = aggroed;
+            if (wanderComponent != null)
+            {
+                wanderComponent.enabled = !aggroed;
+            }
         }
         else if (aggroed && (playerTransform.position - transform.position).magnitude > minDeaggroDistance)
         {
             aggroed = !EnemyManager.Instance.DeaggroEnemy();
             movementComponent.enabled = aggroed;
+            if (wanderComponent != null)
+            {
+                wanderComponent.enabled = !aggroed;
+            }
         }
     }
 

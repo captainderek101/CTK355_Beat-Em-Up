@@ -11,7 +11,7 @@ public class MoveTowardsPlayer : MonoBehaviour
 
     private Vector3 moveDirection = Vector2.zero;
 
-    void Start()
+    private void Start()
     {
         controller = GetComponent<EnemyMovementController>();
         if (GameManager.Instance.playerObject != null)
