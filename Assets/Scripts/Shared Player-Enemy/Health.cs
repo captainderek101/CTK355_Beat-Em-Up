@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     public bool destroyOnDeath = true;
 
     public DeathEvent death;
+    Vector3 checkpointPos;
 
     private void Awake()
     {
@@ -51,5 +52,9 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void UpdateCheckpoint(Vector3 pos)
+    {
+        checkpointPos = pos;
     }
 }

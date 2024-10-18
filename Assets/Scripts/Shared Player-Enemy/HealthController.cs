@@ -23,7 +23,10 @@ public class HealthController : MonoBehaviour
 
         health.death += () =>
         {
-            deathEvents.Invoke();
+            if(deathEvents != null)
+            {
+                deathEvents.Invoke();
+            }
         };
         if (gameObject.tag == playerTagName)
         {

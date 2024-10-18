@@ -15,10 +15,10 @@ public class Wander : MonoBehaviour
     private const float directionDeviation = 30f;
     private const float maxDistanceToRandomizeDirection = 0.05f;
 
-    private bool moving = false;
+    [SerializeField] private bool moving = false;
     private float currentBrainClock;
     private float timeToMove;
-    private Vector3 moveDirection = Vector2.zero;
+    [SerializeField] private Vector3 moveDirection = Vector2.zero;
     private Vector3 startPoint;
 
     private void Start()
@@ -44,6 +44,7 @@ public class Wander : MonoBehaviour
                     moving = true;
                     timeToMove = Random.Range(minMoveTime, maxMoveTime);
                     Vector3 moveDirection = startPoint - transform.position;
+                    moveDirection.y = 0;
                     if(moveDirection.magnitude < maxDistanceToRandomizeDirection)
                     {
                         moveDirection = Random.insideUnitCircle.normalized;

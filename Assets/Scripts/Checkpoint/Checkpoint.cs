@@ -6,9 +6,9 @@ public class Checkpoint : MonoBehaviour
 {
     public Health health;
 
-    private void Awake()
+    private void Start()
     {
-        health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        health = GameManager.Instance.playerObject.GetComponent<Health>();
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whereIsRight: 0
   whereIsUp: 2
-  horizontalMoveSpeed: 1
+  horizontalMoveSpeed: 1.5
   verticalMoveSpeed: 1
   dodgerollSpeedCurve:
     serializedVersion: 2
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 320628664827432212}
   m_Layer: 0
   m_Name: Billboard
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 4112126459645641529}
   m_Layer: 0
   m_Name: Feet
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 4491536561477130093}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 5657656946462758261}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
