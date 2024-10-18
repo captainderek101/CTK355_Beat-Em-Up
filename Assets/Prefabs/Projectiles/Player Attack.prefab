@@ -63,8 +63,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7120691546537325843}
-  - component: {fileID: 5392473652578923223}
   - component: {fileID: 1239790928022814902}
+  - component: {fileID: 2034599004565393467}
   m_Layer: 0
   m_Name: Attack Hitbox
   m_TagString: Player Hitbox
@@ -88,8 +88,21 @@ Transform:
   - {fileID: 8980605488491772404}
   m_Father: {fileID: 8497680654554018953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &5392473652578923223
-SphereCollider:
+--- !u!114 &1239790928022814902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832185168898763280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a546d97069bd0f4baea3f4c81ea3da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthEffect: -1
+--- !u!136 &2034599004565393467
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,22 +119,11 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.1
+  serializedVersion: 2
+  m_Radius: 0.12
+  m_Height: 0.5
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1239790928022814902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3832185168898763280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a546d97069bd0f4baea3f4c81ea3da9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthEffect: -1
 --- !u!1 &3926296806629705270
 GameObject:
   m_ObjectHideFlags: 0

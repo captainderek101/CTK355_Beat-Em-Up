@@ -10,8 +10,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     [SerializeField] private Slider playerHealthSlider;
+    [SerializeField] private Button closeGameButton;
+    private GameObject levelCompleteScreen;
 
-    private void Start()
+    private const string loadSceneButtonTagName = "Load Scene Button";
+
+    private void Awake()
     {
         if(Instance == null)
         {
@@ -27,8 +31,43 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        closeGameButton.onClick.AddListener(CloseGame);
+    }
+
     public void SetPlayerHealthUI(float percentWaterLevel)
     {
         playerHealthSlider.value = percentWaterLevel;
+    }
+
+    public void ShowLevelCompleteScreen(string sceneToLoad)
+    {
+        Button transitionButton = null;
+        foreach(Transform child in levelCompleteScreen.transform)
+        {
+            if (child.tag == loadSceneButtonTagName)
+            {
+                child.TryGetComponent(out transitionButton);
+                break;
+            }
+        }
+        if(transitionButton != null)
+        {
+            transitionButton.onClick.AddListener(() => TransitionManager.Instance.LoadSceneAsync(sceneToLoad));
+        }
+        levelCompleteScreen.SetActive(true);
+    }
+
+    public bool SetLevelCompleteScreen(GameObject screenObject)
+    {
+        bool wasSet = levelCompleteScreen != null;
+        levelCompleteScreen = screenObject;
+        return wasSet;
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 }

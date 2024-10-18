@@ -12,6 +12,7 @@ public class HealthController : MonoBehaviour
     private const string enemyTagName = "Enemy";
     private const string playerHitboxTagName = "Player Hitbox";
     private const string enemyHitboxTagName = "Enemy Hitbox";
+    private const string playerHurtAudioName = "hurt";
 
     private Health health;
 
@@ -48,6 +49,12 @@ public class HealthController : MonoBehaviour
                 health.ChangeHealth(otherHitbox.healthEffect);
                 UIManager.Instance.SetPlayerHealthUI(health.GetCurrentHealth() / health.GetMaxHealth());
                 Destroy(other.gameObject);
+
+                AudioPlayer playerAudio;
+                if (TryGetComponent(out playerAudio))
+                {
+                    playerAudio.PlaySound(playerHurtAudioName);
+                }
             }
         }
         else if(isEnemy)

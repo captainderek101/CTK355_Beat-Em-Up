@@ -36,6 +36,12 @@ public class EnemyAggroController : MonoBehaviour
     {
         if (playerTransform == null)
         {
+            aggroed = false;
+            movementComponent.enabled = aggroed;
+            if (wanderComponent != null)
+            {
+                wanderComponent.enabled = !aggroed;
+            }
             return;
         }
         if (!aggroed && (playerTransform.position - transform.position).magnitude < maxAggroDistance)

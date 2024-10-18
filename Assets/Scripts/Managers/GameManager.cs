@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject playerObject;
 
+    private Vector3 checkPointPosToLoad;
+    private bool useCheckPoint = false;
+    private int previousLevel;
+
     private void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            transform.parent = null;
+            DontDestroyOnLoad(this);
         }
         else
         {
@@ -20,5 +26,28 @@ public class GameManager : MonoBehaviour
         }
 
         playerObject = FindObjectOfType<PlayerInputController>().gameObject;
+        previousLevel = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.sceneLoaded += RespawnAtCheckpoint;
+    }
+
+    public void UpdateCheckpoint(Vector3 pos)
+    {
+        checkPointPosToLoad = pos;
+        useCheckPoint = true;
+    }
+
+    private void RespawnAtCheckpoint(Scene scene, LoadSceneMode mode)
+    {
+        playerObject = FindObjectOfType<PlayerInputController>().gameObject;
+        if (useCheckPoint && scene.buildIndex == previousLevel)
+        {
+            //Debug.Log("checkpoint used");
+            playerObject.transform.position = checkPointPosToLoad;
+        }
+        else if (useCheckPoint)
+        {
+            useCheckPoint = false;
+        }
+        previousLevel = scene.buildIndex;
     }
 }

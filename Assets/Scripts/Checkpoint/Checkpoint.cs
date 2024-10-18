@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    public Health health;
-
-    private void Start()
-    {
-        health = GameManager.Instance.playerObject.GetComponent<Health>();
-    }
-
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
         {
-            health.UpdateCheckpoint(transform.position);
+            GameManager.Instance.UpdateCheckpoint(transform.position);
         }
     }
 }

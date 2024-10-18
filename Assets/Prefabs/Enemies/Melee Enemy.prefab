@@ -167,7 +167,7 @@ MonoBehaviour:
   - name: melee
     prefab: {fileID: 1107040573827765603, guid: 7e11bf41a66ef4b4f8df1304f11798ea, type: 3}
   attackCooldown: 1
-  maxAttackDistance: 0.4
+  maxAttackDistance: 0.3
   attacksTargetPlayer: 1
 --- !u!114 &6110436717163639712
 MonoBehaviour:
@@ -202,6 +202,8 @@ MonoBehaviour:
   clockRandomizerAmount: 0.1
   minMoveTime: 1.5
   maxMoveTime: 3
+  moving: 0
+  moveDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &4583003053153866965
 GameObject:
   m_ObjectHideFlags: 0

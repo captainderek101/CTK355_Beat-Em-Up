@@ -169,11 +169,23 @@ MonoBehaviour:
     pitch: 1
     volume: 0.2
     randomizePitchAndVolume: 1
-  - name: lightAttack
+  - name: strongAttack
     clips:
     - {fileID: 8300000, guid: f2a4111ba0c2b4242ab7fc5f7786a72d, type: 3}
     pitch: 1
     volume: 0.2
+    randomizePitchAndVolume: 1
+  - name: lightAttack
+    clips:
+    - {fileID: 8300000, guid: 41f0654fbcaf68d46a77fd4d03fd2d78, type: 3}
+    pitch: 1
+    volume: 1
+    randomizePitchAndVolume: 1
+  - name: hurt
+    clips:
+    - {fileID: 8300000, guid: af670712ad278f54b8b00c32a4e16108, type: 3}
+    pitch: 1
+    volume: 1
     randomizePitchAndVolume: 1
   source: {fileID: 7156533634202135804}
 --- !u!54 &6592542614895908127
@@ -200,7 +212,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4879448011507846752

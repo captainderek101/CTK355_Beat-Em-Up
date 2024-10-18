@@ -408,6 +408,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      propertyPath: closeGameButton
+      value: 
+      objectReference: {fileID: 1963732476}
+    - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
       propertyPath: playerHealthSlider
       value: 
       objectReference: {fileID: 1346168082}
@@ -26529,6 +26533,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+--- !u!114 &1963732476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8309649788685764712, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+  m_PrefabInstance: {fileID: 1963732475}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1978172485
 GameObject:
   m_ObjectHideFlags: 0
@@ -69732,11 +69747,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4507207432099907571, guid: c2a4e1f06cde3ac4aa0207ea5c2937d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.24
+      value: 46.94
       objectReference: {fileID: 0}
     - target: {fileID: 4507207432099907571, guid: c2a4e1f06cde3ac4aa0207ea5c2937d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.95
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4507207432099907571, guid: c2a4e1f06cde3ac4aa0207ea5c2937d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69773,6 +69788,10 @@ PrefabInstance:
     - target: {fileID: 8168651731950559231, guid: c2a4e1f06cde3ac4aa0207ea5c2937d2, type: 3}
       propertyPath: sceneToLoad
       value: Level1Blockout
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168651731950559231, guid: c2a4e1f06cde3ac4aa0207ea5c2937d2, type: 3}
+      propertyPath: transitionOnTriggerEnter
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

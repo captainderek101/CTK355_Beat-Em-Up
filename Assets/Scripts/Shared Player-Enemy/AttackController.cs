@@ -26,8 +26,9 @@ public class AttackController : MonoBehaviour
     }
     public bool AttackTargeted(Transform target, string attackName)
     {
+        bool wasReady = readyToAttack;
         StartCoroutine(AttackCoroutine(target, attackPrefabs.Where(x => x.name == attackName).First().prefab));
-        return readyToAttack;
+        return wasReady;
     }
 
     private IEnumerator AttackCoroutine(Transform target, GameObject attackPrefab)

@@ -13,7 +13,7 @@ public class PlayerAttackController : AttackController
     private const string lightAttackAttackName = "light";
     private const string lightAttackAudioName = "lightAttack";
     private const string strongAttackAttackName = "strong";
-    private const string strongAttackAudioName = "lightAttack";
+    private const string strongAttackAudioName = "strongAttack";
 
     private void Start()
     {
@@ -26,13 +26,20 @@ public class PlayerAttackController : AttackController
         // TODO: holding down the attack key should let you attack repeatedly!!
         if (actions.LightAttack.WasPressedThisFrame())
         {
-            audioPlayer.PlaySound(lightAttackAudioName);
-            Attack(lightAttackAttackName);
+            bool success = Attack(lightAttackAttackName);
+            if (success)
+            {
+                audioPlayer.PlaySound(lightAttackAudioName);
+            }
         }
         else if (actions.StrongAttack.WasPressedThisFrame())
         {
-            audioPlayer.PlaySound(strongAttackAudioName);
-            Attack(strongAttackAttackName);
+            bool success = Attack(strongAttackAttackName);
+            if (success)
+            {
+                audioPlayer.PlaySound(strongAttackAudioName);
+            }
+            
         }
     }
 
