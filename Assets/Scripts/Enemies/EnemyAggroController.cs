@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HealthController))]
 public class EnemyAggroController : MonoBehaviour
 {
     [SerializeField] private float maxAggroDistance = 2f;
@@ -10,9 +11,12 @@ public class EnemyAggroController : MonoBehaviour
     [SerializeField] private MonoBehaviour movementComponent;
     private Wander wanderComponent;
     private Transform playerTransform;
+    private HealthController healthController;
 
     private void Start()
     {
+        healthController = GetComponent<HealthController>();
+        healthController.deathEvents += () => EnemyManager.Instance.DeaggroEnemy();
         TryGetComponent(out wanderComponent);
         if(movementComponent == null)
         {
