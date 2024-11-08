@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    private const string playerTag = "Player";
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag(playerTag))
         {
             GameManager.Instance.UpdateCheckpoint(transform.position);
         }
