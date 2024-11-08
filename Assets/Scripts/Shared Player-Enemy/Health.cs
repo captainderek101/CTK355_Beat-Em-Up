@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
 
     public DeathEvent death;
 
+    public GameObject[] itemDrops;
+
     private void Awake()
     {
         currentHealth = initialHealth;
@@ -50,6 +52,14 @@ public class Health : MonoBehaviour
         if(destroyOnDeath)
         {
             Destroy(gameObject);
+            ItemDrop();
+        }
+    }
+    private void ItemDrop()
+    {
+        for (int i = 0; i < itemDrops.Length; i++)
+        {
+            Instantiate(itemDrops[i], transform.position, Quaternion.identity);
         }
     }
 }
