@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 9136946547655550152}
   - component: {fileID: 7446515397335263002}
   - component: {fileID: 4657772922782364197}
+  - component: {fileID: 1623685368326329898}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -208,6 +209,29 @@ MonoBehaviour:
   clockRandomizerAmount: 0.1
   minMoveTime: 1.5
   maxMoveTime: 3
+  moving: 0
+  moveDirection: {x: 0, y: 0, z: 0}
+--- !u!95 &1623685368326329898
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527879470585777904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a846216894267654094603a8e52afb78, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8183167492779121575
 GameObject:
   m_ObjectHideFlags: 0

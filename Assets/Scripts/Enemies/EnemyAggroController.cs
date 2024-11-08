@@ -17,6 +17,10 @@ public class EnemyAggroController : MonoBehaviour
     {
         healthController = GetComponent<HealthController>();
         healthController.deathEvents += () => EnemyManager.Instance.DeaggroEnemy();
+        if(transform.parent.TryGetComponent(out ScreenManager screenManager)) // are we part of a screen?
+        {
+            healthController.deathEvents += () => screenManager.SpawnDefeated();
+        }
         TryGetComponent(out wanderComponent);
         if(movementComponent == null)
         {

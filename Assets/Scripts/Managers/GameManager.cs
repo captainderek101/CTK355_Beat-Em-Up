@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         playerObject = FindObjectOfType<PlayerInputController>().gameObject;
         previousLevel = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += RespawnAtCheckpoint;
+        //SceneManager.activeSceneChanged
     }
 
     public void UpdateCheckpoint(Vector3 pos)
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
         playerObject = FindObjectOfType<PlayerInputController>().gameObject;
         if (useCheckPoint && scene.buildIndex == previousLevel)
         {
-            //Debug.Log("checkpoint used");
+            Debug.Log("checkpoint used");
             playerObject.transform.position = checkPointPosToLoad;
         }
         else if (useCheckPoint)
@@ -50,4 +51,9 @@ public class GameManager : MonoBehaviour
         }
         previousLevel = scene.buildIndex;
     }
+
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    RespawnAtCheckpoint(SceneManager.GetSceneAt(level), LoadSceneMode.Additive);
+    //}
 }
