@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class MovementController : MonoBehaviour
 {
     [SerializeField] protected AxisDirection whereIsRight = AxisDirection.PositiveX;
@@ -14,10 +15,13 @@ public class MovementController : MonoBehaviour
 
     protected bool primaryMovementEnabled = true;
 
+    [HideInInspector] public Animator animationController;
+
     protected void Start()
     {
         rightDirection = GetVector3FromEnum(whereIsRight);
         upDirection = GetVector3FromEnum(whereIsUp);
+        animationController = GetComponent<Animator>();
     }
 
     private Vector3 GetVector3FromEnum(AxisDirection direction)

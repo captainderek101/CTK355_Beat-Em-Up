@@ -15,8 +15,6 @@ public class ScreenManager : MonoBehaviour
     private int activeSpawns;
     private int activeWaveIndex;
 
-    private bool wavesClear = false;
-
     private void OnValidate()
     {
         if(loadChildrenButton)
@@ -85,7 +83,6 @@ public class ScreenManager : MonoBehaviour
 
     private void WavesClear()
     {
-        wavesClear = false;
         if (blockUntilWavesClear && TryGetComponent(out ScreenColliders screenColliders))
         {
             screenColliders.TurnOffColliders();

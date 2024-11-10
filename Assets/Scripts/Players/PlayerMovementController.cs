@@ -15,6 +15,8 @@ public class PlayerMovementController : MovementController
     private Vector2 movementInput = Vector2.zero;
     private Vector3 realMovement = Vector3.zero;
 
+    private const string walkingAnimationBool = "Walking";
+    private const string dodgerollAnimationTrigger = "Dodgeroll";
     private AudioPlayer audioPlayer;
     private const string dodgerollAudioName = "roll";
     private const string walkAudioName = "footstep";
@@ -47,9 +49,18 @@ public class PlayerMovementController : MovementController
         if (primaryMovementEnabled)
         {
             gameObject.transform.position += realMovement * Time.fixedDeltaTime;
-            if(realMovement.magnitude > 0.01f && !walkSoundActive)
+            if (realMovement.magnitude > 0.01f)
             {
-                StartCoroutine(FootstepCoroutine());
+                if (!walkSoundActive)
+                    StartCoroutine(FootstepCoroutine());
+                if (!animationController.GetBool(walkingAnimationBool))
+                {
+                    animationController.SetBool(walkingAnimationBool, true);
+                }
+            }
+            else if (animationController.GetBool(walkingAnimationBool))
+            {
+                animationController.SetBool(walkingAnimationBool, false);
             }
         }
     }
@@ -57,6 +68,7 @@ public class PlayerMovementController : MovementController
     private IEnumerator DodgerollCoroutine()
     {
         primaryMovementEnabled = false;
+        animationController.SetTrigger(dodgerollAnimationTrigger);
         playerBillboard.transform.localScale = new Vector3(1, 0.5f);
         float timeSinceStart = 0;
         float currentSpeed = 0;
