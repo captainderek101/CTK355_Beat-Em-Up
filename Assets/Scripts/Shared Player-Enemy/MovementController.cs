@@ -13,7 +13,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] protected float horizontalMoveSpeed = 1.0f;
     [SerializeField] protected float verticalMoveSpeed = 1.0f;
 
-    protected bool primaryMovementEnabled = true;
+    public bool primaryMovementEnabled = true;
 
     [HideInInspector] public Animator animationController;
 

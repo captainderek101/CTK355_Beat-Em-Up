@@ -25,6 +25,7 @@ public class EnemyAttackController : AttackController
             Debug.LogError("Game State Controller's player is null!");
         }
         TryGetComponent(out aggroController);
+        TryGetComponent(out movementController);
         animationController = GetComponent<Animator>();
     }
 
@@ -33,6 +34,14 @@ public class EnemyAttackController : AttackController
         if(playerTransform == null)
         {
             return;
+        }
+        if (facingRight && ((EnemyMovementController)movementController).movementInput.x < 0)
+        {
+            facingRight = false;
+        }
+        else if (!facingRight && ((EnemyMovementController)movementController).movementInput.x > 0)
+        {
+            facingRight = true;
         }
         toPlayer = playerTransform.transform.position - transform.position;
         if(toPlayer.magnitude < maxAttackDistance)

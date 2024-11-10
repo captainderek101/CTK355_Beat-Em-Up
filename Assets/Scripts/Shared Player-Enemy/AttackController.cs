@@ -5,15 +5,18 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(MovementController))]
 public class AttackController : MonoBehaviour
 {
     [SerializeField] private NamedAttack[] attackPrefabs;
     [SerializeField] private float attackCooldown = 0.5f;
 
-    protected bool readyToAttack = true;
+    public bool readyToAttack = true;
+    protected bool diabledBecauseOfSelf = false;
     protected bool facingRight = true;
 
     [HideInInspector] public Animator animationController;
+    [HideInInspector] public MovementController movementController;
 
     public bool Attack()
     {
@@ -29,16 +32,17 @@ public class AttackController : MonoBehaviour
     }
     public bool AttackTargeted(Transform target, string attackName)
     {
-        bool wasReady = readyToAttack;
+        bool wasReady = readyToAttack && !diabledBecauseOfSelf;
         StartCoroutine(AttackCoroutine(target, attackPrefabs.Where(x => x.name == attackName).First().prefab));
         return wasReady;
     }
 
     private IEnumerator AttackCoroutine(Transform target, GameObject attackPrefab)
     {
-        if (readyToAttack)
+        if (readyToAttack && !diabledBecauseOfSelf)
         {
-            readyToAttack = false;
+            diabledBecauseOfSelf = true;
+            movementController.primaryMovementEnabled = false;
 
             Quaternion newRotation = transform.rotation;
             if (!facingRight)
@@ -52,7 +56,8 @@ public class AttackController : MonoBehaviour
             }
 
             yield return new WaitForSeconds(attackCooldown);
-            readyToAttack = true;
+            diabledBecauseOfSelf = false;
+            movementController.primaryMovementEnabled = true;
         }
     }
 

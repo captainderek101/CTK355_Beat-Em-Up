@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioPlayer))]
+[RequireComponent(typeof(AudioPlayer))]
 public class PlayerAttackController : AttackController
 {
     private PlayerInputs.PlayerActions actions;
@@ -22,6 +23,7 @@ public class PlayerAttackController : AttackController
         actions = PlayerInputController.Instance.inputActions.Player;
         audioPlayer = GetComponent<AudioPlayer>();
         animationController = GetComponent<Animator>();
+        TryGetComponent(out movementController);
     }
 
     private void Update()

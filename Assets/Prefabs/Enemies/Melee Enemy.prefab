@@ -94,7 +94,9 @@ MonoBehaviour:
   whereIsUp: 2
   horizontalMoveSpeed: 0.3
   verticalMoveSpeed: 0.3
+  animationController: {fileID: 0}
   movementInput: {x: 0, y: 0, z: 0}
+  walkingAnimationBool: Walking
 --- !u!114 &789556337453129303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,8 +170,9 @@ MonoBehaviour:
   - name: melee
     prefab: {fileID: 1107040573827765603, guid: 7e11bf41a66ef4b4f8df1304f11798ea, type: 3}
   attackCooldown: 1
+  animationController: {fileID: 0}
   maxAttackDistance: 0.3
-  attacksTargetPlayer: 1
+  attacksTargetPlayer: 0
 --- !u!114 &6110436717163639712
 MonoBehaviour:
   m_ObjectHideFlags: 0

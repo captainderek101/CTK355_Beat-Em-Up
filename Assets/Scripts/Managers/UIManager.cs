@@ -6,11 +6,12 @@ using UnityEngine.UI;
 /// <summary>
 /// This component controls how the Water level of the player is displayed
 /// </summary>
+public delegate void UIEvent();
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+    public UIEvent pauseEvent;
     [SerializeField] private Slider playerHealthSlider;
-    [SerializeField] private Button closeGameButton;
     private GameObject levelCompleteScreen;
 
     private const string loadSceneButtonTagName = "Load Scene Button";
@@ -29,11 +30,6 @@ public class UIManager : MonoBehaviour
         {
             Debug.LogWarning(nameof(UIManager) + " is missing player health slider!");
         }
-    }
-
-    private void Start()
-    {
-        closeGameButton.onClick.AddListener(CloseGame);
     }
 
     public void SetPlayerHealthUI(float percentWaterLevel)

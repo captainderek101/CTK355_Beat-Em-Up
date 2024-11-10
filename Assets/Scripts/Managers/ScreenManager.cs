@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class ScreenManager : MonoBehaviour
 {
     public bool loadChildrenButton;
+    public bool validateSpawnsButton;
     public bool blockUntilWavesClear = true;
     public List<Spawn> spawns;
     public List<Wave> waves;
@@ -21,6 +23,11 @@ public class ScreenManager : MonoBehaviour
         {
             LoadChildrenIntoSpawns();
             loadChildrenButton = false;
+        }
+        if(validateSpawnsButton)
+        {
+            ValidateSpawns();
+            validateSpawnsButton = false;
         }
         PopulateWaves();
     }
@@ -101,6 +108,22 @@ public class ScreenManager : MonoBehaviour
             if (child.tag == tagToSpawn && spawns.FindAll(x => x.toSpawn == child).Count == 0)
             {
                 spawns.Add(new Spawn() { toSpawn = transform.GetChild(i).gameObject, wave = 1, instantiateNew = false });
+            }
+        }
+    }
+
+    private void ValidateSpawns()
+    {
+        int i = 0;
+        while (i < spawns.Count)
+        {
+            if(spawns[i].toSpawn == null || spawns[i].toSpawn.transform.parent != transform)
+            {
+                spawns.Remove(spawns[i]);
+            }
+            else
+            {
+                i++;
             }
         }
     }

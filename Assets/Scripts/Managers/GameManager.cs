@@ -52,8 +52,9 @@ public class GameManager : MonoBehaviour
         previousLevel = scene.buildIndex;
     }
 
-    //private void OnLevelWasLoaded(int level)
-    //{
-    //    RespawnAtCheckpoint(SceneManager.GetSceneAt(level), LoadSceneMode.Additive);
-    //}
+    public void EnableOrDisablePlayer(bool enable)
+    {
+        playerObject.GetComponent<PlayerMovementController>().primaryMovementEnabled = enable;
+        playerObject.GetComponent<PlayerAttackController>().readyToAttack = enable;
+    }
 }

@@ -7,6 +7,7 @@ public class PlayerInputController : MonoBehaviour
     public static PlayerInputController Instance;
     public PlayerInputs inputActions;
 
+
     private void Awake()
     {
         if (Instance == null)
@@ -19,5 +20,14 @@ public class PlayerInputController : MonoBehaviour
         }
         inputActions = new PlayerInputs();
         inputActions.Player.Enable();
+        inputActions.Player.Pause.started += (e) =>
+        {
+            if (UIManager.Instance.pauseEvent != null)
+                UIManager.Instance.pauseEvent.Invoke();
+        };
+    }
+
+    private void Update()
+    {
     }
 }
