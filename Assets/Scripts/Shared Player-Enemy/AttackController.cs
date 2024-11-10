@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class AttackController : MonoBehaviour
 {
     [SerializeField] private NamedAttack[] attackPrefabs;
@@ -11,6 +12,8 @@ public class AttackController : MonoBehaviour
 
     protected bool readyToAttack = true;
     protected bool facingRight = true;
+
+    [HideInInspector] public Animator animationController;
 
     public bool Attack()
     {

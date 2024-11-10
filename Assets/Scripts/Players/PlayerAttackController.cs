@@ -12,13 +12,16 @@ public class PlayerAttackController : AttackController
 
     private const string lightAttackAttackName = "light";
     private const string lightAttackAudioName = "lightAttack";
+    private const string lightAttackAnimationTrigger = "Light Attack";
     private const string strongAttackAttackName = "strong";
     private const string strongAttackAudioName = "strongAttack";
+    private const string strongAttackAnimationTrigger = "Strong Attack";
 
     private void Start()
     {
         actions = PlayerInputController.Instance.inputActions.Player;
         audioPlayer = GetComponent<AudioPlayer>();
+        animationController = GetComponent<Animator>();
     }
 
     private void Update()
@@ -29,6 +32,7 @@ public class PlayerAttackController : AttackController
             bool success = Attack(lightAttackAttackName);
             if (success)
             {
+                animationController.SetTrigger(lightAttackAnimationTrigger);
                 audioPlayer.PlaySound(lightAttackAudioName);
             }
         }
@@ -37,6 +41,7 @@ public class PlayerAttackController : AttackController
             bool success = Attack(strongAttackAttackName);
             if (success)
             {
+                animationController.SetTrigger(strongAttackAnimationTrigger);
                 audioPlayer.PlaySound(strongAttackAudioName);
             }
             

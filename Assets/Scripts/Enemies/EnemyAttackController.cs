@@ -12,6 +12,8 @@ public class EnemyAttackController : AttackController
     private Vector3 toPlayer = Vector3.zero;
     private EnemyAggroController aggroController;
 
+    private const string lightAttackAnimationTrigger = "Light Attack";
+
     private void Start()
     {
         if (GameManager.Instance.playerObject != null)
@@ -23,6 +25,7 @@ public class EnemyAttackController : AttackController
             Debug.LogError("Game State Controller's player is null!");
         }
         TryGetComponent(out aggroController);
+        animationController = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -39,13 +42,18 @@ public class EnemyAttackController : AttackController
                 // Don't attack if not aggroed!
                 return;
             }
-            if(attacksTargetPlayer)
+            bool success = false;
+            if (attacksTargetPlayer)
             {
-                AttackTargeted(playerTransform);
+                success = AttackTargeted(playerTransform);
             }
             else
             {
-                Attack();
+                success = Attack();
+            }
+            if (success)
+            {
+                animationController.SetTrigger(lightAttackAnimationTrigger);
             }
         }
     }

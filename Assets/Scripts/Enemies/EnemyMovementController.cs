@@ -6,6 +6,9 @@ public class EnemyMovementController : MovementController
 {
     public Vector3 movementInput = Vector3.zero;
     private Vector3 realMovement = Vector3.zero;
+
+    public string walkingAnimationBool = "Walking";
+
     private void FixedUpdate()
     {
         realMovement = Vector3.zero;
@@ -14,6 +17,17 @@ public class EnemyMovementController : MovementController
         if (primaryMovementEnabled)
         {
             gameObject.transform.position += realMovement * Time.fixedDeltaTime;
+            if (realMovement.magnitude > 0.01f)
+            {
+                if (!animationController.GetBool(walkingAnimationBool))
+                {
+                    animationController.SetBool(walkingAnimationBool, true);
+                }
+            }
+            else if (animationController.GetBool(walkingAnimationBool))
+            {
+                animationController.SetBool(walkingAnimationBool, false);
+            }
         }
     }
 
