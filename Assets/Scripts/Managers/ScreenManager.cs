@@ -117,7 +117,7 @@ public class ScreenManager : MonoBehaviour
         int i = 0;
         while (i < spawns.Count)
         {
-            if(spawns[i].toSpawn == null || spawns[i].toSpawn.transform.parent != transform)
+            if(spawns[i].toSpawn == null || spawns[i].toSpawn.transform.parent != transform || spawns[i].toSpawn.tag != tagToSpawn)
             {
                 spawns.Remove(spawns[i]);
             }

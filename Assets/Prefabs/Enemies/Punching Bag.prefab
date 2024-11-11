@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1421726364246192500}
   - component: {fileID: 8804727360176565426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8021628709233623620}
   - component: {fileID: 3742617915432840340}
   - component: {fileID: 5200789794520113568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Punching Bag
   m_TagString: Enemy
   m_Icon: {fileID: 0}

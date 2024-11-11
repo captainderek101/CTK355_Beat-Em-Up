@@ -19,9 +19,9 @@ GameObject:
   - component: {fileID: 7446515397335263002}
   - component: {fileID: 4657772922782364197}
   - component: {fileID: 1623685368326329898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ranged Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,10 @@ MonoBehaviour:
   whereIsUp: 2
   horizontalMoveSpeed: 0.3
   verticalMoveSpeed: 0.3
+  primaryMovementEnabled: 1
+  animationController: {fileID: 0}
   movementInput: {x: 0, y: 0, z: 0}
+  walkingAnimationBool: Walking
 --- !u!114 &6039350635138174503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +177,9 @@ MonoBehaviour:
   - name: ranged
     prefab: {fileID: 1107040573827765603, guid: 658896be59438a143b83a446d16f291c, type: 3}
   attackCooldown: 2
+  readyToAttack: 1
+  animationController: {fileID: 0}
+  movementController: {fileID: 0}
   maxAttackDistance: 2.5
   attacksTargetPlayer: 1
 --- !u!114 &7446515397335263002
@@ -242,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4873163336270358144}
   - component: {fileID: 4909918111779877122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

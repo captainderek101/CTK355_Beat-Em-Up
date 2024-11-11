@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6110436717163639712}
   - component: {fileID: 8494296789745483206}
   - component: {fileID: 2450961328916554186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Melee Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -78,6 +78,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToStop: 0.3
+  targetDistanceFromPlayer: 2
+  distanceToKeepFromEnemies: 2
+  fixedUpdateClockCycle: 30
 --- !u!114 &2728322498208420808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +97,7 @@ MonoBehaviour:
   whereIsUp: 2
   horizontalMoveSpeed: 0.3
   verticalMoveSpeed: 0.3
+  primaryMovementEnabled: 1
   animationController: {fileID: 0}
   movementInput: {x: 0, y: 0, z: 0}
   walkingAnimationBool: Walking
@@ -170,9 +174,16 @@ MonoBehaviour:
   - name: melee
     prefab: {fileID: 1107040573827765603, guid: 7e11bf41a66ef4b4f8df1304f11798ea, type: 3}
   attackCooldown: 1
+  readyToAttack: 1
   animationController: {fileID: 0}
+  movementController: {fileID: 0}
+  targetYDistanceFromPlayer: 0.05
+  targetXDistanceFromPlayer: 0.1
+  YDistanceNegativeBias: 1
+  XDistanceNegativeBias: 0.5
   maxAttackDistance: 0.3
   attacksTargetPlayer: 0
+  fixedUpdateClockCycle: 60
 --- !u!114 &6110436717163639712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5515013819054272374}
   - component: {fileID: 3434859358122449343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
