@@ -75,7 +75,6 @@ public class PlayerMovementController : MovementController
         disabledBecauseOfSelf = true;
         attackController.readyToAttack = false;
         animationController.SetTrigger(dodgerollAnimationTrigger);
-        playerBillboard.transform.localScale = new Vector3(1, 0.5f);
         float timeSinceStart = 0;
         float currentSpeed = 0;
         audioPlayer.PlaySound(dodgerollAudioName);
@@ -88,7 +87,6 @@ public class PlayerMovementController : MovementController
         }
         disabledBecauseOfSelf = false;
         attackController.readyToAttack = true;
-        playerBillboard.transform.localScale = new Vector3(1, 1);
     }
 
     private IEnumerator FootstepCoroutine()

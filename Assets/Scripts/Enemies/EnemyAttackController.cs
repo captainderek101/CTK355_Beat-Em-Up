@@ -20,6 +20,8 @@ public class EnemyAttackController : AttackController
 
     private const string lightAttackAnimationTrigger = "Light Attack";
 
+    [SerializeField] private SpriteRenderer billboard;
+
     private void Start()
     {
         if (GameManager.Instance.playerObject != null)
@@ -39,19 +41,21 @@ public class EnemyAttackController : AttackController
 
     private void FixedUpdate()
     {
+        if (facingRight && ((EnemyMovementController)movementController).movementInput.x < 0 && movementController.primaryMovementEnabled)
+        {
+            facingRight = false;
+            billboard.flipX = true;
+        }
+        else if (!facingRight && ((EnemyMovementController)movementController).movementInput.x > 0 && movementController.primaryMovementEnabled)
+        {
+            facingRight = true;
+            billboard.flipX = false;
+        }
         if (currentClockCycle == 0)
         {
             if (playerTransform == null)
             {
                 return;
-            }
-            if (facingRight && ((EnemyMovementController)movementController).movementInput.x < 0)
-            {
-                facingRight = false;
-            }
-            else if (!facingRight && ((EnemyMovementController)movementController).movementInput.x > 0)
-            {
-                facingRight = true;
             }
             toPlayer = playerTransform.transform.position - transform.position;
             float chanceToAttack = 1;

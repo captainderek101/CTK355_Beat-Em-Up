@@ -30,8 +30,10 @@ AnimationClip:
       value: {fileID: -1111698828, guid: ac86439340140ab4aac51c0555740ea6, type: 3}
     - time: 0.33333334
       value: {fileID: -1741520192, guid: ac86439340140ab4aac51c0555740ea6, type: 3}
+    - time: 0.41666666
+      value: {fileID: -1741520192, guid: ac86439340140ab4aac51c0555740ea6, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Billboard
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -43,7 +45,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 1956491605
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -57,12 +59,13 @@ AnimationClip:
     - {fileID: 477405287, guid: ac86439340140ab4aac51c0555740ea6, type: 3}
     - {fileID: -1111698828, guid: ac86439340140ab4aac51c0555740ea6, type: 3}
     - {fileID: -1741520192, guid: ac86439340140ab4aac51c0555740ea6, type: 3}
+    - {fileID: -1741520192, guid: ac86439340140ab4aac51c0555740ea6, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4166667
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

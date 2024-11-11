@@ -102,8 +102,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 523
-        width: 546
-        height: 512
+        width: 971
+        height: 523
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: Elf Light_1
       rect:
         serializedVersion: 2
-        x: 1164
-        y: 526
-        width: 364
-        height: 505
+        x: 971
+        y: 523
+        width: 971
+        height: 523
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: Elf Light_2
       rect:
         serializedVersion: 2
-        x: 2245
-        y: 526
-        width: 671
-        height: 509
+        x: 1942
+        y: 523
+        width: 971
+        height: 523
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: Elf Light_3
       rect:
         serializedVersion: 2
-        x: 421
-        y: 11
-        width: 552
-        height: 513
+        x: 0
+        y: 0
+        width: 971
+        height: 523
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,9 +184,9 @@ TextureImporter:
       name: Elf Light_4
       rect:
         serializedVersion: 2
-        x: 1382
-        y: 1
-        width: 463
+        x: 971
+        y: 0
+        width: 971
         height: 523
       alignment: 7
       pivot: {x: 0.5, y: 0}

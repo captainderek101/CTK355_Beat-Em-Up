@@ -72,6 +72,8 @@ MonoBehaviour:
   whereIsUp: 2
   horizontalMoveSpeed: 1.5
   verticalMoveSpeed: 1
+  primaryMovementEnabled: 1
+  animationController: {fileID: 0}
   dodgerollSpeedCurve:
     serializedVersion: 2
     m_Curve:
@@ -143,6 +145,10 @@ MonoBehaviour:
   - name: strong
     prefab: {fileID: 1107040573827765603, guid: 8d2e569514a90f64185a3e870b74f993, type: 3}
   attackCooldown: 0.3
+  readyToAttack: 1
+  animationController: {fileID: 0}
+  movementController: {fileID: 0}
+  billboard: {fileID: 320628664827432212}
 --- !u!114 &146691553045232611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +252,7 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   destroyOnDeath: 1
+  itemDrops: []
 --- !u!82 &7156533634202135804
 AudioSource:
   m_ObjectHideFlags: 0
@@ -389,7 +396,7 @@ Transform:
   m_GameObject: {fileID: 1926904527520315143}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.336, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

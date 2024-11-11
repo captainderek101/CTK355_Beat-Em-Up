@@ -18,6 +18,8 @@ public class PlayerAttackController : AttackController
     private const string strongAttackAudioName = "strongAttack";
     private const string strongAttackAnimationTrigger = "Strong Attack";
 
+    [SerializeField] private SpriteRenderer billboard;
+
     private void Start()
     {
         actions = PlayerInputController.Instance.inputActions.Player;
@@ -53,13 +55,15 @@ public class PlayerAttackController : AttackController
     private void FixedUpdate()
     {
         movementInput = actions.Move.ReadValue<Vector2>();
-        if(facingRight && movementInput.x < 0)
+        if(facingRight && movementInput.x < 0 && movementController.primaryMovementEnabled)
         {
             facingRight = false;
+            billboard.flipX = true;
         }
-        else if(!facingRight && movementInput.x > 0)
+        else if(!facingRight && movementInput.x > 0 && movementController.primaryMovementEnabled)
         {
             facingRight = true;
+            billboard.flipX = false;
         }
     }
 }

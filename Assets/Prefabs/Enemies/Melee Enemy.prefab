@@ -62,7 +62,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.12
-  m_Height: 0.5
+  m_Height: 0.6
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8643787902521124027
@@ -131,6 +131,7 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   destroyOnDeath: 1
+  itemDrops: []
 --- !u!54 &2354765010468131817
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -184,6 +185,7 @@ MonoBehaviour:
   maxAttackDistance: 0.3
   attacksTargetPlayer: 0
   fixedUpdateClockCycle: 60
+  billboard: {fileID: 3434859358122449343}
 --- !u!114 &6110436717163639712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,12 +315,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3c86db66e98d2aa448decfb3a9d79852, type: 3}
+  m_Sprite: {fileID: 37613217, guid: f854b035d358c3943997aa337903a497, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.24, y: 0.48}
+  m_Size: {x: 0.612, y: 0.547}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
