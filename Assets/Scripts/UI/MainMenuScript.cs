@@ -10,13 +10,21 @@ public class MainMenuScript : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.EnableOrDisablePlayer(false);
-        animator = GetComponent<Animator>();
+        if (GameManager.Instance.mainMenuDismissed)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            GameManager.Instance.EnableOrDisablePlayer(false);
+            animator = GetComponent<Animator>();
+        }
     }
 
     public void StartGame()
     {
         GameManager.Instance.EnableOrDisablePlayer(true);
         animator.SetBool(animatorShowBool, false);
+        GameManager.Instance.mainMenuDismissed = true;
     }
 }

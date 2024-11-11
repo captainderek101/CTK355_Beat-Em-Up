@@ -12,7 +12,9 @@ public class HealthController : MonoBehaviour
     private const string enemyTagName = "Enemy";
     private const string playerHitboxTagName = "Player Hitbox";
     private const string enemyHitboxTagName = "Enemy Hitbox";
-    private const string playerHurtAudioName = "hurt";
+    private const string hurtAudioName = "hurt";
+    private const string hurtAnimationTrigger = "Hit";
+    private const string deadAnimationTrigger = "Dead";
 
     private Health health;
 
@@ -29,6 +31,11 @@ public class HealthController : MonoBehaviour
                 deathEvents.Invoke();
             }
         };
+        Animator animator;
+        if (TryGetComponent(out animator))
+        {
+            deathEvents += () => animator.SetTrigger(deadAnimationTrigger);
+        }
         if (gameObject.tag == playerTagName)
         {
             isPlayer = true;
@@ -50,10 +57,15 @@ public class HealthController : MonoBehaviour
                 UIManager.Instance.SetPlayerHealthUI(health.GetCurrentHealth() / health.GetMaxHealth());
                 Destroy(other.gameObject);
 
-                AudioPlayer playerAudio;
-                if (TryGetComponent(out playerAudio))
+                AudioPlayer audioPlayer;
+                if (TryGetComponent(out audioPlayer))
                 {
-                    playerAudio.PlaySound(playerHurtAudioName);
+                    audioPlayer.PlaySound(hurtAudioName);
+                }
+                Animator animator;
+                if (TryGetComponent(out animator))
+                {
+                    animator.SetTrigger(hurtAnimationTrigger);
                 }
             }
         }
@@ -63,6 +75,17 @@ public class HealthController : MonoBehaviour
             {
                 health.ChangeHealth(otherHitbox.healthEffect);
                 Destroy(other);
+
+                AudioPlayer audioPlayer;
+                if (TryGetComponent(out audioPlayer))
+                {
+                    audioPlayer.PlaySound(hurtAudioName);
+                }
+                Animator animator;
+                if (TryGetComponent(out animator))
+                {
+                    animator.SetTrigger(hurtAnimationTrigger);
+                }
             }
         }
     }

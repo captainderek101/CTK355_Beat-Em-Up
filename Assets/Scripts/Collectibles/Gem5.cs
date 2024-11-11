@@ -15,7 +15,7 @@ public class Gem5 : MonoBehaviour, ICollectible
         // This is where you can play sounds or spawn particles
         //Instantiate(collectParticle, transform.position, Quaternion.identity);
 
-        Debug.Log("Gem5 collected!");
+        //Debug.Log("Gem5 collected!");
         Destroy(gameObject);
     }
 }

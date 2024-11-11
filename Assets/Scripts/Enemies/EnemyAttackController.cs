@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioPlayer))]
 public class EnemyAttackController : AttackController
 {
     [SerializeField] private float targetYDistanceFromPlayer = 0.05f;
@@ -19,8 +20,10 @@ public class EnemyAttackController : AttackController
     private EnemyAggroController aggroController;
 
     private const string lightAttackAnimationTrigger = "Light Attack";
+    private const string lightAttackAudioName = "attack";
 
     [SerializeField] private SpriteRenderer billboard;
+    private AudioPlayer audioPlayer;
 
     private void Start()
     {
@@ -35,6 +38,7 @@ public class EnemyAttackController : AttackController
         TryGetComponent(out aggroController);
         TryGetComponent(out movementController);
         animationController = GetComponent<Animator>();
+        audioPlayer = GetComponent<AudioPlayer>();
 
         fixedUpdateClockCycle = Mathf.RoundToInt(fixedUpdateClockCycle * Random.Range(0.8f, 1.2f));
     }
@@ -86,6 +90,7 @@ public class EnemyAttackController : AttackController
                 if (success)
                 {
                     animationController.SetTrigger(lightAttackAnimationTrigger);
+                    audioPlayer.PlaySound(lightAttackAudioName);
                 }
             }
             currentClockCycle = fixedUpdateClockCycle;

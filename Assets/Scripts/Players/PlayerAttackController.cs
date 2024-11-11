@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioPlayer))]
-[RequireComponent(typeof(AudioPlayer))]
 public class PlayerAttackController : AttackController
 {
     private PlayerInputs.PlayerActions actions;
@@ -30,7 +29,6 @@ public class PlayerAttackController : AttackController
 
     private void Update()
     {
-        // TODO: holding down the attack key should let you attack repeatedly!!
         if (actions.LightAttack.WasPressedThisFrame())
         {
             bool success = Attack(lightAttackAttackName);
@@ -40,16 +38,16 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(lightAttackAudioName);
             }
         }
-        else if (actions.StrongAttack.WasPressedThisFrame())
-        {
-            bool success = Attack(strongAttackAttackName);
-            if (success)
-            {
-                animationController.SetTrigger(strongAttackAnimationTrigger);
-                audioPlayer.PlaySound(strongAttackAudioName);
-            }
+        //else if (actions.StrongAttack.WasPressedThisFrame())
+        //{
+        //    bool success = Attack(strongAttackAttackName);
+        //    if (success)
+        //    {
+        //        animationController.SetTrigger(strongAttackAnimationTrigger);
+        //        audioPlayer.PlaySound(strongAttackAudioName);
+        //    }
             
-        }
+        //}
     }
 
     private void FixedUpdate()

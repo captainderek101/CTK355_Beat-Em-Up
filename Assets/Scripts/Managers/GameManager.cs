@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private bool useCheckPoint = false;
     private int previousLevel;
 
+    public bool mainMenuDismissed = false;
+
     private void Awake()
     {
         if(Instance == null)

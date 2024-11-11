@@ -51,7 +51,7 @@ public class Health : MonoBehaviour
         //Debug.Log(gameObject.name + " died!");
         if(destroyOnDeath)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             ItemDrop();
         }
     }
