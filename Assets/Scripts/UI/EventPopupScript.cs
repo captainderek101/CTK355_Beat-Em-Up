@@ -9,6 +9,7 @@ public class EventPopupScript : MonoBehaviour
     [SerializeField] private GameObject popupObject;
 
     private const string loadSceneButtonTagName = "Load Scene Button";
+    private const string pauseMenuAnimationBool = "Show";
 
     private void Start()
     {
@@ -41,6 +42,9 @@ public class EventPopupScript : MonoBehaviour
                 UIManager.Instance.pauseEvent += () =>
                 {
                     popupObject.SetActive(true);
+                    popupObject.TryGetComponent(out Animator pauseMenuAnimator);
+                    if (pauseMenuAnimator != null)
+                        pauseMenuAnimator.SetBool(pauseMenuAnimationBool, true);
                     GameManager.Instance.EnableOrDisablePlayer(false);
                 };
                 break;

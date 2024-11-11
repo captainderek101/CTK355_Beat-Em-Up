@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class PauseMenuScript : MonoBehaviour
 {
+    private Animator animator;
+    private const string animatorShowBool = "Show";
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public void ResumeGame()
     {
         GameManager.Instance.EnableOrDisablePlayer(true);
-        gameObject.SetActive(false);
+        animator.SetBool(animatorShowBool, false);
     }
 }

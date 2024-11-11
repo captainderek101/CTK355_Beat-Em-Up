@@ -50,6 +50,7 @@ public class UIManager : MonoBehaviour
         }
         if(transitionButton != null)
         {
+            transitionButton.onClick.RemoveListener(() => TransitionManager.Instance.LoadSceneAsync(sceneToLoad)); // in case we did this already...
             transitionButton.onClick.AddListener(() => TransitionManager.Instance.LoadSceneAsync(sceneToLoad));
         }
         levelCompleteScreen.SetActive(true);

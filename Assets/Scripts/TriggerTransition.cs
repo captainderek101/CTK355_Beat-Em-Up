@@ -15,6 +15,7 @@ public class TriggerTransition : MonoBehaviour
         }
         else if (other.transform.IsChildOf(GameManager.Instance.playerObject.transform))
         {
+            GameManager.Instance.EnableOrDisablePlayer(false);
             UIManager.Instance.ShowLevelCompleteScreen(sceneToLoad);
         }
     }
