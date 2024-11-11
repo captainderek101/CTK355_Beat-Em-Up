@@ -100,12 +100,12 @@ TextureImporter:
       name: player_idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 43
         y: 550
-        width: 400
-        height: 550
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 314
+        height: 504
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,12 +121,12 @@ TextureImporter:
       name: player_idle_1
       rect:
         serializedVersion: 2
-        x: 400
+        x: 438
         y: 550
-        width: 400
-        height: 550
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 314
+        height: 496
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,12 +142,12 @@ TextureImporter:
       name: player_idle_2
       rect:
         serializedVersion: 2
-        x: 800
+        x: 855
         y: 550
-        width: 400
-        height: 550
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 314
+        height: 506
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: player_idle_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 63
         y: 0
-        width: 400
-        height: 550
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 314
+        height: 508
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: player_idle_4
       rect:
         serializedVersion: 2
-        x: 400
+        x: 476
         y: 0
-        width: 400
-        height: 550
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 314
+        height: 496
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
