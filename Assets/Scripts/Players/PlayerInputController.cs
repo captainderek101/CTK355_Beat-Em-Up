@@ -26,8 +26,4 @@ public class PlayerInputController : MonoBehaviour
                 UIManager.Instance.pauseEvent.Invoke();
         };
     }
-
-    private void Update()
-    {
-    }
 }

@@ -39,7 +39,7 @@ public class PlayerMovementController : MovementController
     private void Update()
     {
         bool dodgerollPressed = actions.Dodgeroll.WasPressedThisFrame();
-        if (dodgerollPressed && primaryMovementEnabled)
+        if (dodgerollPressed && primaryMovementEnabled && !disabledBecauseOfSelf)
         {
             StartCoroutine(DodgerollCoroutine());
         }
