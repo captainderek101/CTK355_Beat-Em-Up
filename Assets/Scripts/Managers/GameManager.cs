@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private bool useCheckPoint = false;
     private int previousLevel;
 
-    public bool mainMenuDismissed = false;
+    public bool inFirstLoadedScene = true;
 
     private void Awake()
     {

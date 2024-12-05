@@ -10,7 +10,7 @@ public class MainMenuScript : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.Instance.mainMenuDismissed)
+        if (GameManager.Instance.inFirstLoadedScene == false)
         {
             gameObject.SetActive(false);
         }
@@ -25,6 +25,5 @@ public class MainMenuScript : MonoBehaviour
     {
         GameManager.Instance.EnableOrDisablePlayer(true);
         animator.SetBool(animatorShowBool, false);
-        GameManager.Instance.mainMenuDismissed = true;
     }
 }

@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public UIEvent pauseEvent;
     [SerializeField] private Slider playerHealthSlider;
+    [SerializeField] private Image blackScreen;
+    [SerializeField] private AnimationCurve blackScreenCurve;
     private GameObject levelCompleteScreen;
 
     private const string loadSceneButtonTagName = "Load Scene Button";
@@ -29,6 +31,18 @@ public class UIManager : MonoBehaviour
         if(playerHealthSlider == null)
         {
             Debug.LogWarning(nameof(UIManager) + " is missing player health slider!");
+        }
+    }
+
+    private void Start()
+    {
+        TransitionManager.Instance.transitionEvent += (float duration) => { ControlBlackScreen(true, duration); };
+        if (GameManager.Instance.inFirstLoadedScene == false)
+        {
+            Color screenColor = blackScreen.color;
+            screenColor.a = 1;
+            blackScreen.color = screenColor;
+            ControlBlackScreen(false, TransitionManager.Instance.defaultTransitionTime);
         }
     }
 
@@ -66,5 +80,34 @@ public class UIManager : MonoBehaviour
     public void CloseGame()
     {
         Application.Quit();
+    }
+
+    private void ControlBlackScreen(bool makeVisible, float transitionTime)
+    {
+        if(makeVisible)
+        {
+            StartCoroutine(ChangeBlackScreenCoroutine(transitionTime, 1));
+        }
+        else
+        {
+            StartCoroutine(ChangeBlackScreenCoroutine(transitionTime, 0));
+        }
+    }
+
+    private IEnumerator ChangeBlackScreenCoroutine(float transitionTime, float targetAlpha)
+    {
+        float timeSinceStart = 0;
+        float current;
+        float startingAlpha = blackScreen.color.a;
+        float startingAlphaAboveTarget = startingAlpha - targetAlpha;
+        Color newColor = blackScreen.color;
+        while (timeSinceStart < transitionTime)
+        {
+            current = blackScreenCurve.Evaluate(timeSinceStart / transitionTime);
+            yield return new WaitForEndOfFrame();
+            newColor.a = startingAlpha - (current * startingAlphaAboveTarget);
+            blackScreen.color = newColor;
+            timeSinceStart += Time.deltaTime;
+        }
     }
 }

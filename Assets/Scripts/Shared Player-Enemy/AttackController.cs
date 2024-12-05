@@ -42,7 +42,7 @@ public class AttackController : MonoBehaviour
         if (readyToAttack && !diabledBecauseOfSelf)
         {
             diabledBecauseOfSelf = true;
-            movementController.primaryMovementEnabled = false;
+            //movementController.primaryMovementEnabled = false;
 
             Quaternion newRotation = transform.rotation;
             if (!facingRight)
@@ -57,7 +57,7 @@ public class AttackController : MonoBehaviour
 
             yield return new WaitForSeconds(attackCooldown);
             diabledBecauseOfSelf = false;
-            movementController.primaryMovementEnabled = true;
+            //movementController.primaryMovementEnabled = true;
         }
     }
 
