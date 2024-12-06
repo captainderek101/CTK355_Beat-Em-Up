@@ -38,16 +38,16 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(lightAttackAudioName);
             }
         }
-        //else if (actions.StrongAttack.WasPressedThisFrame())
-        //{
-        //    bool success = Attack(strongAttackAttackName);
-        //    if (success)
-        //    {
-        //        animationController.SetTrigger(strongAttackAnimationTrigger);
-        //        audioPlayer.PlaySound(strongAttackAudioName);
-        //    }
-            
-        //}
+        else if (actions.StrongAttack.WasPressedThisFrame())
+        {
+            bool success = Attack(strongAttackAttackName);
+            if (success)
+            {
+                animationController.SetTrigger(strongAttackAnimationTrigger);
+                audioPlayer.PlaySound(strongAttackAudioName);
+            }
+
+        }
     }
 
     private void FixedUpdate()
