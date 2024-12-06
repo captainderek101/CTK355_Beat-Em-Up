@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+public delegate void DialogueEvent();
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
@@ -15,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<DialogueLine> lines;
 
     public bool isDialogueActive = false;
+    public DialogueEvent dialogueEnded;
 
     public float typingSpeed = 0.2f;
 
@@ -74,6 +76,10 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        if(dialogueEnded !=  null)
+        {
+            dialogueEnded.Invoke();
+        }
         isDialogueActive = false;
         animator.Play("DialogueBoxHide");
     }

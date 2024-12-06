@@ -451,8 +451,119 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 32841167}
+    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 32841166}
+    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 32841168}
+    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 32841170}
+    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 32841169}
   m_SourcePrefab: {fileID: 100100000, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+--- !u!1 &32841165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+  m_PrefabInstance: {fileID: 32841164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &32841166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32841165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b68c07f3ea8e14a92bbddab8f36a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: God
+        icon: {fileID: 0}
+      line: Welcome to the game! Use the arrow keys or WASD to move.
+--- !u!114 &32841167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32841165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e759384c1bce0b489568deee08c264a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogues:
+  - {fileID: 32841166}
+  - {fileID: 32841168}
+  - {fileID: 32841170}
+  - {fileID: 32841169}
+--- !u!114 &32841168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32841165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b68c07f3ea8e14a92bbddab8f36a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: God
+        icon: {fileID: 0}
+      line: Great work! Now use right click (Mouse2) to perform a dodge roll.
+--- !u!114 &32841169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32841165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b68c07f3ea8e14a92bbddab8f36a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: God
+        icon: {fileID: 0}
+      line: You're doing well! Now head over to the right to get teleported to Level
+        1.
+--- !u!114 &32841170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32841165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b68c07f3ea8e14a92bbddab8f36a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: God
+        icon: {fileID: 0}
+      line: You can press left click (Mouse1) to perform a 'light attack', and press
+        the Space bar to perform a 'strong attack'. Try it now!
 --- !u!1 &36744412
 GameObject:
   m_ObjectHideFlags: 0
@@ -25836,6 +25947,34 @@ PrefabInstance:
     - target: {fileID: 5887564307240490803, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 32841167}
+    - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CutsceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6562790224170498713, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
