@@ -64,7 +64,8 @@ public class EnemyAggroController : MonoBehaviour
         }
         else if (aggroed && (playerTransform.position - transform.position).magnitude > minDeaggroDistance)
         {
-            aggroed = !EnemyManager.Instance.DeaggroEnemy();
+            EnemyManager.Instance.DeaggroEnemy();
+            aggroed = false;
             movementComponent.enabled = aggroed;
             if (wanderComponent != null)
             {

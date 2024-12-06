@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToStop: 0.3
-  targetDistanceFromPlayer: 2
+  targetDistanceFromPlayer: 0.2
   distanceToKeepFromEnemies: 2
   fixedUpdateClockCycle: 30
 --- !u!114 &2728322498208420808

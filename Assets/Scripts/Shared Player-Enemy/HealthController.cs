@@ -49,7 +49,11 @@ public class HealthController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Hitbox otherHitbox;
-        if(isPlayer)
+        if (health.dead)
+        {
+            return;
+        }
+        if (isPlayer)
         {
             if (other.tag == enemyHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
