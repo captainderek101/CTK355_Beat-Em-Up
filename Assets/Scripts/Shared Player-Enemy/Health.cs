@@ -6,7 +6,7 @@ public delegate void DeathEvent();
 public class Health : MonoBehaviour
 {
     [SerializeField] private float initialHealth = 5;
-    [SerializeField] private float maxHealth = 5;
+    public float maxHealth = 5;
     [SerializeField] private float currentHealth;
     public bool destroyOnDeath = true;
 
@@ -40,11 +40,6 @@ public class Health : MonoBehaviour
     public float GetCurrentHealth()
     {
         return currentHealth;
-    }
-
-    public float GetMaxHealth()
-    {
-        return maxHealth;
     }
 
     private void Die()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider playerHealthSlider;
     [SerializeField] private Image blackScreen;
     [SerializeField] private AnimationCurve blackScreenCurve;
+    [SerializeField] public TMP_Text coinUI;
     private GameObject levelCompleteScreen;
+    [HideInInspector] public GameObject upgradeShopScreen;
 
     private const string loadSceneButtonTagName = "Load Scene Button";
 
@@ -75,6 +78,17 @@ public class UIManager : MonoBehaviour
         bool wasSet = levelCompleteScreen != null;
         levelCompleteScreen = screenObject;
         return wasSet;
+    }
+
+    public void SetCoinUI(int coins)
+    {
+        coinUI.text = coins.ToString();
+    }
+
+    public void OpenUpgradeShop()
+    {
+        upgradeShopScreen.SetActive(true);
+        GameManager.Instance.EnableOrDisablePlayer(false);
     }
 
     public void CloseGame()

@@ -18,6 +18,8 @@ public class AttackController : MonoBehaviour
     [HideInInspector] public Animator animationController;
     [HideInInspector] public MovementController movementController;
 
+    public float damageMultiplier = 1.0f;
+
     public bool Attack()
     {
         return AttackTargeted(null, attackPrefabs[0].name);
@@ -50,9 +52,19 @@ public class AttackController : MonoBehaviour
                 newRotation *= Quaternion.Euler(0, 180, 0);
             }
             GameObject projectile = Instantiate(attackPrefab, transform.position, newRotation);
-            if(target != null && projectile.TryGetComponent<TargetedProjectile>(out TargetedProjectile targeting))
+            if(target != null && projectile.TryGetComponent(out TargetedProjectile targeting))
             {
                 targeting.target = target;
+            }
+            for (int i = 0; i < projectile.transform.childCount; i++)
+            {
+                if (projectile.transform.GetChild(i).TryGetComponent(out Hitbox hitbox))
+                {
+                    if (hitbox.healthEffect < 0)
+                    {
+                        hitbox.healthEffect *= damageMultiplier;
+                    }
+                }
             }
 
             yield return new WaitForSeconds(attackCooldown);

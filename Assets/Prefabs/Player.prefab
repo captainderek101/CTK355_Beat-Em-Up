@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4510184122755170893}
   - component: {fileID: 7156533634202135804}
   - component: {fileID: 4468775706077698230}
+  - component: {fileID: 3732511960196748194}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -252,6 +253,7 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   destroyOnDeath: 1
+  dead: 0
   itemDrops: []
 --- !u!82 &7156533634202135804
 AudioSource:
@@ -370,6 +372,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3732511960196748194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747389704131661039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d028fcc9ad9054299006d498653f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1926904527520315143
 GameObject:
   m_ObjectHideFlags: 0

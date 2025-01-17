@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 642350511233873402}
   - component: {fileID: 3447137808928477521}
   - component: {fileID: 684921071394291130}
-  - component: {fileID: 9070983011645363849}
   - component: {fileID: 3430422367680342419}
   - component: {fileID: 3961045583876431984}
+  - component: {fileID: 5631670149900118515}
   m_Layer: 0
   m_Name: Coinx5
   m_TagString: Untagged
@@ -178,18 +178,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &9070983011645363849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105946487565396428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 638eae11912e0614891af8feddc64ba8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3430422367680342419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,3 +212,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5631670149900118515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105946487565396428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023d4cc6fe6a04b42868f379d5e42cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: e824e6482bf15ae478fea6647c6ab65c, type: 2}
+  quantity: 5
