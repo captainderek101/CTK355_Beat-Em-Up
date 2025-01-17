@@ -68,6 +68,10 @@ public class PlayerMovementController : MovementController
                 animationController.SetBool(walkingAnimationBool, false);
             }
         }
+        else
+        {
+            animationController.SetBool(walkingAnimationBool, false);
+        }
     }
 
     private IEnumerator DodgerollCoroutine()
