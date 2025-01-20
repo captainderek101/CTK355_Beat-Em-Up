@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour
     public float verticalMoveSpeed = 1.0f;
 
     public bool primaryMovementEnabled = true;
+    public bool notBusy = true;
 
     [HideInInspector] public Animator animationController;
 

@@ -9,7 +9,6 @@ public class EnemyAttackController : AttackController
     [SerializeField] private float targetXDistanceFromPlayer = 0.1f;
     [SerializeField] private float YDistanceNegativeBias = 4;
     [SerializeField] private float XDistanceNegativeBias = 2;
-    [SerializeField] private float maxAttackDistance = 0.1f;
     [SerializeField] private bool attacksTargetPlayer = true;
     [SerializeField] private int fixedUpdateClockCycle = 30;
     private int currentClockCycle = 0;

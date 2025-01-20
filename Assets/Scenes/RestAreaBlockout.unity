@@ -495,6 +495,11 @@ MonoBehaviour:
         name: God
         icon: {fileID: 0}
       line: Welcome to the game! Use the arrow keys or WASD to move.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!114 &32841167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +535,11 @@ MonoBehaviour:
         name: God
         icon: {fileID: 0}
       line: Great work! Now use right click (Mouse2) to perform a dodge roll.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!114 &32841169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +559,11 @@ MonoBehaviour:
         icon: {fileID: 0}
       line: You're doing well! Now head over to the right to get teleported to Level
         1.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!114 &32841170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +583,22 @@ MonoBehaviour:
         icon: {fileID: 0}
       line: You can press left click (Mouse1) to perform a 'light attack', and press
         the Space bar to perform a 'strong attack'. Try it now!
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
+--- !u!114 &32841173 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+  m_PrefabInstance: {fileID: 32841164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32841165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52ff01db9baf7e40adbd1c2f55c7675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &36744412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1291,11 @@ MonoBehaviour:
         name: Wings Salesman
         icon: {fileID: 21300000, guid: 2b00393053c47c54ba6ff8cab7ab748c, type: 3}
       line: We're all out at the moment.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &86598624
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6188,6 +6224,11 @@ MonoBehaviour:
         name: Name
         icon: {fileID: 0}
       line: Are you still a placeholder sprite?
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &502663024
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6476,6 +6517,11 @@ MonoBehaviour:
         name: Pete
         icon: {fileID: 21300000, guid: f9844ead85cd31a4a91698eb11adb49d, type: 3}
       line: Mafia's been around and it won't be long before they hit here.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &508081143
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8469,6 +8515,11 @@ MonoBehaviour:
         name: Taco Salesman
         icon: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
       line: We are currently closed for now.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &681894327
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11550,7 +11601,6 @@ GameObject:
   - component: {fileID: 850106007}
   - component: {fileID: 850106006}
   - component: {fileID: 850106005}
-  - component: {fileID: 850106012}
   m_Layer: 0
   m_Name: Upgrade Shop NPC
   m_TagString: Untagged
@@ -11583,7 +11633,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 114
   m_CollisionDetection: 0
 --- !u!136 &850106006
 CapsuleCollider:
@@ -11626,6 +11676,23 @@ MonoBehaviour:
         name: Shop Owner
         icon: {fileID: 21300000, guid: 2b00393053c47c54ba6ff8cab7ab748c, type: 3}
       line: Whaddaya want?
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 32841173}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OpenUpgradeShop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    distanceToEnd: 2
 --- !u!136 &850106008
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11716,20 +11783,6 @@ Transform:
   - {fileID: 82041088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &850106012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850106004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942b5b9cbb2b41f4b929fed092d10949, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventType: 0
-  useTrigger: 1
 --- !u!1 &859764119
 GameObject:
   m_ObjectHideFlags: 0
@@ -17532,6 +17585,11 @@ MonoBehaviour:
         icon: {fileID: 0}
       line: This is the next line. If you walk too far away, you won't be able to
         hear us speak anymore.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &1151162428
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17980,6 +18038,11 @@ MonoBehaviour:
         name: Concerned Civilian
         icon: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
       line: I have a reward ready to go if you do.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &1204226576
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20173,6 +20236,11 @@ MonoBehaviour:
         name: Ice Cream Salesman
         icon: {fileID: 21300000, guid: f9844ead85cd31a4a91698eb11adb49d, type: 3}
       line: If you need ice cream, I don't got it right now.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &1392408743
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23582,6 +23650,11 @@ MonoBehaviour:
         name: Hot Dog Salesman
         icon: {fileID: 0}
       line: I'd ask if you want hot dogs, but I'm closed for now.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &1725778235
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25408,6 +25481,11 @@ MonoBehaviour:
         name: Neighbor
         icon: {fileID: 21300000, guid: 2b00393053c47c54ba6ff8cab7ab748c, type: 3}
       line: How are you liking your new apartment?
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls: []
+    distanceToEnd: 2
 --- !u!136 &1902662471
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26280,11 +26358,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 578123887022646216, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0010986328
+      value: -0.0012207031
       objectReference: {fileID: 0}
     - target: {fileID: 578123887022646216, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.9638977
+      value: -1.9638672
       objectReference: {fileID: 0}
     - target: {fileID: 641566968843844774, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -26308,15 +26386,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300997877168655686, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0010986328
+      value: -0.0012207031
       objectReference: {fileID: 0}
     - target: {fileID: 2300997877168655686, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.9638977
+      value: -1.9638672
       objectReference: {fileID: 0}
     - target: {fileID: 2429325107183660663, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582653153018158665, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_IsActive
@@ -26324,11 +26402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2717106123188936820, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0010986328
+      value: -0.0012207031
       objectReference: {fileID: 0}
     - target: {fileID: 2717106123188936820, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.9638977
+      value: -1.9638672
       objectReference: {fileID: 0}
     - target: {fileID: 2946542318881139287, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -26354,6 +26432,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BuyItem
       objectReference: {fileID: 0}
+    - target: {fileID: 4191239321015622792, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 45.066895
+      objectReference: {fileID: 0}
     - target: {fileID: 4294507686342370325, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.000061035156
@@ -26368,7 +26450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4661599733689764120, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.10992432
+      value: 0.10986328
       objectReference: {fileID: 0}
     - target: {fileID: 5398524673782771843, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -26381,6 +26463,10 @@ PrefabInstance:
     - target: {fileID: 5887564307240490803, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294472888109344662, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.10986328
       objectReference: {fileID: 0}
     - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -26410,6 +26496,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6558301585280531436, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6562790224170498713, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.00012207031
@@ -26434,6 +26524,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -3.1710205
       objectReference: {fileID: 0}
+    - target: {fileID: 8263643476989144112, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8628004747720599704, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -26449,6 +26543,10 @@ PrefabInstance:
     - target: {fileID: 8683023514812369387, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857037565325583402, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.10986328
       objectReference: {fileID: 0}
     - target: {fileID: 9069045345957209058, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_Pivot.x

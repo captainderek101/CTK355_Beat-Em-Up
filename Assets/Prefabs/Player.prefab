@@ -74,6 +74,7 @@ MonoBehaviour:
   horizontalMoveSpeed: 1.5
   verticalMoveSpeed: 1
   primaryMovementEnabled: 1
+  notBusy: 1
   animationController: {fileID: 0}
   dodgerollSpeedCurve:
     serializedVersion: 2
@@ -81,12 +82,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 3.015123
-      outSlope: 3.015123
+      inSlope: 6.4800453
+      outSlope: 6.4800453
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.1368213
+      outWeight: 0.16150741
     - serializedVersion: 3
       time: 0.1
       value: 1.6
@@ -97,8 +98,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.52718925
     - serializedVersion: 3
-      time: 0.4
-      value: 1.5
+      time: 0.53864133
+      value: 1.510025
       inSlope: -0.6042224
       outSlope: -0.6042224
       tangentMode: 0
@@ -147,8 +148,10 @@ MonoBehaviour:
     prefab: {fileID: 1107040573827765603, guid: 7714ac7633d780a44943cab27696e013, type: 3}
   attackCooldown: 0.3
   readyToAttack: 1
+  notBusy: 1
   animationController: {fileID: 0}
   movementController: {fileID: 0}
+  damageMultiplier: 1
   billboard: {fileID: 320628664827432212}
 --- !u!114 &146691553045232611
 MonoBehaviour:

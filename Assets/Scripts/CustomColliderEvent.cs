@@ -8,7 +8,7 @@ public class CustomColliderEvent : MonoBehaviour
     [SerializeField] private ColliderEventType eventType;
     [SerializeField] private bool useTrigger = true;
 
-    private void StartEvent(Collider collision)
+    public void StartEvent(Collider collision)
     {
         switch (eventType)
         {

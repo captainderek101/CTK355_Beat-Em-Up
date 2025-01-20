@@ -53,12 +53,12 @@ public class PlayerAttackController : AttackController
     private void FixedUpdate()
     {
         movementInput = actions.Move.ReadValue<Vector2>();
-        if(facingRight && movementInput.x < 0 && movementController.primaryMovementEnabled)
+        if(facingRight && movementInput.x < 0 && movementController.primaryMovementEnabled && movementController.notBusy)
         {
             facingRight = false;
             billboard.flipX = true;
         }
-        else if(!facingRight && movementInput.x > 0 && movementController.primaryMovementEnabled)
+        else if(!facingRight && movementInput.x > 0 && movementController.primaryMovementEnabled && movementController.notBusy)
         {
             facingRight = true;
             billboard.flipX = false;

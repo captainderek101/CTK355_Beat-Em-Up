@@ -9,10 +9,9 @@ using UnityEngine;
 public class AttackController : MonoBehaviour
 {
     [SerializeField] private NamedAttack[] attackPrefabs;
-    [SerializeField] private float attackCooldown = 0.5f;
 
     public bool readyToAttack = true;
-    protected bool diabledBecauseOfSelf = false;
+    public bool notBusy = true;
     protected bool facingRight = true;
 
     [HideInInspector] public Animator animationController;
@@ -34,18 +33,15 @@ public class AttackController : MonoBehaviour
     }
     public bool AttackTargeted(Transform target, string attackName)
     {
-        bool wasReady = readyToAttack && !diabledBecauseOfSelf;
-        StartCoroutine(AttackCoroutine(target, attackPrefabs.Where(x => x.name == attackName).First().prefab));
+        bool wasReady = readyToAttack && notBusy;
+        AttackCoroutine(target, attackPrefabs.Where(x => x.name == attackName).First().prefab);
         return wasReady;
     }
 
-    private IEnumerator AttackCoroutine(Transform target, GameObject attackPrefab)
+    private void AttackCoroutine(Transform target, GameObject attackPrefab)
     {
-        if (readyToAttack && !diabledBecauseOfSelf)
+        if (readyToAttack && notBusy)
         {
-            diabledBecauseOfSelf = true;
-            //movementController.primaryMovementEnabled = false;
-
             Quaternion newRotation = transform.rotation;
             if (!facingRight)
             {
@@ -66,10 +62,6 @@ public class AttackController : MonoBehaviour
                     }
                 }
             }
-
-            yield return new WaitForSeconds(attackCooldown);
-            diabledBecauseOfSelf = false;
-            //movementController.primaryMovementEnabled = true;
         }
     }
 
