@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8410624720415627785}
   - component: {fileID: 6110436717163639712}
   - component: {fileID: 8494296789745483206}
+  - component: {fileID: 7958657949506678839}
   - component: {fileID: 2450961328916554186}
   - component: {fileID: 58936288999786074}
   - component: {fileID: 2413493707254753785}
@@ -81,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToStop: 0.3
   targetDistanceFromPlayer: 0.2
-  distanceToKeepFromEnemies: 2
+  distanceToKeepFromEnemies: 1
   fixedUpdateClockCycle: 30
 --- !u!114 &2728322498208420808
 MonoBehaviour:
@@ -100,6 +101,7 @@ MonoBehaviour:
   horizontalMoveSpeed: 0.3
   verticalMoveSpeed: 0.3
   primaryMovementEnabled: 1
+  notBusy: 1
   animationController: {fileID: 0}
   movementInput: {x: 0, y: 0, z: 0}
   walkingAnimationBool: Walking
@@ -133,6 +135,7 @@ MonoBehaviour:
   maxHealth: 4
   currentHealth: 0
   destroyOnDeath: 1
+  dead: 0
   itemDrops:
   - {fileID: 3105946487565396428, guid: cf51512f5f4490143ae6e209980f582e, type: 3}
 --- !u!54 &2354765010468131817
@@ -177,17 +180,18 @@ MonoBehaviour:
   attackPrefabs:
   - name: melee
     prefab: {fileID: 1107040573827765603, guid: 7e11bf41a66ef4b4f8df1304f11798ea, type: 3}
-  attackCooldown: 2
   readyToAttack: 1
+  notBusy: 1
   animationController: {fileID: 0}
   movementController: {fileID: 0}
+  damageMultiplier: 1
   targetYDistanceFromPlayer: 0.05
   targetXDistanceFromPlayer: 0.1
   YDistanceNegativeBias: 1
   XDistanceNegativeBias: 0.5
-  maxAttackDistance: 1
   attacksTargetPlayer: 0
-  fixedUpdateClockCycle: 60
+  fixedUpdateClockCycle: 100
+  billboardFacingRight: 1
   billboard: {fileID: 3434859358122449343}
 --- !u!114 &6110436717163639712
 MonoBehaviour:
@@ -224,6 +228,19 @@ MonoBehaviour:
   maxMoveTime: 3
   moving: 0
   moveDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &7958657949506678839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465197915174158027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659a59eac54acc049b203f3b4b526425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!95 &2450961328916554186
 Animator:
   serializedVersion: 5

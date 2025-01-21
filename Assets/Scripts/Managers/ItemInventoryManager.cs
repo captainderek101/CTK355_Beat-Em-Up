@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static ItemScriptableObject.ItemType;
+using UnityEngine.SceneManagement;
 
 public class ItemInventoryManager : MonoBehaviour
 {
@@ -23,6 +24,14 @@ public class ItemInventoryManager : MonoBehaviour
             Destroy(this);
         }
         items = new Dictionary<ItemScriptableObject, int>();
+
+        SceneManager.sceneLoaded += (x, y) =>
+        {
+            if (items.ContainsKey(coinObject))
+            {
+                UIManager.Instance.SetCoinUI(items[coinObject]);
+            }
+        };
     }
 
 

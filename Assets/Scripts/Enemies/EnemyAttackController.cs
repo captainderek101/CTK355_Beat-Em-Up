@@ -9,8 +9,9 @@ public class EnemyAttackController : AttackController
     [SerializeField] private float targetXDistanceFromPlayer = 0.1f;
     [SerializeField] private float YDistanceNegativeBias = 4;
     [SerializeField] private float XDistanceNegativeBias = 2;
-    [SerializeField] private bool attacksTargetPlayer = true;
-    [SerializeField] private int fixedUpdateClockCycle = 30;
+    [SerializeField] private bool attacksTargetPlayer = false;
+    [SerializeField] private int fixedUpdateClockCycle = 50;
+    [SerializeField] private bool billboardFacingRight = false;
     private int currentClockCycle = 0;
 
     private Transform playerTransform;
@@ -42,18 +43,14 @@ public class EnemyAttackController : AttackController
         fixedUpdateClockCycle = Mathf.RoundToInt(fixedUpdateClockCycle * Random.Range(0.8f, 1.2f));
     }
 
+    public void FacingLeftOrRight(bool facingRight)
+    {
+        this.facingRight = facingRight;
+        billboard.flipX = billboardFacingRight ? !facingRight : facingRight;
+    }
+
     private void FixedUpdate()
     {
-        if (facingRight && ((EnemyMovementController)movementController).movementInput.x < 0 && movementController.primaryMovementEnabled)
-        {
-            facingRight = false;
-            billboard.flipX = true;
-        }
-        else if (!facingRight && ((EnemyMovementController)movementController).movementInput.x > 0 && movementController.primaryMovementEnabled)
-        {
-            facingRight = true;
-            billboard.flipX = false;
-        }
         if (currentClockCycle == 0)
         {
             if (playerTransform == null)
