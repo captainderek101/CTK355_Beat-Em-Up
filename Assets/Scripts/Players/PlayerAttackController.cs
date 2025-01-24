@@ -38,27 +38,27 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(lightAttackAudioName);
             }
         }
-        //else if (actions.StrongAttack.WasPressedThisFrame())
-        //{
-        //    bool success = Attack(strongAttackAttackName);
-        //    if (success)
-        //    {
-        //        animationController.SetTrigger(strongAttackAnimationTrigger);
-        //        audioPlayer.PlaySound(strongAttackAudioName);
-        //    }
-            
-        //}
+        else if (actions.StrongAttack.WasPressedThisFrame())
+        {
+            bool success = Attack(strongAttackAttackName);
+            if (success)
+            {
+                animationController.SetTrigger(strongAttackAnimationTrigger);
+                audioPlayer.PlaySound(strongAttackAudioName);
+            }
+
+        }
     }
 
     private void FixedUpdate()
     {
         movementInput = actions.Move.ReadValue<Vector2>();
-        if(facingRight && movementInput.x < 0 && movementController.primaryMovementEnabled)
+        if(facingRight && movementInput.x < 0 && movementController.primaryMovementEnabled && movementController.notBusy)
         {
             facingRight = false;
             billboard.flipX = true;
         }
-        else if(!facingRight && movementInput.x > 0 && movementController.primaryMovementEnabled)
+        else if(!facingRight && movementInput.x > 0 && movementController.primaryMovementEnabled && movementController.notBusy)
         {
             facingRight = true;
             billboard.flipX = false;

@@ -6,11 +6,12 @@ public delegate void DeathEvent();
 public class Health : MonoBehaviour
 {
     [SerializeField] private float initialHealth = 5;
-    [SerializeField] private float maxHealth = 5;
+    public float maxHealth = 5;
     [SerializeField] private float currentHealth;
     public bool destroyOnDeath = true;
 
     public DeathEvent death;
+    [HideInInspector] public bool dead = false;
 
     public GameObject[] itemDrops;
 
@@ -21,6 +22,10 @@ public class Health : MonoBehaviour
 
     public void ChangeHealth(float amount)
     {
+        if (dead) // we already died
+        {
+            return;
+        }
         currentHealth += amount;
         if (currentHealth < 0.01f)
         {
@@ -37,11 +42,6 @@ public class Health : MonoBehaviour
         return currentHealth;
     }
 
-    public float GetMaxHealth()
-    {
-        return maxHealth;
-    }
-
     private void Die()
     {
         if(death != null)
@@ -54,6 +54,7 @@ public class Health : MonoBehaviour
             //Destroy(gameObject);
             ItemDrop();
         }
+        dead = true;
     }
     private void ItemDrop()
     {

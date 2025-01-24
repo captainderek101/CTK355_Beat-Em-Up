@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private bool useCheckPoint = false;
     private int previousLevel;
 
-    public bool mainMenuDismissed = false;
+    public bool inFirstLoadedScene = true;
 
     private void Awake()
     {
@@ -26,11 +26,15 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-
         playerObject = FindObjectOfType<PlayerInputController>().gameObject;
         previousLevel = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += RespawnAtCheckpoint;
         //SceneManager.activeSceneChanged
+    }
+
+    private void Start()
+    {
+        LoadPlayer(); // load player stats now that they can be found
     }
 
     public void UpdateCheckpoint(Vector3 pos)
@@ -41,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void RespawnAtCheckpoint(Scene scene, LoadSceneMode mode)
     {
-        playerObject = FindObjectOfType<PlayerInputController>().gameObject;
+        LoadPlayer();
         if (useCheckPoint && scene.buildIndex == previousLevel)
         {
             Debug.Log("checkpoint used");
@@ -58,5 +62,14 @@ public class GameManager : MonoBehaviour
     {
         playerObject.GetComponent<PlayerMovementController>().primaryMovementEnabled = enable;
         playerObject.GetComponent<PlayerAttackController>().readyToAttack = enable;
+    }
+
+    private void LoadPlayer()
+    {
+        playerObject = FindObjectOfType<PlayerInputController>().gameObject;
+        if (playerObject != null)
+        {
+            PlayerStatManager.Instance.ApplyPlayerStats(playerObject);
+        }
     }
 }

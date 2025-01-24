@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class DialogueCharacter
@@ -20,6 +21,9 @@ public class DialogueLine
 public class Dialogue
 {
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
+    public bool endCurrentDialogue = true;
+    public UnityEvent dialogueEnded;
+    public float distanceToEnd = 4f;
 }
 
 public class DialogueTrigger : MonoBehaviour

@@ -12,7 +12,11 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogueArea;
 
-    private Queue<DialogueLine> lines;
+    private Queue<Dialogue> queue;
+    private Dialogue currentDialogue;
+    private int currentDialogueLine = 0;
+    private Vector3 dialogueStartLocation = Vector3.zero;
+    private Transform playerTransform;
 
     public bool isDialogueActive = false;
 
@@ -23,46 +27,76 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
 
-        lines = new Queue<DialogueLine>();
+        queue = new Queue<Dialogue>();
+    }
+
+    private void Start()
+    {
+        playerTransform = GameManager.Instance.playerObject.transform;
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        isDialogueActive = true;
-
-        animator.Play("DialogueBoxShow");
-
-        lines.Clear();
-
-        foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
+        if (dialogue.endCurrentDialogue)
         {
-            lines.Enqueue(dialogueLine);
+            currentDialogue = null;
+            queue.Clear();
+        }
+        dialogueStartLocation = playerTransform.position;
+        queue.Enqueue(dialogue);
+
+        if (!isDialogueActive)
+        {
+            animator.Play("DialogueBoxShow");
+        }
+        if (dialogue.endCurrentDialogue || !isDialogueActive)
+        {
+            DisplayNextDialogueLine();
         }
 
-        DisplayNextDialogueLine();
+        isDialogueActive = true;
     }
 
     public void DisplayNextDialogueLine()
     {
-        if (lines.Count == 0)
+        if(currentDialogue == null || currentDialogueLine >= currentDialogue.dialogueLines.Count)
         {
-            EndDialogue();
-            return;
+            if(currentDialogue != null && currentDialogue.dialogueEnded != null)
+            {
+                currentDialogue.dialogueEnded.Invoke();
+            }
+
+            currentDialogueLine = 0;
+            if (queue.Count == 0)
+            {
+                HideDialogue();
+                return;
+            }
+            else
+            {
+                currentDialogue = queue.Dequeue();
+            }
         }
 
-        DialogueLine currentLine = lines.Dequeue();
-
-        characterIcon.sprite = currentLine.character.icon;
-        characterName.text = currentLine.character.name;
+        characterIcon.sprite = currentDialogue.dialogueLines[currentDialogueLine].character.icon;
+        characterName.text = currentDialogue.dialogueLines[currentDialogueLine].character.name;
 
         StopAllCoroutines();
 
-        StartCoroutine(TypeSentence(currentLine));
+        StartCoroutine(TypeSentence(currentDialogue.dialogueLines[currentDialogueLine]));
+
+        currentDialogueLine++;
     }
 
-    IEnumerator TypeSentence(DialogueLine dialogueLine)
+    private IEnumerator TypeSentence(DialogueLine dialogueLine)
     {
         dialogueArea.text = "";
         foreach (char letter in dialogueLine.line.ToCharArray())
@@ -72,9 +106,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void EndDialogue()
+    private void HideDialogue()
     {
         isDialogueActive = false;
         animator.Play("DialogueBoxHide");
+    }
+
+    private void FixedUpdate()
+    {
+        if (isDialogueActive && currentDialogue.distanceToEnd < (playerTransform.position - dialogueStartLocation).magnitude)
+        {
+            currentDialogue.dialogueEnded.Invoke();
+            currentDialogue = null;
+            DisplayNextDialogueLine();
+        }
     }
 }

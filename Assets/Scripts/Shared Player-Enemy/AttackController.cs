@@ -9,14 +9,15 @@ using UnityEngine;
 public class AttackController : MonoBehaviour
 {
     [SerializeField] private NamedAttack[] attackPrefabs;
-    [SerializeField] private float attackCooldown = 0.5f;
 
     public bool readyToAttack = true;
-    protected bool diabledBecauseOfSelf = false;
+    public bool notBusy = true;
     protected bool facingRight = true;
 
     [HideInInspector] public Animator animationController;
     [HideInInspector] public MovementController movementController;
+
+    public float damageMultiplier = 1.0f;
 
     public bool Attack()
     {
@@ -32,32 +33,35 @@ public class AttackController : MonoBehaviour
     }
     public bool AttackTargeted(Transform target, string attackName)
     {
-        bool wasReady = readyToAttack && !diabledBecauseOfSelf;
-        StartCoroutine(AttackCoroutine(target, attackPrefabs.Where(x => x.name == attackName).First().prefab));
+        bool wasReady = readyToAttack && notBusy;
+        AttackCoroutine(target, attackPrefabs.Where(x => x.name == attackName).First().prefab);
         return wasReady;
     }
 
-    private IEnumerator AttackCoroutine(Transform target, GameObject attackPrefab)
+    private void AttackCoroutine(Transform target, GameObject attackPrefab)
     {
-        if (readyToAttack && !diabledBecauseOfSelf)
+        if (readyToAttack && notBusy)
         {
-            diabledBecauseOfSelf = true;
-            movementController.primaryMovementEnabled = false;
-
             Quaternion newRotation = transform.rotation;
             if (!facingRight)
             {
                 newRotation *= Quaternion.Euler(0, 180, 0);
             }
             GameObject projectile = Instantiate(attackPrefab, transform.position, newRotation);
-            if(target != null && projectile.TryGetComponent<TargetedProjectile>(out TargetedProjectile targeting))
+            if(target != null && projectile.TryGetComponent(out TargetedProjectile targeting))
             {
                 targeting.target = target;
             }
-
-            yield return new WaitForSeconds(attackCooldown);
-            diabledBecauseOfSelf = false;
-            movementController.primaryMovementEnabled = true;
+            for (int i = 0; i < projectile.transform.childCount; i++)
+            {
+                if (projectile.transform.GetChild(i).TryGetComponent(out Hitbox hitbox))
+                {
+                    if (hitbox.healthEffect < 0)
+                    {
+                        hitbox.healthEffect *= damageMultiplier;
+                    }
+                }
+            }
         }
     }
 

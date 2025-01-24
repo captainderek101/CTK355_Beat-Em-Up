@@ -48,6 +48,9 @@ public class EventPopupScript : MonoBehaviour
                     GameManager.Instance.EnableOrDisablePlayer(false);
                 };
                 break;
+            case PopupType.UpgradeShop:
+                UIManager.Instance.upgradeShopScreen = popupObject;
+                break;
             default: 
                 break;
         }
@@ -57,6 +60,7 @@ public class EventPopupScript : MonoBehaviour
     {
         PlayerDeath,
         LevelComplete,
-        Pause
+        Pause,
+        UpgradeShop
     }
 }

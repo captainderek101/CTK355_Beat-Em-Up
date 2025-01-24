@@ -10,10 +10,7 @@ public class PlayerMovementController : MovementController
     [SerializeField] private AnimationCurve dodgerollSpeedCurve;
     [SerializeField] private float dodgerollDuration = 1.0f;
 
-    [SerializeField] private SpriteRenderer playerBillboard;
-
     private PlayerInputs.PlayerActions actions;
-    private PlayerAttackController attackController;
     private Vector2 movementInput = Vector2.zero;
     private Vector3 realMovement = Vector3.zero;
 
@@ -25,21 +22,18 @@ public class PlayerMovementController : MovementController
     private const float timeBetweenFootstepSounds = 0.3f;
     private bool walkSoundActive = false;
 
-    private bool disabledBecauseOfSelf = false;
-
     private new void Start()
     {
         base.Start();
         actions = PlayerInputController.Instance.inputActions.Player;
 
         audioPlayer = GetComponent<AudioPlayer>();
-        attackController = GetComponent<PlayerAttackController>();
     }
 
     private void Update()
     {
         bool dodgerollPressed = actions.Dodgeroll.WasPressedThisFrame();
-        if (dodgerollPressed && primaryMovementEnabled && !disabledBecauseOfSelf)
+        if (dodgerollPressed && primaryMovementEnabled && notBusy)
         {
             StartCoroutine(DodgerollCoroutine());
         }
@@ -51,7 +45,7 @@ public class PlayerMovementController : MovementController
         realMovement = Vector3.zero;
         realMovement += rightDirection * movementInput.x * horizontalMoveSpeed;
         realMovement += upDirection * movementInput.y * verticalMoveSpeed;
-        if (primaryMovementEnabled && !disabledBecauseOfSelf)
+        if (primaryMovementEnabled && notBusy)
         {
             gameObject.transform.position += realMovement * Time.fixedDeltaTime;
             if (realMovement.magnitude > 0.01f)
@@ -68,12 +62,14 @@ public class PlayerMovementController : MovementController
                 animationController.SetBool(walkingAnimationBool, false);
             }
         }
+        else
+        {
+            animationController.SetBool(walkingAnimationBool, false);
+        }
     }
 
     private IEnumerator DodgerollCoroutine()
     {
-        disabledBecauseOfSelf = true;
-        attackController.readyToAttack = false;
         animationController.SetTrigger(dodgerollAnimationTrigger);
         float timeSinceStart = 0;
         float currentSpeed = 0;
@@ -85,8 +81,6 @@ public class PlayerMovementController : MovementController
             gameObject.transform.position += realMovement * currentSpeed * Time.fixedDeltaTime;
             timeSinceStart += Time.fixedDeltaTime;
         }
-        disabledBecauseOfSelf = false;
-        attackController.readyToAttack = true;
     }
 
     private IEnumerator FootstepCoroutine()
