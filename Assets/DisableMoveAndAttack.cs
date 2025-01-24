@@ -7,8 +7,8 @@ public class DisableMoveAndAttack : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.gameObject.GetComponent<AttackController>().readyToAttack = false;
-        animator.gameObject.GetComponent<MovementController>().primaryMovementEnabled = false;
+        animator.gameObject.GetComponent<AttackController>().notBusy = false;
+        animator.gameObject.GetComponent<MovementController>().notBusy = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,8 +20,8 @@ public class DisableMoveAndAttack : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.gameObject.GetComponent<AttackController>().readyToAttack = true;
-        animator.gameObject.GetComponent<MovementController>().primaryMovementEnabled = true;
+        animator.gameObject.GetComponent<AttackController>().notBusy = true;
+        animator.gameObject.GetComponent<MovementController>().notBusy = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

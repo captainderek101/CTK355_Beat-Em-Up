@@ -44,11 +44,11 @@ public class MoveTowardsPlayer : MonoBehaviour
             targetPosition = playerTransform.position;
             if ((playerTransform.position - transform.position).x > 0)
             {
-                targetPosition.x += targetDistanceFromPlayer;
+                targetPosition.x -= targetDistanceFromPlayer;
             }
             else
             {
-                targetPosition.x -= targetDistanceFromPlayer;
+                targetPosition.x += targetDistanceFromPlayer;
             }
             moveDirection = targetPosition - transform.position;
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, distanceToKeepFromEnemies, enemyLayer);

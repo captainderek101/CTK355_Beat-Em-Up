@@ -10,10 +10,11 @@ public class MovementController : MonoBehaviour
     [SerializeField] protected AxisDirection whereIsUp = AxisDirection.PositiveZ;
     protected Vector3 upDirection;
 
-    [SerializeField] protected float horizontalMoveSpeed = 1.0f;
-    [SerializeField] protected float verticalMoveSpeed = 1.0f;
+    public float horizontalMoveSpeed = 1.0f;
+    public float verticalMoveSpeed = 1.0f;
 
     public bool primaryMovementEnabled = true;
+    public bool notBusy = true;
 
     [HideInInspector] public Animator animationController;
 

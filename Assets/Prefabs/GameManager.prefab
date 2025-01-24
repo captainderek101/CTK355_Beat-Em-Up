@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 709176313351315458}
   - component: {fileID: 1574732351528787183}
+  - component: {fileID: 2027817677162291365}
+  - component: {fileID: 3827135792584700910}
   m_Layer: 0
   m_Name: DontDestroyOnLoad Managers
   m_TagString: Untagged
@@ -45,6 +47,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 0}
+  inFirstLoadedScene: 1
+--- !u!114 &2027817677162291365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293677446008155496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9385f2e8b06ed7c42bbf8aebc4390e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinObject: {fileID: 11400000, guid: e824e6482bf15ae478fea6647c6ab65c, type: 2}
+--- !u!114 &3827135792584700910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293677446008155496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1532928fe0be34aaf135c4127885c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHorizontalMoveSpeed: 1.5
+  baseVerticalMoveSpeed: 1
+  currentMoveSpeedMultiplier: 1
+  baseMaxHealth: 5
+  currentMaxHealthMultiplier: 1
+  currentDamageMultiplier: 1
 --- !u!1 &4706570429176043575
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +91,7 @@ GameObject:
   - component: {fileID: 4717794431462099431}
   - component: {fileID: 8935013384111678928}
   - component: {fileID: 1765862002976393100}
+  - component: {fileID: 4247378149714435323}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -94,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggroLimitForLevel: 5
   currentAggroCount: 0
+  aggroPriorityTTL: 1
 --- !u!114 &8935013384111678928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +143,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealthSlider: {fileID: 0}
+  blackScreen: {fileID: 0}
+  blackScreenCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  coinUI: {fileID: 0}
 --- !u!114 &1765862002976393100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,3 +181,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eedd26884c2a52241845bac27aa2a941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultTransitionTime: 2
+--- !u!114 &4247378149714435323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706570429176043575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d36a36e6bbd1643811e8171ae2ecf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: f578a87cab11826489e15f37371c45b2, type: 2}
+  exposedVolumeParameter: Volume
+  volumeChangeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

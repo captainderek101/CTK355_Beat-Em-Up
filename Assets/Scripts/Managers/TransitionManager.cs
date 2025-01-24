@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public delegate void TransitionEvent();
+public delegate void TransitionEvent(float duration);
 public class TransitionManager : MonoBehaviour
 {
     public static TransitionManager Instance;
 
-    public DeathEvent transition;
+    public TransitionEvent transitionEvent;
+
+    public float defaultTransitionTime = 2f;
 
     private void Awake()
     {
@@ -24,22 +26,36 @@ public class TransitionManager : MonoBehaviour
     }
     public void ReloadCurrentScene()
     {
-        StartCoroutine(LoadSceneCoroutine(SceneManager.GetActiveScene().buildIndex));
+        StartCoroutine(LoadSceneCoroutine(SceneManager.GetActiveScene().buildIndex, defaultTransitionTime));
     }
-    public void LoadSceneAsync(string sceneName)
+    public void LoadSceneAsync(string sceneName, float transitionTime = -1)
     {
-        StartCoroutine(LoadSceneCoroutine(sceneName));
+        if (transitionTime < -0.01)
+        {
+            transitionTime = defaultTransitionTime;
+        }
+        StartCoroutine(LoadSceneCoroutine(sceneName, transitionTime));
     }
-    public void LoadSceneAsync(int buildIndex)
+    public void LoadSceneAsync(int buildIndex, float transitionTime = -1)
     {
-        StartCoroutine(LoadSceneCoroutine(buildIndex));
+        if (transitionTime < -0.01)
+        {
+            transitionTime = defaultTransitionTime;
+        }
+        StartCoroutine(LoadSceneCoroutine(buildIndex, transitionTime));
     }
-    private IEnumerator LoadSceneCoroutine(string sceneName)
+    private IEnumerator LoadSceneCoroutine(int buildIndex, float transitionTime)
     {
-        yield return SceneManager.LoadSceneAsync(sceneName);
-    }
-    private IEnumerator LoadSceneCoroutine(int buildIndex)
-    {
+        transitionEvent.Invoke(transitionTime);
+        yield return new WaitForSeconds(transitionTime);
+        GameManager.Instance.inFirstLoadedScene = false;
         yield return SceneManager.LoadSceneAsync(buildIndex);
+    }
+    private IEnumerator LoadSceneCoroutine(string sceneName, float transitionTime)
+    {
+        transitionEvent.Invoke(transitionTime);
+        yield return new WaitForSeconds(transitionTime);
+        GameManager.Instance.inFirstLoadedScene = false;
+        yield return SceneManager.LoadSceneAsync(sceneName);
     }
 }
