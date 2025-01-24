@@ -66,5 +66,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d81baa4e0ff524c9d3c5ee65b88ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionOnTriggerEnter: 1
+  transitionOnTriggerEnter: 0
   sceneToLoad: 

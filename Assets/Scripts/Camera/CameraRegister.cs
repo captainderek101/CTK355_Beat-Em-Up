@@ -10,7 +10,7 @@ public class CameraRegister : MonoBehaviour
         CameraManager.Register(GetComponent<CinemachineVirtualCamera>());
     }
 
-    private void onDisable()
+    private void OnDisable()
     {
         CameraManager.Unregister(GetComponent <CinemachineVirtualCamera>());
     }
