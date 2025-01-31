@@ -15,10 +15,12 @@ public class Health : MonoBehaviour
     [HideInInspector] public bool dead = false;
 
     public GameObject[] itemDrops;
+    private EntityUIManager entityUI;
 
     private void Awake()
     {
         currentHealth = initialHealth;
+        TryGetComponent(out entityUI);
     }
 
     public void ChangeHealth(float amount)
@@ -35,6 +37,10 @@ public class Health : MonoBehaviour
         else if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
+        }
+        if (entityUI != null)
+        {
+            entityUI.SetHealthBarUI(currentHealth / maxHealth);
         }
     }
 
