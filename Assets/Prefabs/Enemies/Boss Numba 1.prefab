@@ -448,6 +448,7 @@ MonoBehaviour:
     phaseStarted:
       m_PersistentCalls:
         m_Calls: []
+  waitForReenable: 1
 --- !u!114 &2232980214975204971
 MonoBehaviour:
   m_ObjectHideFlags: 0
