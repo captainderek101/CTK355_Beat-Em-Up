@@ -55,6 +55,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Ability"",
+                    ""type"": ""Button"",
+                    ""id"": ""52c60011-24aa-43f8-ab8d-41c5c743c604"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Dodgeroll"",
                     ""type"": ""Button"",
                     ""id"": ""8c72b695-48bd-498e-9735-f5883b4cb394"",
@@ -308,7 +317,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6553c92b-7a7e-421a-8caf-5a1c3600cfb2"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -346,6 +355,28 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""676bab4e-864b-44f7-9d86-b7813b2a13e7"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Ability"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eec8dea2-8bee-4281-ab60-abcbee23f0e4"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Ability"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -936,6 +967,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_LightAttack = m_Player.FindAction("LightAttack", throwIfNotFound: true);
         m_Player_StrongAttack = m_Player.FindAction("StrongAttack", throwIfNotFound: true);
+        m_Player_Ability = m_Player.FindAction("Ability", throwIfNotFound: true);
         m_Player_Dodgeroll = m_Player.FindAction("Dodgeroll", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         // UI
@@ -1014,6 +1046,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_LightAttack;
     private readonly InputAction m_Player_StrongAttack;
+    private readonly InputAction m_Player_Ability;
     private readonly InputAction m_Player_Dodgeroll;
     private readonly InputAction m_Player_Pause;
     public struct PlayerActions
@@ -1023,6 +1056,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @LightAttack => m_Wrapper.m_Player_LightAttack;
         public InputAction @StrongAttack => m_Wrapper.m_Player_StrongAttack;
+        public InputAction @Ability => m_Wrapper.m_Player_Ability;
         public InputAction @Dodgeroll => m_Wrapper.m_Player_Dodgeroll;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -1043,6 +1077,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @StrongAttack.started += instance.OnStrongAttack;
             @StrongAttack.performed += instance.OnStrongAttack;
             @StrongAttack.canceled += instance.OnStrongAttack;
+            @Ability.started += instance.OnAbility;
+            @Ability.performed += instance.OnAbility;
+            @Ability.canceled += instance.OnAbility;
             @Dodgeroll.started += instance.OnDodgeroll;
             @Dodgeroll.performed += instance.OnDodgeroll;
             @Dodgeroll.canceled += instance.OnDodgeroll;
@@ -1062,6 +1099,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @StrongAttack.started -= instance.OnStrongAttack;
             @StrongAttack.performed -= instance.OnStrongAttack;
             @StrongAttack.canceled -= instance.OnStrongAttack;
+            @Ability.started -= instance.OnAbility;
+            @Ability.performed -= instance.OnAbility;
+            @Ability.canceled -= instance.OnAbility;
             @Dodgeroll.started -= instance.OnDodgeroll;
             @Dodgeroll.performed -= instance.OnDodgeroll;
             @Dodgeroll.canceled -= instance.OnDodgeroll;
@@ -1253,6 +1293,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLightAttack(InputAction.CallbackContext context);
         void OnStrongAttack(InputAction.CallbackContext context);
+        void OnAbility(InputAction.CallbackContext context);
         void OnDodgeroll(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }

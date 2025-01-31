@@ -16,8 +16,15 @@ public class PlayerAttackController : AttackController
     private const string strongAttackAttackName = "strong";
     private const string strongAttackAudioName = "strongAttack";
     private const string strongAttackAnimationTrigger = "Strong Attack";
+    private const string abilityAttackName = "ability";
+    private const string abilityAudioName = "strongAttack";
+    private const string abilityAnimationTrigger = "Strong Attack";
 
     [SerializeField] private SpriteRenderer billboard;
+
+    private int abilityChargeLimit = 10;
+    private int currentAbilityCharge;
+    private bool abilityReady = false;
 
     private void Start()
     {
@@ -25,6 +32,7 @@ public class PlayerAttackController : AttackController
         audioPlayer = GetComponent<AudioPlayer>();
         animationController = GetComponent<Animator>();
         TryGetComponent(out movementController);
+        currentAbilityCharge = 0;
     }
 
     private void Update()
@@ -46,7 +54,17 @@ public class PlayerAttackController : AttackController
                 animationController.SetTrigger(strongAttackAnimationTrigger);
                 audioPlayer.PlaySound(strongAttackAudioName);
             }
-
+        }
+        else if (actions.Ability.WasPressedThisFrame() && abilityReady)
+        {
+            bool success = Attack(abilityAttackName);
+            if (success)
+            {
+                animationController.SetTrigger(abilityAnimationTrigger);
+                audioPlayer.PlaySound(abilityAudioName);
+                abilityReady = false;
+                currentAbilityCharge = 0;
+            }
         }
     }
 
@@ -62,6 +80,24 @@ public class PlayerAttackController : AttackController
         {
             facingRight = true;
             billboard.flipX = false;
+        }
+    }
+
+    public void SetAbilityChargeLimit(int amount)
+    {
+        abilityChargeLimit = amount;
+        if(currentAbilityCharge >= abilityChargeLimit)
+        {
+            abilityReady = true;
+        }
+    }
+
+    public void ChargeAbility(int amount)
+    {
+        currentAbilityCharge += amount;
+        if (currentAbilityCharge >= abilityChargeLimit)
+        {
+            abilityReady = true;
         }
     }
 }

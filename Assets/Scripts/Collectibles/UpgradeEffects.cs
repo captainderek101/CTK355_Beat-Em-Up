@@ -18,6 +18,9 @@ public static class UpgradeEffects
             case "Taco Truck":
                 PlayerStatManager.Instance.currentMaxHealthMultiplier = upgradeValue;
                 break;
+            case "Hot Dog Stand":
+                PlayerStatManager.Instance.currentAbilityChargeLimit = Mathf.RoundToInt(upgradeValue);
+                break;
             case "Wing Truck":
                 PlayerStatManager.Instance.currentDamageMultiplier = upgradeValue;
                 break;

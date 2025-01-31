@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinObject: {fileID: 11400000, guid: e824e6482bf15ae478fea6647c6ab65c, type: 2}
+  DEBUG_add1000Coins: 0
 --- !u!114 &3827135792584700910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +80,7 @@ MonoBehaviour:
   baseMaxHealth: 5
   currentMaxHealthMultiplier: 1
   currentDamageMultiplier: 1
+  currentAbilityChargeLimit: 10
 --- !u!1 &4706570429176043575
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +171,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   coinUI: {fileID: 0}
+  upgradeShopScreen: {fileID: 0}
 --- !u!114 &1765862002976393100
 MonoBehaviour:
   m_ObjectHideFlags: 0

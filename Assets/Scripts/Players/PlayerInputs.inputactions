@@ -33,6 +33,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Ability",
+                    "type": "Button",
+                    "id": "52c60011-24aa-43f8-ab8d-41c5c743c604",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Dodgeroll",
                     "type": "Button",
                     "id": "8c72b695-48bd-498e-9735-f5883b4cb394",
@@ -286,7 +295,7 @@
                 {
                     "name": "",
                     "id": "6553c92b-7a7e-421a-8caf-5a1c3600cfb2",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -324,6 +333,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "676bab4e-864b-44f7-9d86-b7813b2a13e7",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Ability",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eec8dea2-8bee-4281-ab60-abcbee23f0e4",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Ability",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

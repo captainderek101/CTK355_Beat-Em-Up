@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Health))]
 public class HealthController : MonoBehaviour
@@ -18,7 +19,7 @@ public class HealthController : MonoBehaviour
 
     private Health health;
 
-    public DeathEvent deathEvents;
+    public UnityEvent deathEvents;
 
     private void Awake()
     {
@@ -34,7 +35,7 @@ public class HealthController : MonoBehaviour
         Animator animator;
         if (TryGetComponent(out animator))
         {
-            deathEvents += () => animator.SetTrigger(deadAnimationTrigger);
+            deathEvents.AddListener(() => animator.SetTrigger(deadAnimationTrigger));
         }
         if (gameObject.tag == playerTagName)
         {
