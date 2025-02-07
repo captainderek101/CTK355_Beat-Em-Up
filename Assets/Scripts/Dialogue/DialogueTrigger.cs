@@ -34,12 +34,4 @@ public class DialogueTrigger : MonoBehaviour
     {
         DialogueManager.Instance.StartDialogue(dialogue);
     }
-
-    public void OnTriggerEnter(Collider collision)
-    {
-        if (collision.tag == "Player")
-        {
-            TriggerDialogue();
-        }
-    }
 }
