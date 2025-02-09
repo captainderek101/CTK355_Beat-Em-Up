@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7156533634202135804}
   - component: {fileID: 4468775706077698230}
   - component: {fileID: 3732511960196748194}
+  - component: {fileID: 4709582478740246797}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -128,7 +129,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dodgerollDuration: 1
-  playerBillboard: {fileID: 320628664827432212}
 --- !u!114 &3591415680390208088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +146,8 @@ MonoBehaviour:
     prefab: {fileID: 1107040573827765603, guid: 8d2e569514a90f64185a3e870b74f993, type: 3}
   - name: strong
     prefab: {fileID: 1107040573827765603, guid: 7714ac7633d780a44943cab27696e013, type: 3}
-  attackCooldown: 0.3
+  - name: ability
+    prefab: {fileID: 1107040573827765603, guid: 7714ac7633d780a44943cab27696e013, type: 3}
   readyToAttack: 1
   notBusy: 1
   animationController: {fileID: 0}
@@ -240,6 +241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   isEnemy: 0
+  deathEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4510184122755170893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +391,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d028fcc9ad9054299006d498653f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4709582478740246797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747389704131661039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4933f57e107ace24681879017a8dc745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
 --- !u!1 &1926904527520315143
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     public UIEvent pauseEvent;
-    [SerializeField] private Slider playerHealthSlider;
     [SerializeField] private Image blackScreen;
     [SerializeField] private AnimationCurve blackScreenCurve;
     [SerializeField] public TMP_Text coinUI;
@@ -31,10 +30,6 @@ public class UIManager : MonoBehaviour
         {
             Destroy(this);
         }
-        if(playerHealthSlider == null)
-        {
-            Debug.LogWarning(nameof(UIManager) + " is missing player health slider!");
-        }
     }
 
     private void Start()
@@ -47,11 +42,6 @@ public class UIManager : MonoBehaviour
             blackScreen.color = screenColor;
             ControlBlackScreen(false, TransitionManager.Instance.defaultTransitionTime);
         }
-    }
-
-    public void SetPlayerHealthUI(float percentWaterLevel)
-    {
-        playerHealthSlider.value = percentWaterLevel;
     }
 
     public void ShowLevelCompleteScreen(string sceneToLoad)

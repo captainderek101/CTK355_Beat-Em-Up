@@ -12,6 +12,7 @@ public class EnemyManager : MonoBehaviour
     private List<AggroPriority> aggroVirgins;
     private List<AggroPriority> aggroChads;
     [SerializeField] private float aggroPriorityTTL = 1f;
+    private PlayerAttackController playerAttackController;
 
     private void Awake()
     {
@@ -52,6 +53,15 @@ public class EnemyManager : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void RecordEnemyDeath()
+    {
+        if(playerAttackController == null)
+        {
+            GameManager.Instance.playerObject.TryGetComponent(out playerAttackController);
+        }
+        playerAttackController.ChargeAbility(1);
     }
 
     public bool CanIContinue(GameObject me, GameObject them)

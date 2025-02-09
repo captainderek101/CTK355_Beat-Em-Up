@@ -11,6 +11,7 @@ public class PlayerStatManager : MonoBehaviour
     public float baseMaxHealth;
     public float currentMaxHealthMultiplier;
     public float currentDamageMultiplier;
+    public int currentAbilityChargeLimit;
 
     private void Awake()
     {
@@ -45,7 +46,8 @@ public class PlayerStatManager : MonoBehaviour
     }
     private void ApplyAttackEffects(GameObject player)
     {
-        var attackController = player.GetComponent<AttackController>();
+        var attackController = player.GetComponent<PlayerAttackController>();
         attackController.damageMultiplier = currentDamageMultiplier;
+        attackController.SetAbilityChargeLimit(currentAbilityChargeLimit);
     }
 }
