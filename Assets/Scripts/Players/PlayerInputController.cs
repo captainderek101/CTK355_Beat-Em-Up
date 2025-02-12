@@ -1,23 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class PlayerInputController : MonoBehaviour
 {
     public static PlayerInputController Instance;
     public PlayerInputs inputActions;
+    public PlayerInput player;
 
 
     private void Awake()
     {
+        TryGetComponent(out player);
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(player);
+            DontDestroyOnLoad(this);
         }
         else
         {
+            Destroy(player);
             Destroy(this);
         }
+        ResetInputActions();
+    }
+
+    private void Start()
+    {
+    }
+
+    public void ResetInputActions()
+    {
         inputActions = new PlayerInputs();
         inputActions.Player.Enable();
         inputActions.Player.Pause.started += (e) =>
@@ -26,4 +43,9 @@ public class PlayerInputController : MonoBehaviour
                 UIManager.Instance.pauseEvent.Invoke();
         };
     }
+
+    //public void ChangeInputBinding(string nameOrId, string path)
+    //{
+    //    inputActions.FindAction(nameOrId).ChangeBindingWithGroup(player.currentControlScheme).WithPath(path);
+    //}
 }

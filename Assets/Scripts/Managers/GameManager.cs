@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-        playerObject = FindObjectOfType<PlayerInputController>().gameObject;
+        playerObject = FindObjectOfType<PlayerMovementController>().gameObject;
         previousLevel = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += RespawnAtCheckpoint;
         //SceneManager.activeSceneChanged
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadPlayer()
     {
-        playerObject = FindObjectOfType<PlayerInputController>().gameObject;
+        playerObject = FindObjectOfType<PlayerMovementController>().gameObject;
         if (playerObject != null)
         {
             PlayerStatManager.Instance.ApplyPlayerStats(playerObject);
