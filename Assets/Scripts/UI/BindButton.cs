@@ -21,7 +21,8 @@ public class BindButton : MonoBehaviour
     {
         if(action == null)
         {
-            action = PlayerInputController.Instance.inputActions.FindAction(input.action.id.ToString());
+            action = PlayerInputController.Instance.player.actions.FindAction(input.action.id.ToString());
+            //action = PlayerInputController.Instance.inputActions.FindAction(input.action.id.ToString());
         }
         UpdateBindingText();
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed = 0.2f;
 
     public Animator animator;
+    [SerializeField] private GameObject firstSelected;
 
     private void Awake()
     {
@@ -45,6 +47,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        EventSystem.current.SetSelectedGameObject(firstSelected);
+        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
         if (dialogue.endCurrentDialogue)
         {
             currentDialogue = null;
@@ -108,6 +112,8 @@ public class DialogueManager : MonoBehaviour
 
     private void HideDialogue()
     {
+        Debug.Log("action map set to Player");
+        PlayerInputController.Instance.player.SwitchCurrentActionMap("Player");
         isDialogueActive = false;
         animator.Play("DialogueBoxHide");
     }

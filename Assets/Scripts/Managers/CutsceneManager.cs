@@ -57,22 +57,30 @@ public class CutsceneManager : MonoBehaviour
         switch(currentDialogueIndex)
         {
             case 1:
-                PlayerInputController.Instance.inputActions.Player.Move.performed += playNext_Handler;
+                PlayerInputController.Instance.player.actions.FindAction("Move").performed += playNext_Handler;
+                //PlayerInputController.Instance.inputActions.Player.Move.performed += playNext_Handler;
                 break;
             case 2:
-                PlayerInputController.Instance.inputActions.Player.Move.performed -= playNext_Handler;
-                PlayerInputController.Instance.inputActions.Player.Dodgeroll.performed += playNext_Handler;
+                PlayerInputController.Instance.player.actions.FindAction("Move").performed -= playNext_Handler;
+                //PlayerInputController.Instance.inputActions.Player.Move.performed -= playNext_Handler;
+                PlayerInputController.Instance.player.actions.FindAction("Dodgeroll").performed += playNext_Handler;
+                //PlayerInputController.Instance.inputActions.Player.Dodgeroll.performed += playNext_Handler;
                 break;
             case 3:
-                PlayerInputController.Instance.inputActions.Player.Dodgeroll.performed -= playNext_Handler;
+                PlayerInputController.Instance.player.actions.FindAction("Dodgeroll").performed -= playNext_Handler;
+                //PlayerInputController.Instance.inputActions.Player.Dodgeroll.performed -= playNext_Handler;
                 prerequisitesMet = 0;
                 prerequisitesNeeded = 2;
-                PlayerInputController.Instance.inputActions.Player.LightAttack.performed += prerequisite_Handler;
-                PlayerInputController.Instance.inputActions.Player.StrongAttack.performed += prerequisite_Handler;
+                PlayerInputController.Instance.player.actions.FindAction("LightAttack").performed += prerequisite_Handler;
+                //PlayerInputController.Instance.inputActions.Player.LightAttack.performed += prerequisite_Handler;
+                PlayerInputController.Instance.player.actions.FindAction("StrongAttack").performed += prerequisite_Handler;
+                //PlayerInputController.Instance.inputActions.Player.StrongAttack.performed += prerequisite_Handler;
                 break;
             case 4:
-                PlayerInputController.Instance.inputActions.Player.LightAttack.performed -= prerequisite_Handler;
-                PlayerInputController.Instance.inputActions.Player.StrongAttack.performed -= prerequisite_Handler;
+                PlayerInputController.Instance.player.actions.FindAction("LightAttack").performed -= prerequisite_Handler;
+                //PlayerInputController.Instance.inputActions.Player.LightAttack.performed -= prerequisite_Handler;
+                PlayerInputController.Instance.player.actions.FindAction("StrongAttack").performed -= prerequisite_Handler;
+                //PlayerInputController.Instance.inputActions.Player.StrongAttack.performed -= prerequisite_Handler;
                 break;
             default:
                 Debug.LogWarning(nameof(CutsceneManager) + " attached to " + gameObject.name + " had WaitForAction()'s switch statement fall through to default!");

@@ -10,7 +10,7 @@ public class PlayerMovementController : MovementController
     [SerializeField] private AnimationCurve dodgerollSpeedCurve;
     [SerializeField] private float dodgerollDuration = 1.0f;
 
-    private PlayerInputs.PlayerActions actions;
+    //private PlayerInputs.PlayerActions actions;
     private Vector2 movementInput = Vector2.zero;
     private Vector3 realMovement = Vector3.zero;
 
@@ -25,14 +25,14 @@ public class PlayerMovementController : MovementController
     private new void Start()
     {
         base.Start();
-        actions = PlayerInputController.Instance.inputActions.Player;
+        //actions = PlayerInputController.Instance.inputActions.Player;
 
         audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Update()
     {
-        bool dodgerollPressed = actions.Dodgeroll.WasPressedThisFrame();
+        bool dodgerollPressed = PlayerInputController.Instance.player.actions.FindAction("Dodgeroll").WasPressedThisFrame();
         if (dodgerollPressed && primaryMovementEnabled && notBusy)
         {
             StartCoroutine(DodgerollCoroutine());
@@ -41,7 +41,7 @@ public class PlayerMovementController : MovementController
 
     private void FixedUpdate()
     {
-        movementInput = actions.Move.ReadValue<Vector2>();
+        movementInput = PlayerInputController.Instance.player.actions.FindAction("Move").ReadValue<Vector2>();
         realMovement = Vector3.zero;
         realMovement += rightDirection * movementInput.x * horizontalMoveSpeed;
         realMovement += upDirection * movementInput.y * verticalMoveSpeed;

@@ -8,8 +8,8 @@ using UnityEngine.Windows;
 public class PlayerInputController : MonoBehaviour
 {
     public static PlayerInputController Instance;
-    public PlayerInputs inputActions;
-    public PlayerInput player;
+    [HideInInspector] public PlayerInputs inputActions;
+    [HideInInspector] public PlayerInput player;
 
 
     private void Awake()
@@ -37,11 +37,18 @@ public class PlayerInputController : MonoBehaviour
     {
         inputActions = new PlayerInputs();
         inputActions.Player.Enable();
-        inputActions.Player.Pause.started += (e) =>
+        player.actions.FindAction("Pause").started += (e) =>
         {
+            player.SwitchCurrentActionMap("UI");
             if (UIManager.Instance.pauseEvent != null)
                 UIManager.Instance.pauseEvent.Invoke();
         };
+        //inputActions.Player.Pause.started += (e) =>
+        //{
+        //    player.SwitchCurrentActionMap("UI");
+        //    if (UIManager.Instance.pauseEvent != null)
+        //        UIManager.Instance.pauseEvent.Invoke();
+        //};
     }
 
     //public void ChangeInputBinding(string nameOrId, string path)

@@ -60,8 +60,8 @@ public class GameManager : MonoBehaviour
 
     public void EnableOrDisablePlayer(bool enable)
     {
-        playerObject.GetComponent<PlayerMovementController>().primaryMovementEnabled = enable;
-        playerObject.GetComponent<PlayerAttackController>().readyToAttack = enable;
+        //playerObject.GetComponent<PlayerMovementController>().primaryMovementEnabled = enable;
+        //playerObject.GetComponent<PlayerAttackController>().readyToAttack = enable;
     }
 
     private void LoadPlayer()

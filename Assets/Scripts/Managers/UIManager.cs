@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowLevelCompleteScreen(string sceneToLoad)
     {
+        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
         Button transitionButton = null;
         foreach(Transform child in levelCompleteScreen.transform)
         {
@@ -77,6 +78,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenUpgradeShop()
     {
+        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
         upgradeShopScreen.SetActive(true);
         GameManager.Instance.EnableOrDisablePlayer(false);
     }

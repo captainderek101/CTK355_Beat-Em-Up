@@ -11,7 +11,7 @@ public class InteractPrompt : MonoBehaviour
 
     private void Start()
     {
-        playerActions = PlayerInputController.Instance.inputActions.Player;
+        //playerActions = PlayerInputController.Instance.inputActions.Player;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +32,7 @@ public class InteractPrompt : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(playerActions.Interact.inProgress && other.tag == "Player" && interactEvent != null)
+        if(PlayerInputController.Instance.player.actions.FindAction("Interact").inProgress && other.tag == "Player" && interactEvent != null)
         {
             interactEvent.Invoke();
         }

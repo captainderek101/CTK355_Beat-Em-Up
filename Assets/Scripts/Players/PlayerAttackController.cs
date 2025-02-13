@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioPlayer))]
 public class PlayerAttackController : AttackController
 {
-    private PlayerInputs.PlayerActions actions;
+    //private PlayerInputs.PlayerActions actions;
     private AudioPlayer audioPlayer;
 
     private Vector2 movementInput;
@@ -28,7 +28,7 @@ public class PlayerAttackController : AttackController
 
     private void Start()
     {
-        actions = PlayerInputController.Instance.inputActions.Player;
+        //actions = PlayerInputController.Instance.inputActions.Player;
         audioPlayer = GetComponent<AudioPlayer>();
         animationController = GetComponent<Animator>();
         TryGetComponent(out movementController);
@@ -37,7 +37,7 @@ public class PlayerAttackController : AttackController
 
     private void Update()
     {
-        if (actions.LightAttack.WasPressedThisFrame())
+        if (PlayerInputController.Instance.player.actions.FindAction("LightAttack").WasPressedThisFrame())
         {
             bool success = Attack(lightAttackAttackName);
             if (success)
@@ -46,7 +46,7 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(lightAttackAudioName);
             }
         }
-        else if (actions.StrongAttack.WasPressedThisFrame())
+        else if (PlayerInputController.Instance.player.actions.FindAction("StrongAttack").WasPressedThisFrame())
         {
             bool success = Attack(strongAttackAttackName);
             if (success)
@@ -55,7 +55,7 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(strongAttackAudioName);
             }
         }
-        else if (actions.Ability.WasPressedThisFrame() && abilityReady)
+        else if (PlayerInputController.Instance.player.actions.FindAction("Ability").WasPressedThisFrame() && abilityReady)
         {
             bool success = Attack(abilityAttackName);
             if (success)
@@ -70,7 +70,7 @@ public class PlayerAttackController : AttackController
 
     private void FixedUpdate()
     {
-        movementInput = actions.Move.ReadValue<Vector2>();
+        movementInput = PlayerInputController.Instance.player.actions.FindAction("Move").ReadValue<Vector2>();
         if(facingRight && movementInput.x < 0 && movementController.primaryMovementEnabled && movementController.notBusy)
         {
             facingRight = false;
