@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Menu Exit Left
+  m_Controller: {fileID: 9100000, guid: 66ccf75d9b0a9c94b95412de3e69e05d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5bbe4e675bb76e14cbdd85879620057a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 648cc95fa5a3b654f928bef5cd1b7cb0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 699541899002de44a80ce74d3d917e7e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 657fcdc87c42ed44cacc1a8ab099208d, type: 2}

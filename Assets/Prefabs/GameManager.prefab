@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1574732351528787183}
   - component: {fileID: 2027817677162291365}
   - component: {fileID: 3827135792584700910}
+  - component: {fileID: 3410330071663045495}
+  - component: {fileID: 968137502671860123}
   m_Layer: 0
   m_Name: DontDestroyOnLoad Managers
   m_TagString: Untagged
@@ -81,6 +83,49 @@ MonoBehaviour:
   currentMaxHealthMultiplier: 1
   currentDamageMultiplier: 1
   currentAbilityChargeLimit: 10
+--- !u!114 &3410330071663045495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293677446008155496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7a1f6033a5df74687e4749a1757f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+--- !u!114 &968137502671860123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293677446008155496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: bdedc60fd2900f24d82a539e8918535a, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4706570429176043575
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52ff01db9baf7e40adbd1c2f55c7675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthSlider: {fileID: 0}
   blackScreen: {fileID: 0}
   blackScreenCurve:
     serializedVersion: 2
