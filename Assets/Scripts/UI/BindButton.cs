@@ -35,7 +35,7 @@ public class BindButton : MonoBehaviour
         //Debug.Log(input.action.controls.Count);
         //bindingText.text = input.action.controls[0].displayName;
 
-        Debug.Log(action.controls.Count);
+        //Debug.Log(action.controls.Count);
         bindingText.text = action.controls[0].displayName;
     }
 
