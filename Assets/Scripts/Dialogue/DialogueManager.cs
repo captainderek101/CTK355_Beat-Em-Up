@@ -26,6 +26,8 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     [SerializeField] private GameObject firstSelected;
 
+    [SerializeField] private bool enablePlayerOnDialogueEnd = true;
+
     private void Awake()
     {
         if (Instance == null)
@@ -48,7 +50,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         EventSystem.current.SetSelectedGameObject(firstSelected);
-        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
+        UIManager.Instance.SetUIActionMap();
         if (dialogue.endCurrentDialogue)
         {
             currentDialogue = null;
@@ -112,8 +114,10 @@ public class DialogueManager : MonoBehaviour
 
     private void HideDialogue()
     {
-        Debug.Log("action map set to Player");
-        PlayerInputController.Instance.player.SwitchCurrentActionMap("Player");
+        if (enablePlayerOnDialogueEnd)
+        {
+            UIManager.Instance.SetPlayerActionMap();
+        }
         isDialogueActive = false;
         animator.Play("DialogueBoxHide");
     }

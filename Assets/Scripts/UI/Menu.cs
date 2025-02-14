@@ -24,19 +24,22 @@ public class Menu : MonoBehaviour
     public void SetPlayerActionMap()
     {
         //Debug.Log("action map set to Player");
-        PlayerInputController.Instance.player.SwitchCurrentActionMap("Player");
+        UIManager.Instance.SetPlayerActionMap();
     }
 
     public void SetUIActionMap()
     {
         //Debug.Log("action map set to UI");
-        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
+        UIManager.Instance.SetUIActionMap();
     }
 
     public void SetFirstSelected()
     {
-        EventSystem.current.SetSelectedGameObject(firstSelected);
-        SetUIActionMap();
+        if(firstSelected != null)
+        {
+            EventSystem.current.SetSelectedGameObject(firstSelected);
+            SetUIActionMap();
+        }
     }
 
     private void OnEnable()

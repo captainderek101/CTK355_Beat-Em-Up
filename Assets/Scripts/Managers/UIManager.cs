@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowLevelCompleteScreen(string sceneToLoad)
     {
-        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
+        SetUIActionMap();
         Button transitionButton = null;
         foreach(Transform child in levelCompleteScreen.transform)
         {
@@ -78,11 +78,22 @@ public class UIManager : MonoBehaviour
 
     public void OpenUpgradeShop()
     {
-        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
+        SetUIActionMap();
         upgradeShopScreen.SetActive(true);
         GameManager.Instance.EnableOrDisablePlayer(false);
     }
 
+    public void SetPlayerActionMap()
+    {
+        //Debug.Log("action map set to Player");
+        PlayerInputController.Instance.player.SwitchCurrentActionMap("Player");
+    }
+
+    public void SetUIActionMap()
+    {
+        //Debug.Log("action map set to UI");
+        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
+    }
     public void CloseGame()
     {
         Application.Quit();

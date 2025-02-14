@@ -12099,6 +12099,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3995846216817129346, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: enablePlayerOnDialogueEnd
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3996177972702033146, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000061035156
@@ -33474,9 +33478,37 @@ PrefabInstance:
       value: Upgrade Shop NPC
       objectReference: {fileID: 0}
     - target: {fileID: 8927750242205857546, guid: 0ce24e146d3b41c428a34e723a54798a, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927750242205857546, guid: 0ce24e146d3b41c428a34e723a54798a, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927750242205857546, guid: 0ce24e146d3b41c428a34e723a54798a, type: 3}
       propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 761850527}
+    - target: {fileID: 8927750242205857546, guid: 0ce24e146d3b41c428a34e723a54798a, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 761850527}
+    - target: {fileID: 8927750242205857546, guid: 0ce24e146d3b41c428a34e723a54798a, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927750242205857546, guid: 0ce24e146d3b41c428a34e723a54798a, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OpenUpgradeShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927750242205857546, guid: 0ce24e146d3b41c428a34e723a54798a, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927750242205857546, guid: 0ce24e146d3b41c428a34e723a54798a, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
