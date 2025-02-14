@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: f578a87cab11826489e15f37371c45b2, type: 2}
-  exposedVolumeParameter: Volume
+  exposedVolumeParameter: masterVolume
   volumeChangeCurve:
     serializedVersion: 2
     m_Curve:
