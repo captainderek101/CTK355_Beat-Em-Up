@@ -8,7 +8,6 @@ using UnityEngine.Windows;
 public class PlayerInputController : MonoBehaviour
 {
     public static PlayerInputController Instance;
-    [HideInInspector] public PlayerInputs inputActions;
     [HideInInspector] public PlayerInput player;
 
 
@@ -35,8 +34,6 @@ public class PlayerInputController : MonoBehaviour
 
     public void ResetInputActions()
     {
-        inputActions = new PlayerInputs();
-        inputActions.Player.Enable();
         player.actions.FindAction("Pause").started += (e) =>
         {
             player.SwitchCurrentActionMap("UI");
