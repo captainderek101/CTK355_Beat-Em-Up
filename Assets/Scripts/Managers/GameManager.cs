@@ -58,12 +58,6 @@ public class GameManager : MonoBehaviour
         previousLevel = scene.buildIndex;
     }
 
-    public void EnableOrDisablePlayer(bool enable)
-    {
-        //playerObject.GetComponent<PlayerMovementController>().primaryMovementEnabled = enable;
-        //playerObject.GetComponent<PlayerAttackController>().readyToAttack = enable;
-    }
-
     private void LoadPlayer()
     {
         playerObject = FindObjectOfType<PlayerMovementController>().gameObject;

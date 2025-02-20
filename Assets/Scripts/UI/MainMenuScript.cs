@@ -12,7 +12,6 @@ public class MainMenuScript : Menu
         }
         else
         {
-            GameManager.Instance.EnableOrDisablePlayer(false);
             animator = GetComponent<Animator>();
         }
     }

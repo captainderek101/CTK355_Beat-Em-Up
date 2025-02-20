@@ -10905,6 +10905,18 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: Level1Blockout
       objectReference: {fileID: 0}
+    - target: {fileID: 8168651731950559231, guid: c2a4e1f06cde3ac4aa0207ea5c2937d2, type: 3}
+      propertyPath: scenesToLoad.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168651731950559231, guid: c2a4e1f06cde3ac4aa0207ea5c2937d2, type: 3}
+      propertyPath: scenesToLoad.Array.data[0]
+      value: Level1Blockout
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168651731950559231, guid: c2a4e1f06cde3ac4aa0207ea5c2937d2, type: 3}
+      propertyPath: scenesToLoad.Array.data[1]
+      value: Level2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12799,6 +12811,10 @@ PrefabInstance:
     - target: {fileID: 8628004747720599704, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648681030787119793, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 8726575702232694358, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
