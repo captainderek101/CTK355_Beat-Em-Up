@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class TriggerTransition : MonoBehaviour
 {
-    [SerializeField] private bool transitionOnTriggerEnter = true;
-    [SerializeField] private string sceneToLoad = "";
+    [SerializeField] private string[] scenesToLoad;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (transitionOnTriggerEnter && other.transform.IsChildOf(GameManager.Instance.playerObject.transform))
+        if (other.transform == GameManager.Instance.playerObject.GetComponentInChildren<Collider>().transform)
         {
-            TransitionManager.Instance.LoadSceneAsync(sceneToLoad);
-        }
-        else if (other.transform.IsChildOf(GameManager.Instance.playerObject.transform))
-        {
-            GameManager.Instance.EnableOrDisablePlayer(false);
-            UIManager.Instance.ShowLevelCompleteScreen(sceneToLoad);
+            UIManager.Instance.ShowLevelCompleteScreen(scenesToLoad);
         }
     }
 }

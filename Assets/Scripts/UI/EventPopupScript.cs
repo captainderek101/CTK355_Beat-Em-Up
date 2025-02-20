@@ -45,7 +45,6 @@ public class EventPopupScript : MonoBehaviour
                     popupObject.TryGetComponent(out Animator pauseMenuAnimator);
                     if (pauseMenuAnimator != null)
                         pauseMenuAnimator.SetBool(pauseMenuAnimationBool, true);
-                    GameManager.Instance.EnableOrDisablePlayer(false);
                 };
                 break;
             case PopupType.UpgradeShop:

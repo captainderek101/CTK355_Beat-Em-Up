@@ -17,7 +17,6 @@ public class Menu : MonoBehaviour
         {
             animator = GetComponent<Animator>();
         }
-        GameManager.Instance.EnableOrDisablePlayer(true);
         animator.SetBool(animatorShowBool, false);
     }
 
