@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static ItemScriptableObject;
 
 public class ShopItem : MonoBehaviour
@@ -12,10 +13,14 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private TMP_Text descriptionText;
     [SerializeField] private TMP_Text costText;
     [SerializeField] private GameObject insufficientFundsMessage;
+    [SerializeField] private GameObject soldOutMessage;
+    [SerializeField] private Button button;
     private UpgradeAttributes currentAttributes;
 
     private void OnEnable()
     {
+        soldOutMessage.SetActive(false);
+        button.interactable = true;
         LoadShopDetails();
     }
 
@@ -39,7 +44,8 @@ public class ShopItem : MonoBehaviour
             }
             else
             {
-                gameObject.SetActive(false);
+                soldOutMessage.SetActive(true);
+                button.interactable = false;
             }
         }
     }

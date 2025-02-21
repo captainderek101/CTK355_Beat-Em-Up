@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MainMenuScript : Menu
 {
@@ -14,6 +15,12 @@ public class MainMenuScript : Menu
         else
         {
             animator = GetComponent<Animator>();
+            SetFirstSelected();
         }
+    }
+
+    public override void OnEnable()
+    {
+        return;
     }
 }

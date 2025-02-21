@@ -50,6 +50,11 @@ public class StoryProgressionManager : MonoBehaviour
         }
     }
 
+    public void ResetCheckpoints()
+    {
+        storyCheckpoints = new Dictionary<StoryPoint, bool>();
+    }
+
     [Serializable]
     public enum StoryPoint
     {

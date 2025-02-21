@@ -13,6 +13,8 @@ public class PlayerStatManager : MonoBehaviour
     public float currentDamageMultiplier;
     public int currentAbilityChargeLimit;
 
+    private const int baseAbilityChargeLimit = 10;
+
     private void Awake()
     {
         if (Instance == null)
@@ -30,6 +32,14 @@ public class PlayerStatManager : MonoBehaviour
         ApplyMovementEffects(player);
         ApplyHealthEffects(player);
         ApplyAttackEffects(player);
+    }
+    public void ResetPlayerStats()
+    {
+        currentMoveSpeedMultiplier = 1;
+        currentMaxHealthMultiplier = 1;
+        currentDamageMultiplier = 1;
+        currentAbilityChargeLimit = baseAbilityChargeLimit;
+        ApplyPlayerStats(GameManager.Instance.playerObject);
     }
     private void ApplyMovementEffects(GameObject player)
     {

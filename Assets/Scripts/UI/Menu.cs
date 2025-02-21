@@ -46,7 +46,7 @@ public class Menu : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public virtual void OnEnable()
     {
         SetFirstSelected();
         //Debug.Log(PlayerInputController.Instance.player.currentActionMap.name);

@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using static ItemScriptableObject.ItemType;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
 
 public class ItemInventoryManager : MonoBehaviour
 {
@@ -82,6 +83,12 @@ public class ItemInventoryManager : MonoBehaviour
         UpdateInventoryUI(item);
         UpdateItemEffects(item);
         return true; // we had enough of the item to be removed
+    }
+
+    public void RemoveAllItems()
+    {
+        items = new Dictionary<ItemScriptableObject, int>();
+        UIManager.Instance.SetCoinUI(0);
     }
 
     private void UpdateInventoryUI(ItemScriptableObject item)

@@ -21,6 +21,8 @@ public class PlayerInputController : MonoBehaviour
         }
         else
         {
+            //Debug.Log("action map set to " + player.defaultActionMap);
+            Instance.player.SwitchCurrentActionMap(player.defaultActionMap);
             Destroy(player);
             Destroy(this);
         }
