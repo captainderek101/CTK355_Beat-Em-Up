@@ -9,6 +9,7 @@ public class MainMenuScript : Menu
         if (GameManager.Instance.inFirstLoadedScene == false)
         {
             gameObject.SetActive(false);
+            SetPlayerActionMap();
         }
         else
         {

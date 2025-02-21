@@ -20,6 +20,11 @@ public class Menu : MonoBehaviour
         animator.SetBool(animatorShowBool, false);
     }
 
+    public void LoadScene(string sceneName)
+    {
+        TransitionManager.Instance.LoadSceneAsync(sceneName);
+    }
+
     public void SetPlayerActionMap()
     {
         //Debug.Log("action map set to Player");

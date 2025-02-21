@@ -10,7 +10,6 @@ public class PlayerInputController : MonoBehaviour
     public static PlayerInputController Instance;
     [HideInInspector] public PlayerInput player;
 
-
     private void Awake()
     {
         TryGetComponent(out player);
@@ -28,10 +27,6 @@ public class PlayerInputController : MonoBehaviour
         ResetInputActions();
     }
 
-    private void Start()
-    {
-    }
-
     public void ResetInputActions()
     {
         player.actions.FindAction("Pause").started += (e) =>
@@ -40,16 +35,5 @@ public class PlayerInputController : MonoBehaviour
             if (UIManager.Instance.pauseEvent != null)
                 UIManager.Instance.pauseEvent.Invoke();
         };
-        //inputActions.Player.Pause.started += (e) =>
-        //{
-        //    player.SwitchCurrentActionMap("UI");
-        //    if (UIManager.Instance.pauseEvent != null)
-        //        UIManager.Instance.pauseEvent.Invoke();
-        //};
     }
-
-    //public void ChangeInputBinding(string nameOrId, string path)
-    //{
-    //    inputActions.FindAction(nameOrId).ChangeBindingWithGroup(player.currentControlScheme).WithPath(path);
-    //}
 }

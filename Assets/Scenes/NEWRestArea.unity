@@ -17056,6 +17056,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3719587706313285157, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 547985514}
     - target: {fileID: 3955529935514233344, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -17264,6 +17268,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7233727507886063813, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7310326495981723003, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -17340,6 +17348,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.10986328
       objectReference: {fileID: 0}
+    - target: {fileID: 8978267768269780537, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 547985515}
     - target: {fileID: 9069045345957209058, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17430,6 +17442,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8446726853225023101, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
   m_PrefabInstance: {fileID: 547985512}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &547985514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8978267768269780537, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+  m_PrefabInstance: {fileID: 547985512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &547985515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3719587706313285157, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+  m_PrefabInstance: {fileID: 547985512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &548113298
 GameObject:
   m_ObjectHideFlags: 0

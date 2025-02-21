@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TriggerTransition : MonoBehaviour
 {
-    [SerializeField] private string[] scenesToLoad;
-
+    [SerializeField] private StoryProgressionManager.StoryPoint checkpointToComplete;
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform == GameManager.Instance.playerObject.GetComponentInChildren<Collider>().transform)
         {
-            UIManager.Instance.ShowLevelCompleteScreen(scenesToLoad);
+            StoryProgressionManager.Instance.SetCheckpoint(checkpointToComplete, true);
+            UIManager.Instance.ShowLevelCompleteScreen();
         }
     }
 }

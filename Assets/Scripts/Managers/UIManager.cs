@@ -44,34 +44,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ShowLevelCompleteScreen(string[] scenesToLoad)
+    public void ShowLevelCompleteScreen()
     {
         SetUIActionMap();
-        List<Button> transitionButtons = new List<Button>();
-        Button transitionButton = null;
-        foreach(Transform child in levelCompleteScreen.transform)
-        {
-            if (child.tag == loadSceneButtonTagName)
-            {
-                child.TryGetComponent(out transitionButton);
-                if (transitionButton != null)
-                {
-                    transitionButtons.Add(transitionButton);
-                }
-            }
-        }
-        for (int i = 0; i < scenesToLoad.Length; i++)
-        {
-            transitionButton = transitionButtons[i];
-            transitionButton.gameObject.SetActive(true);
-            int j = i;
-            transitionButton.onClick.RemoveListener(() => TransitionManager.Instance.LoadSceneAsync(scenesToLoad[j])); // in case we did this already...
-            transitionButton.onClick.AddListener(() => TransitionManager.Instance.LoadSceneAsync(scenesToLoad[j]));
-        }
-        for (int i = scenesToLoad.Length; i < transitionButtons.Count; i++)
-        {
-            transitionButtons[i].gameObject.SetActive(false);
-        }
         levelCompleteScreen.SetActive(true);
     }
 
