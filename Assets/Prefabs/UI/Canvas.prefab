@@ -16952,6 +16952,10 @@ PrefabInstance:
       value: 60.7
       objectReference: {fileID: 0}
     - target: {fileID: 6352515768135504634, guid: 4b2987150d4d889428b48da6b75a7bed, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352515768135504634, guid: 4b2987150d4d889428b48da6b75a7bed, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
       objectReference: {fileID: 8284426435365815322}
