@@ -46,6 +46,12 @@ public class Menu : MonoBehaviour
         }
     }
 
+    public void SelectObject(GameObject selected)
+    {
+        EventSystem.current.SetSelectedGameObject(selected);
+        SetUIActionMap();
+    }
+
     public virtual void OnEnable()
     {
         SetFirstSelected();

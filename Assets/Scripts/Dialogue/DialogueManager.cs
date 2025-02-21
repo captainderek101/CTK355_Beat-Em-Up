@@ -95,6 +95,8 @@ public class DialogueManager : MonoBehaviour
         characterIcon.sprite = currentDialogue.dialogueLines[currentDialogueLine].character.icon;
         characterName.text = currentDialogue.dialogueLines[currentDialogueLine].character.name;
 
+        currentDialogue.dialogueLines[currentDialogueLine].line = TextPreprocessor.Instance.PreprocessText(currentDialogue.dialogueLines[currentDialogueLine].line);
+
         StopAllCoroutines();
 
         StartCoroutine(TypeSentence(currentDialogue.dialogueLines[currentDialogueLine]));

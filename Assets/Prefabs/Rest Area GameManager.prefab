@@ -76,6 +76,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3367533493019679114}
   m_SourcePrefab: {fileID: 100100000, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+--- !u!114 &1668883587243987381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+  m_PrefabInstance: {fileID: 7842626854803354725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280735219880782930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52ff01db9baf7e40adbd1c2f55c7675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3280735219880782930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
@@ -115,11 +126,23 @@ MonoBehaviour:
     - character:
         name: God
         icon: {fileID: 0}
-      line: Welcome to the game! Use the arrow keys or WASD to move.
+      line: Welcome to the game! Use {control:Move} to move.
     endCurrentDialogue: 1
     dialogueEnded:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1668883587243987381}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetPlayerActionMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     distanceToEnd: 100000
 --- !u!114 &559346328022402916
 MonoBehaviour:
@@ -138,11 +161,23 @@ MonoBehaviour:
     - character:
         name: God
         icon: {fileID: 0}
-      line: Great work! Now use right click (Mouse2) to perform a dodge roll.
+      line: Great work! Now use {control:Dodgeroll} to perform a dodge roll.
     endCurrentDialogue: 1
     dialogueEnded:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1668883587243987381}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetPlayerActionMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     distanceToEnd: 100000
 --- !u!114 &7865924819646331487
 MonoBehaviour:
@@ -161,12 +196,24 @@ MonoBehaviour:
     - character:
         name: God
         icon: {fileID: 0}
-      line: You can press left click (Mouse1) to perform a 'light attack', and press
-        the Space bar to perform a 'strong attack'. Try it now!
+      line: You can press {control:LightAttack} to perform a 'light attack', and
+        press {control:StrongAttack} to perform a 'strong attack'. Try it now!
     endCurrentDialogue: 1
     dialogueEnded:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1668883587243987381}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetPlayerActionMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     distanceToEnd: 100000
 --- !u!114 &3367533493019679114
 MonoBehaviour:
@@ -190,5 +237,17 @@ MonoBehaviour:
     endCurrentDialogue: 1
     dialogueEnded:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1668883587243987381}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetPlayerActionMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     distanceToEnd: 100000

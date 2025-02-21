@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 
@@ -9,6 +10,7 @@ public class PlayerInputController : MonoBehaviour
 {
     public static PlayerInputController Instance;
     [HideInInspector] public PlayerInput player;
+    public UnityAction<string> bindingChanged;
 
     private void Awake()
     {
@@ -18,6 +20,7 @@ public class PlayerInputController : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(player);
             DontDestroyOnLoad(this);
+            ResetInputActions();
         }
         else
         {
@@ -26,7 +29,6 @@ public class PlayerInputController : MonoBehaviour
             Destroy(player);
             Destroy(this);
         }
-        ResetInputActions();
     }
 
     public void ResetInputActions()
@@ -37,5 +39,11 @@ public class PlayerInputController : MonoBehaviour
             if (UIManager.Instance.pauseEvent != null)
                 UIManager.Instance.pauseEvent.Invoke();
         };
+    }
+
+    public void ChangeInputBinding(InputAction action, string newPath)
+    {
+        action.ChangeBindingWithGroup(player.currentControlScheme).WithPath(newPath);
+        bindingChanged.Invoke(action.name);
     }
 }

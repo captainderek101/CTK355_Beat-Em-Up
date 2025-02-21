@@ -25,6 +25,18 @@ public class BindButton : MonoBehaviour
             //action = PlayerInputController.Instance.inputActions.FindAction(input.action.id.ToString());
         }
         UpdateBindingText();
+        PlayerInputController.Instance.player.onControlsChanged += (input) =>
+        {
+            UpdateBindingText();
+        };
+    }
+
+    private void OnDisable()
+    {
+        PlayerInputController.Instance.player.onControlsChanged -= (input) =>
+        {
+            UpdateBindingText();
+        };
     }
 
     private void UpdateBindingText()
@@ -42,11 +54,12 @@ public class BindButton : MonoBehaviour
 
     public void BindNewInput()
     {
+        bindingText.text = "Waiting...";
         InputSystem.onAnyButtonPress.CallOnce(input => {
             //Debug.Log(action.controls[0].path);
             //Debug.Log(input.path);
-            //PlayerInputController.Instance.ChangeInputBinding(this.input.action.name, input.path);
-            action.ChangeBindingWithGroup(PlayerInputController.Instance.player.currentControlScheme).WithPath(input.path);
+            PlayerInputController.Instance.ChangeInputBinding(action, input.path);
+            //action.ChangeBindingWithGroup(PlayerInputController.Instance.player.currentControlScheme).WithPath(input.path);
             UpdateBindingText();
         });
     }
