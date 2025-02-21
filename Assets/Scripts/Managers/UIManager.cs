@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public TMP_Text coinUI;
     private GameObject levelCompleteScreen;
     [HideInInspector] public GameObject upgradeShopScreen;
+    public UIGroupControl abilityHUD;
 
     private const string loadSceneButtonTagName = "Load Scene Button";
 

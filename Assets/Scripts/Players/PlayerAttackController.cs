@@ -26,6 +26,8 @@ public class PlayerAttackController : AttackController
     private int currentAbilityCharge;
     private bool abilityReady = false;
 
+    private UIGroupControl abilityUI;
+
     private void Start()
     {
         //actions = PlayerInputController.Instance.inputActions.Player;
@@ -33,6 +35,7 @@ public class PlayerAttackController : AttackController
         animationController = GetComponent<Animator>();
         TryGetComponent(out movementController);
         currentAbilityCharge = 0;
+        UpdateAbilityUI();
     }
 
     private void Update()
@@ -64,6 +67,7 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(abilityAudioName);
                 abilityReady = false;
                 currentAbilityCharge = 0;
+                UpdateAbilityUI();
             }
         }
     }
@@ -90,6 +94,7 @@ public class PlayerAttackController : AttackController
         {
             abilityReady = true;
         }
+        UpdateAbilityUI();
     }
 
     public void ChargeAbility(int amount)
@@ -99,5 +104,16 @@ public class PlayerAttackController : AttackController
         {
             abilityReady = true;
         }
+        UpdateAbilityUI();
+    }
+
+    private void UpdateAbilityUI()
+    {
+        if(abilityUI == null)
+        {
+            abilityUI = UIManager.Instance.abilityHUD;
+        }
+        abilityUI.SetSliderValue(Mathf.Clamp((float)currentAbilityCharge / abilityChargeLimit, 0, 1));
+        abilityUI.SetTextValue((int)Mathf.Min(currentAbilityCharge, abilityChargeLimit) + " / " + abilityChargeLimit);
     }
 }
