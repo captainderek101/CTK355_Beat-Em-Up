@@ -18,6 +18,8 @@ public class HealthController : MonoBehaviour
     private const string deadAnimationTrigger = "Dead";
 
     private Health health;
+    private AudioPlayer audioPlayer;
+    private Animator animator;
 
     public UnityEvent deathEvents;
 
@@ -47,6 +49,21 @@ public class HealthController : MonoBehaviour
         }
     }
 
+    public void ChangeHealth(float amount)
+    {
+        health.ChangeHealth(amount);
+        if (audioPlayer == null)
+        {
+            TryGetComponent(out audioPlayer);
+        }
+        audioPlayer.PlaySound(hurtAudioName);
+        if (animator == null)
+        {
+            TryGetComponent(out animator);
+        }
+        animator.SetTrigger(hurtAnimationTrigger);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Hitbox otherHitbox;
@@ -58,38 +75,16 @@ public class HealthController : MonoBehaviour
         {
             if (other.tag == enemyHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
-                health.ChangeHealth(otherHitbox.healthEffect);
+                ChangeHealth(otherHitbox.healthEffect);
                 Destroy(other.gameObject);
-
-                AudioPlayer audioPlayer;
-                if (TryGetComponent(out audioPlayer))
-                {
-                    audioPlayer.PlaySound(hurtAudioName);
-                }
-                Animator animator;
-                if (TryGetComponent(out animator))
-                {
-                    animator.SetTrigger(hurtAnimationTrigger);
-                }
             }
         }
         else if(isEnemy)
         {
             if (other.tag == playerHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
-                health.ChangeHealth(otherHitbox.healthEffect);
+                ChangeHealth(otherHitbox.healthEffect);
                 Destroy(other);
-
-                AudioPlayer audioPlayer;
-                if (TryGetComponent(out audioPlayer))
-                {
-                    audioPlayer.PlaySound(hurtAudioName);
-                }
-                Animator animator;
-                if (TryGetComponent(out animator))
-                {
-                    animator.SetTrigger(hurtAnimationTrigger);
-                }
             }
         }
     }
