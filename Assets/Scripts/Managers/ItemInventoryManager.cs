@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEngine;
 using static ItemScriptableObject.ItemType;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
 
 public class ItemInventoryManager : MonoBehaviour
 {
