@@ -30,7 +30,7 @@ AnimationClip:
       value: {fileID: 591850673, guid: 454c92b9c0698554f8d9d5e7ae23fee6, type: 3}
     - time: 0.33333334
       value: {fileID: -449688078, guid: 454c92b9c0698554f8d9d5e7ae23fee6, type: 3}
-    - time: 0.41666666
+    - time: 0.5
       value: {fileID: -449688078, guid: 454c92b9c0698554f8d9d5e7ae23fee6, type: 3}
     attribute: m_Sprite
     path: Billboard
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

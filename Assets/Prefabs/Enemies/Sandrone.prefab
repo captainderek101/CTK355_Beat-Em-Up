@@ -297,9 +297,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 3
+  MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -308,22 +308,22 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.99604416
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -1.5
-      outSlope: -1.5
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -389,13 +389,13 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: a71a46165e432f447998daaf486a7e7d, type: 3}
     pitch: 1
-    volume: 2
+    volume: 5
     randomizePitchAndVolume: 0
   - name: hurt
     clips:
     - {fileID: 8300000, guid: 1955ca640cb1a504ca7abc3741c36e34, type: 3}
     pitch: 1
-    volume: 2
+    volume: 1
     randomizePitchAndVolume: 1
   source: {fileID: 58936288999786074}
 --- !u!1 &4583003053153866965

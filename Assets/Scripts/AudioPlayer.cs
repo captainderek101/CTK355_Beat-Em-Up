@@ -15,7 +15,7 @@ public class AudioPlayer : MonoBehaviour
         public AudioClip[] clips;
         [Range(0.1f, 2.0f)]
         public float pitch;
-        [Range(0.1f, 2.0f)]
+        [Range(0.1f, 5.0f)]
         public float volume;
         [Tooltip("Add +/- 0.1f to pitch and volume when played.")]
         public bool randomizePitchAndVolume; //TODO: make this actually do something!!

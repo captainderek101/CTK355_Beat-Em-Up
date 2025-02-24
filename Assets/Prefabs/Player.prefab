@@ -158,7 +158,7 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 4f4397d5c45e8984e9274112d8713b61, type: 3}
     pitch: 1
-    volume: 0.5
+    volume: 5
     randomizePitchAndVolume: 0
   - name: footstep
     clips:
@@ -166,25 +166,25 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c2d27a4e3c14a2945bf0bf8987e6a445, type: 3}
     - {fileID: 8300000, guid: 186013d54ec201d44bc1c84cf06f4c16, type: 3}
     pitch: 1
-    volume: 0.2
+    volume: 0.6
     randomizePitchAndVolume: 1
   - name: strongAttack
     clips:
     - {fileID: 8300000, guid: f2a4111ba0c2b4242ab7fc5f7786a72d, type: 3}
     pitch: 1
-    volume: 0.2
+    volume: 0.6
     randomizePitchAndVolume: 1
   - name: lightAttack
     clips:
     - {fileID: 8300000, guid: 41f0654fbcaf68d46a77fd4d03fd2d78, type: 3}
     pitch: 1
-    volume: 1
+    volume: 5
     randomizePitchAndVolume: 1
   - name: hurt
     clips:
     - {fileID: 8300000, guid: af670712ad278f54b8b00c32a4e16108, type: 3}
     pitch: 1
-    volume: 1
+    volume: 2
     randomizePitchAndVolume: 1
   source: {fileID: 7156533634202135804}
 --- !u!54 &6592542614895908127

@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
         LoadPlayer();
         if (useCheckPoint && scene.buildIndex == previousLevel)
         {
-            Debug.Log("checkpoint used");
             playerObject.transform.position = checkPointPosToLoad;
         }
         else if (useCheckPoint)

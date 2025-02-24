@@ -13,11 +13,6 @@ public class BossFightManager : MonoBehaviour
     private bool waitingForHealth = false;
     [SerializeField] private bool waitForReenable = true;
 
-    private void Start()
-    {
-        TryGetComponent(out bossHealth);
-    }
-
     private void OnDisable()
     {
         waitForReenable = false;
@@ -25,7 +20,8 @@ public class BossFightManager : MonoBehaviour
 
     private void OnEnable()
     {
-        if(!waitForReenable)
+        TryGetComponent(out bossHealth);
+        if (!waitForReenable)
         {
             StartFight();
         }
@@ -33,7 +29,6 @@ public class BossFightManager : MonoBehaviour
 
     public void StartFight()
     {
-        Debug.Log("Starting Boss Fight!");
         PreparePhaseStart(0);
     }
 
@@ -45,7 +40,7 @@ public class BossFightManager : MonoBehaviour
         }
         if (phases[phaseIndex].type == PhaseType.StartWhenPercentOfHealthRemains)
         {
-            if(bossHealth.GetCurrentHealth() / bossHealth.maxHealth < phases[phaseIndex].value + 0.001f)
+            if( (bossHealth.GetCurrentHealth() / bossHealth.maxHealth) < (phases[phaseIndex].value + 0.001f) )
             {
                 StartPhase(phaseIndex);
             }
