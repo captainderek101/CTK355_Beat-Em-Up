@@ -20,6 +20,15 @@ public class Menu : MonoBehaviour
         animator.SetBool(animatorShowBool, false);
     }
 
+    public void OpenMenu()
+    {
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
+        animator.SetBool(animatorShowBool, true);
+    }
+
     public void LoadScene(string sceneName)
     {
         TransitionManager.Instance.LoadSceneAsync(sceneName);

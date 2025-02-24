@@ -13,4 +13,13 @@ public class TriggerTransition : MonoBehaviour
             UIManager.Instance.ShowLevelCompleteScreen();
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform == GameManager.Instance.playerObject.transform)
+        {
+            StoryProgressionManager.Instance.SetCheckpoint(checkpointToComplete, true);
+            UIManager.Instance.ShowLevelCompleteScreen();
+        }
+    }
 }

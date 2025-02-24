@@ -48,7 +48,14 @@ public class UIManager : MonoBehaviour
     public void ShowLevelCompleteScreen()
     {
         SetUIActionMap();
-        levelCompleteScreen.SetActive(true);
+        if(levelCompleteScreen.activeSelf)
+        {
+            levelCompleteScreen.GetComponent<Menu>().OpenMenu();
+        }
+        else
+        {
+            levelCompleteScreen.SetActive(true);
+        }
     }
 
     public bool SetLevelCompleteScreen(GameObject screenObject)
