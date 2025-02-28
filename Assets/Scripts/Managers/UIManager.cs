@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 /// <summary>
@@ -20,6 +22,9 @@ public class UIManager : MonoBehaviour
     public UIGroupControl abilityHUD;
 
     private const string loadSceneButtonTagName = "Load Scene Button";
+
+    private GameObject lastSelected;
+    public UnityEvent<GameObject, GameObject> selectionChanged;
 
     private void Awake()
     {
@@ -42,6 +47,15 @@ public class UIManager : MonoBehaviour
             screenColor.a = 1;
             blackScreen.color = screenColor;
             ControlBlackScreen(false, TransitionManager.Instance.defaultTransitionTime);
+        }
+    }
+
+    private void Update()
+    {
+        if(EventSystem.current.currentSelectedGameObject != lastSelected && selectionChanged != null)
+        {
+            selectionChanged.Invoke(lastSelected, EventSystem.current.currentSelectedGameObject);
+            lastSelected = EventSystem.current.currentSelectedGameObject;
         }
     }
 
