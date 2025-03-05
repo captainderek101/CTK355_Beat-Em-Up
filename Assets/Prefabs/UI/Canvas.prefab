@@ -7506,6 +7506,7 @@ GameObject:
   - component: {fileID: 9187423254478136771}
   - component: {fileID: 3806809664423528487}
   - component: {fileID: 1352948428359395275}
+  - component: {fileID: 2036926723572118201}
   m_Layer: 5
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
@@ -7620,6 +7621,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2036926723572118201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966509608340620514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37aaf6d1417b424c9b7b7349bd7dd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionToControl: 2
+  returnToLastSelected: 1
 --- !u!1 &3975732934904998810
 GameObject:
   m_ObjectHideFlags: 0
@@ -12382,6 +12397,7 @@ GameObject:
   - component: {fileID: 2148107133626139865}
   - component: {fileID: 3672366393939240550}
   - component: {fileID: 6492610657812289384}
+  - component: {fileID: 8990058699042820156}
   m_Layer: 5
   m_Name: Exit Shop Button
   m_TagString: Untagged
@@ -12515,6 +12531,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8990058699042820156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886962898376864444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37aaf6d1417b424c9b7b7349bd7dd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionToControl: 2
+  returnToLastSelected: 1
 --- !u!1 &6921203312947038042
 GameObject:
   m_ObjectHideFlags: 0
