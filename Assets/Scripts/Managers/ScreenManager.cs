@@ -14,6 +14,8 @@ public class ScreenManager : MonoBehaviour
     public List<Wave> waves;
     public string tagToSpawn = "Enemy";
 
+    [SerializeField] private GameObject spawningEffectPrefab;
+
     private int activeSpawns;
     private int activeWaveIndex;
 
@@ -216,6 +218,11 @@ public class ScreenManager : MonoBehaviour
             else
             {
                 spawn.toSpawn.SetActive(true);
+                if(spawningEffectPrefab != null)
+                {
+                    GameObject spawnEffect = Instantiate(spawningEffectPrefab, spawn.toSpawn.transform);
+                    spawnEffect.transform.parent = null;
+                }
             }
             activeSpawns++;
         }

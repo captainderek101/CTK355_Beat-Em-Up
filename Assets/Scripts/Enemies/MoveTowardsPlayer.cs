@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(EnemyMovementController))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class MoveTowardsPlayer : MonoBehaviour
 {
     private EnemyMovementController controller;
     private Transform playerTransform;
+    private NavMeshAgent movementAgent;
 
     [SerializeField] private float distanceToStop = 2f;
     [SerializeField] private float targetDistanceFromPlayer = 2f;
@@ -22,6 +25,7 @@ public class MoveTowardsPlayer : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<EnemyMovementController>();
+        movementAgent = GetComponent<NavMeshAgent>();
         if (GameManager.Instance.playerObject != null)
         {
             playerTransform = GameManager.Instance.playerObject.transform;
@@ -51,25 +55,31 @@ public class MoveTowardsPlayer : MonoBehaviour
                 targetPosition.x += targetDistanceFromPlayer;
             }
             moveDirection = targetPosition - transform.position;
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, distanceToKeepFromEnemies, enemyLayer);
-            foreach (var hitCollider in hitColliders)
-            {
-                // check if other enemy is "in the direction of" player
-                if (Mathf.Abs(Vector3.Angle(moveDirection, hitCollider.transform.position - transform.position)) < 89f)
-                {
-                    bool canIContinue = EnemyManager.Instance.CanIContinue(gameObject, hitCollider.gameObject);
-                    if (!canIContinue)
-                    {
-                        moveDirection = moveDirection - (hitCollider.transform.position - transform.position);
-                        //Debug.Log(gameObject + " was designated as the virgin");
-                        break;
-                    }
-                }
-            }
+            //Collider[] hitColliders = Physics.OverlapSphere(transform.position, distanceToKeepFromEnemies, enemyLayer);
+            //foreach (var hitCollider in hitColliders)
+            //{
+            //    // check if other enemy is "in the direction of" player
+            //    if (Mathf.Abs(Vector3.Angle(moveDirection, hitCollider.transform.position - transform.position)) < 89f)
+            //    {
+            //        bool canIContinue = EnemyManager.Instance.CanIContinue(gameObject, hitCollider.gameObject);
+            //        if (!canIContinue)
+            //        {
+            //            moveDirection = moveDirection - (hitCollider.transform.position - transform.position);
+            //            //Debug.Log(gameObject + " was designated as the virgin");
+            //            break;
+            //        }
+            //    }
+            //}
             moveDirection.y = 0;
             if (moveDirection.magnitude < distanceToStop)
             {
+                movementAgent.SetDestination(transform.position);
                 moveDirection = Vector3.zero;
+            }
+            else
+            {
+                movementAgent.SetDestination(targetPosition);
+                moveDirection = movementAgent.steeringTarget - transform.position;
             }
             controller.SetMoveDirection(moveDirection.normalized);
             currentClockCycle = fixedUpdateClockCycle;
