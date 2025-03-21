@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 930c911ba09ea4643be615808c206ba7
+guid: 40aae1d7f46eee542b634dd3acbdde66
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ENPC Spritesheet_0
+      name: Dwarf1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 529
-        width: 355
-        height: 529
+        y: 453
+        width: 244
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6468345618998474eaef9b3a77e1849f
-      internalID: -2141646338
+      spriteID: 2920024529e633e40823676377595571
+      internalID: 1443203151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ENPC Spritesheet_1
+      name: Dwarf1_1
       rect:
         serializedVersion: 2
-        x: 355
-        y: 529
-        width: 355
-        height: 529
+        x: 244
+        y: 453
+        width: 244
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e358a63dd5a24be498ac347a460e5e69
-      internalID: 120671962
+      spriteID: 1ab673bccfd996447b6a367ec3cdef8d
+      internalID: 500905246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ENPC Spritesheet_2
+      name: Dwarf1_2
       rect:
         serializedVersion: 2
-        x: 710
-        y: 529
-        width: 355
-        height: 529
+        x: 488
+        y: 453
+        width: 244
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd1f5bc2c0d111c4098fbd2a9066c557
-      internalID: 376726962
+      spriteID: fb5f25543443802449bb60eed2e0de42
+      internalID: -330551559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ENPC Spritesheet_3
+      name: Dwarf1_3
       rect:
         serializedVersion: 2
-        x: 1065
-        y: 529
-        width: 355
-        height: 529
+        x: 732
+        y: 453
+        width: 244
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,62 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cded1c5ea7bcb3145a1eeb930ead2e67
-      internalID: -974736417
+      spriteID: caeebc44925b0eb46b47b44d13ab567a
+      internalID: 1154000074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ENPC Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 1420
-        y: 529
-        width: 355
-        height: 529
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96802d429a8f5914ba3011f13cc5103f
-      internalID: 1079445496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ENPC Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 1775
-        y: 529
-        width: 355
-        height: 529
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95308431bbe79a143ba41a547782cf79
-      internalID: 485101542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ENPC Spritesheet_6
+      name: Dwarf1_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 355
-        height: 529
+        y: 2
+        width: 244
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb0f1cc01a5e336459b65a3ca249cb2a
-      internalID: 1898533533
+      spriteID: 88478f0f4e48a5044b53ee994d32545c
+      internalID: -1744670500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ENPC Spritesheet_7
+      name: Dwarf1_5
       rect:
         serializedVersion: 2
-        x: 355
-        y: 0
-        width: 355
-        height: 529
+        x: 244
+        y: 2
+        width: 244
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed02c8f18f5154f48bddc169ded76cd5
-      internalID: 1089570155
+      spriteID: ca67b933115029940aa04d0dc4099d1e
+      internalID: -115045351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ENPC Spritesheet_8
+      name: Dwarf1_6
       rect:
         serializedVersion: 2
-        x: 710
-        y: 0
-        width: 355
-        height: 529
+        x: 488
+        y: 2
+        width: 244
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6119c736d8c1d94b859e929eaf852a4
-      internalID: 577148374
+      spriteID: bcefa47f901b12e4e9018e78de862d0f
+      internalID: 619493309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ENPC Spritesheet_9
+      name: Dwarf1_7
       rect:
         serializedVersion: 2
-        x: 1065
-        y: 0
-        width: 355
-        height: 529
+        x: 732
+        y: 2
+        width: 244
+        height: 451
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,29 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b3ad5f80812e77499e4326e67d5b4c3
-      internalID: 866582043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ENPC Spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 1420
-        y: 0
-        width: 355
-        height: 529
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c0645480913d4a42a166da24b3417f3
-      internalID: -1004423852
+      spriteID: d0b0f8ff594e7cd41852415b46e06695
+      internalID: 19823949
       vertices: []
       indices: 
       edges: []
@@ -330,7 +267,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4b8b5cca0b8df284f8ead75e28bf6567
+    spriteID: bffd8ae15429f1a4b8c50e14b7c7b626
     internalID: 0
     vertices: []
     indices: 
@@ -338,18 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ENPC Spritesheet_0: -2141646338
-      ENPC Spritesheet_1: 120671962
-      ENPC Spritesheet_10: -1004423852
-      ENPC Spritesheet_11: -1851856149
-      ENPC Spritesheet_2: 376726962
-      ENPC Spritesheet_3: -974736417
-      ENPC Spritesheet_4: 1079445496
-      ENPC Spritesheet_5: 485101542
-      ENPC Spritesheet_6: 1898533533
-      ENPC Spritesheet_7: 1089570155
-      ENPC Spritesheet_8: 577148374
-      ENPC Spritesheet_9: 866582043
+      Dwarf1_0: 1443203151
+      Dwarf1_1: 500905246
+      Dwarf1_2: -330551559
+      Dwarf1_3: 1154000074
+      Dwarf1_4: -1744670500
+      Dwarf1_5: -115045351
+      Dwarf1_6: 619493309
+      Dwarf1_7: 19823949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

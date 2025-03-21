@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd59334da550d4f4bb5549fb0d2d81e5
+guid: 51327c8b17e906c4fa30a3dc9940446d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 800
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,190 +97,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ElfHeavy_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 525
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb47b023b480e3c43b4b4ff89a246d7d
-      internalID: 884922758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ElfHeavy_1
-      rect:
-        serializedVersion: 2
-        x: 549
-        y: 525
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba46b6703f171184a874e34aedf7741e
-      internalID: -1961172816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ElfHeavy_2
-      rect:
-        serializedVersion: 2
-        x: 1098
-        y: 525
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 178a136faf736bb47bf0cf8cb4d90a6f
-      internalID: 1430281847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ElfHeavy_3
-      rect:
-        serializedVersion: 2
-        x: 1647
-        y: 525
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b5766e167af9d34fac3796c0ed7ffa6
-      internalID: 834832320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ElfHeavy_4
-      rect:
-        serializedVersion: 2
-        x: 2196
-        y: 525
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39321f73e0117d342acaab5323543d5a
-      internalID: -767533207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ElfHeavy_5
+      name: ElfProjectile_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3d46977daaaf674fb0d771875d89e8c
-      internalID: 731976498
+      spriteID: 01b7df6d2a8e878408c74afa92f18fce
+      internalID: 1067817707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfHeavy_6
+      name: ElfProjectile_1
       rect:
         serializedVersion: 2
-        x: 549
+        x: 400
         y: 0
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df181e461b88f7143921b200547a53e1
-      internalID: 804057178
+      spriteID: 748e29dc578a1874f8140558f98a7207
+      internalID: -379172006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfHeavy_7
+      name: ElfProjectile_2
       rect:
         serializedVersion: 2
-        x: 1098
+        x: 800
         y: 0
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f7bc9bf4b2f14140a302d9daae37131
-      internalID: 1022634759
+      spriteID: 705f7164749ba5f4cbdc3b05804e90b7
+      internalID: 1473883672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfHeavy_8
+      name: ElfProjectile_3
       rect:
         serializedVersion: 2
-        x: 1647
+        x: 1200
         y: 0
-        width: 549
-        height: 525
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c985641f22022e42b07d20704813f9d
-      internalID: 1600808989
+      spriteID: 270cb76aba37bb449a7d8329e7d46112
+      internalID: 302079114
       vertices: []
       indices: 
       edges: []
@@ -288,7 +183,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 0ee6d8be4123fbc4e8f24b47eb7f51d9
     internalID: 0
     vertices: []
     indices: 
@@ -296,16 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ElfHeavy_0: 884922758
-      ElfHeavy_1: -1961172816
-      ElfHeavy_2: 1430281847
-      ElfHeavy_3: 834832320
-      ElfHeavy_4: -767533207
-      ElfHeavy_5: 731976498
-      ElfHeavy_6: 804057178
-      ElfHeavy_7: 1022634759
-      ElfHeavy_8: 1600808989
-      ElfHeavy_9: 998589705
+      ElfProjectile_0: 1067817707
+      ElfProjectile_1: -379172006
+      ElfProjectile_2: 1473883672
+      ElfProjectile_3: 302079114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

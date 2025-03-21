@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17d5ec0d2c6eba14a9f259892b2d189d
+guid: bf47f9d100770ff4fb69b629a45c32cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,127 +97,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vine Attack_0
+      name: ElfHeavy Clean_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 275
-        width: 260
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 525
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a99820a4bcbb8bf42a40314734c332bc
-      internalID: -291582472
+      spriteID: 6d93019c06406cb498c737af1acd4e13
+      internalID: 496556610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vine Attack_1
+      name: ElfHeavy Clean_1
       rect:
         serializedVersion: 2
-        x: 260
-        y: 275
-        width: 260
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 548
+        y: 525
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3a93c7131b280b449216c48260e7ca3
-      internalID: 201720828
+      spriteID: 23fdb9da80e9fa34c93cc28a37c4a7dd
+      internalID: 1587906877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vine Attack_2
+      name: ElfHeavy Clean_2
       rect:
         serializedVersion: 2
-        x: 520
-        y: 275
-        width: 260
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1096
+        y: 525
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 846cb9275659eba47835392f36851b4f
-      internalID: 1895125237
+      spriteID: 8e6f2bba6f106c9499e82c82a674a131
+      internalID: 1708465497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vine Attack_3
+      name: ElfHeavy Clean_3
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 525
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3719a6bd2524743a5d1770a0b9cdc6
+      internalID: -1490797421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfHeavy Clean_4
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 525
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa3f67f1a4f1a8429dc94854925bf01
+      internalID: 1322799120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfHeavy Clean_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 260
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ee70116be5f856419e4821d09abdbe1
-      internalID: -1398319680
+      spriteID: d6e1e37d3b8e1804383f97fe37a6b1e5
+      internalID: 1340766158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vine Attack_4
+      name: ElfHeavy Clean_6
       rect:
         serializedVersion: 2
-        x: 260
+        x: 548
         y: 0
-        width: 260
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61a7865a33fbd72418d3fb7256211e04
-      internalID: 2142435021
+      spriteID: 2eb301b467d7f9845b0d09233ad136f0
+      internalID: -367877066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vine Attack_5
+      name: ElfHeavy Clean_7
       rect:
         serializedVersion: 2
-        x: 520
+        x: 1096
         y: 0
-        width: 260
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93b4e62af35d2044789ecb8e45ffa416
-      internalID: 1246647237
+      spriteID: ab496e510cfd48a4b8496911744703e1
+      internalID: 1426298698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfHeavy Clean_8
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 0
+        width: 548
+        height: 525
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccea249b56610cf4d9235125a71b0d08
+      internalID: 151951330
       vertices: []
       indices: 
       edges: []
@@ -225,7 +288,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 61ed01b11616b1f46b11bb72e7b299f2
+    spriteID: 00d79f061136eac45ad96394fd76a668
     internalID: 0
     vertices: []
     indices: 
@@ -233,12 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Vine Attack_0: -291582472
-      Vine Attack_1: 201720828
-      Vine Attack_2: 1895125237
-      Vine Attack_3: -1398319680
-      Vine Attack_4: 2142435021
-      Vine Attack_5: 1246647237
+      ElfHeavy Clean_0: 496556610
+      ElfHeavy Clean_1: 1587906877
+      ElfHeavy Clean_2: 1708465497
+      ElfHeavy Clean_3: -1490797421
+      ElfHeavy Clean_4: 1322799120
+      ElfHeavy Clean_5: 1340766158
+      ElfHeavy Clean_6: -367877066
+      ElfHeavy Clean_7: 1426298698
+      ElfHeavy Clean_8: 151951330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

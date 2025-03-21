@@ -19,7 +19,7 @@ public class PlayerAttackController : AttackController
     private const string strongAttackAnimationTrigger = "Strong Attack";
     private const string abilityAttackName = "ability";
     private const string abilityAudioName = "strongAttack";
-    private const string abilityAnimationTrigger = "Strong Attack";
+    private const string abilityAnimationTrigger = "Ability";
 
     [SerializeField] private SpriteRenderer billboard;
 
