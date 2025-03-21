@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 /// <summary>
@@ -93,13 +94,19 @@ public class UIManager : MonoBehaviour
     public void SetPlayerActionMap()
     {
         //Debug.Log("action map set to Player");
-        PlayerInputController.Instance.player.SwitchCurrentActionMap("Player");
+        foreach (PlayerInput player in PlayerInputController.Instance.players)
+        {
+            player.SwitchCurrentActionMap("Player");
+        }
     }
 
     public void SetUIActionMap()
     {
         //Debug.Log("action map set to UI");
-        PlayerInputController.Instance.player.SwitchCurrentActionMap("UI");
+        foreach (PlayerInput player in PlayerInputController.Instance.players)
+        {
+            player.SwitchCurrentActionMap("UI");
+        }
     }
     public void CloseGame()
     {

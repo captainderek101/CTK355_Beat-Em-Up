@@ -26,9 +26,9 @@ public class MoveTowardsPlayer : MonoBehaviour
     {
         controller = GetComponent<EnemyMovementController>();
         movementAgent = GetComponent<NavMeshAgent>();
-        if (GameManager.Instance.playerObject != null)
+        if (GameManager.Instance.playerObjects != null)
         {
-            playerTransform = GameManager.Instance.playerObject.transform;
+            playerTransform = GameManager.Instance.playerObjects[Random.Range(0, GameManager.Instance.playerObjects.Length)].transform;
         }
         else
         {

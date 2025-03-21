@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(HealthController))]
 public class EnemyAggroController : MonoBehaviour
@@ -35,9 +36,9 @@ public class EnemyAggroController : MonoBehaviour
                 wanderComponent.enabled = !aggroed;
             }
         }
-        if (GameManager.Instance.playerObject != null)
+        if (GameManager.Instance.playerObjects != null)
         {
-            playerTransform = GameManager.Instance.playerObject.transform;
+            playerTransform = GameManager.Instance.playerObjects[Random.Range(0, GameManager.Instance.playerObjects.Length)].transform;
         }
     }
 

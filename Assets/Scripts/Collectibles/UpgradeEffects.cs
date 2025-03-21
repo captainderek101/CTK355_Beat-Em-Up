@@ -30,7 +30,10 @@ public static class UpgradeEffects
             default: // upgrade is not programmed here
                 return false;
         }
-        PlayerStatManager.Instance.ApplyPlayerStats(GameManager.Instance.playerObject); // apply new player stats
+        foreach (GameObject playerObject in GameManager.Instance.playerObjects)
+        {
+            PlayerStatManager.Instance.ApplyPlayerStats(playerObject); // apply new player stats
+        }
         return true;
     }
 

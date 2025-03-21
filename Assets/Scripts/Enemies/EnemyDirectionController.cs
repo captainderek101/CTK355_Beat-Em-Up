@@ -19,7 +19,7 @@ public class EnemyDirectionController : MonoBehaviour
         TryGetComponent(out movementController);
         TryGetComponent(out attackController);
         TryGetComponent(out aggroController);
-        playerTransform = GameManager.Instance.playerObject.transform;
+        playerTransform = GameManager.Instance.playerObjects[Random.Range(0, GameManager.Instance.playerObjects.Length)].transform;
     }
 
     private void FixedUpdate()

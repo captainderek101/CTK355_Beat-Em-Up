@@ -39,7 +39,11 @@ public class PlayerStatManager : MonoBehaviour
         currentMaxHealthMultiplier = 1;
         currentDamageMultiplier = 1;
         currentAbilityChargeLimit = baseAbilityChargeLimit;
-        ApplyPlayerStats(GameManager.Instance.playerObject);
+
+        foreach (GameObject playerObject in GameManager.Instance.playerObjects)
+        {
+            ApplyPlayerStats(playerObject);
+        }
     }
     private void ApplyMovementEffects(GameObject player)
     {

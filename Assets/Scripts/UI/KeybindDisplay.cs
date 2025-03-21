@@ -19,10 +19,14 @@ public class KeybindDisplay : MonoBehaviour
                 UpdateKeybindText();
             }
         };
-        PlayerInputController.Instance.player.onControlsChanged += (input) =>
+
+        foreach (PlayerInput player in PlayerInputController.Instance.players)
         {
-            UpdateKeybindText();
-        };
+            player.onControlsChanged += (input) =>
+            {
+                UpdateKeybindText();
+            };
+        }
         UpdateKeybindText();
     }
 
@@ -30,7 +34,7 @@ public class KeybindDisplay : MonoBehaviour
     {
         if(action == null)
         {
-            action = PlayerInputController.Instance.player.actions.FindAction(actionName);
+            action = PlayerInputController.Instance.players[0].actions.FindAction(actionName);
         }
         if(action.controls.Count > 0)
         {

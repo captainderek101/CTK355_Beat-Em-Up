@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AudioPlayer))]
 [RequireComponent(typeof(PlayerAttackController))]
@@ -22,17 +23,18 @@ public class PlayerMovementController : MovementController
     private const float timeBetweenFootstepSounds = 0.3f;
     private bool walkSoundActive = false;
 
+    [SerializeField] private PlayerInput playerInput;
+
     private new void Start()
     {
         base.Start();
-        //actions = PlayerInputController.Instance.inputActions.Player;
 
         audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Update()
     {
-        bool dodgerollPressed = PlayerInputController.Instance.player.actions.FindAction("Dodgeroll").WasPressedThisFrame();
+        bool dodgerollPressed = playerInput.actions.FindAction("Dodgeroll").WasPressedThisFrame();
         if (dodgerollPressed && primaryMovementEnabled && notBusy)
         {
             StartCoroutine(DodgerollCoroutine());
@@ -41,7 +43,7 @@ public class PlayerMovementController : MovementController
 
     private void FixedUpdate()
     {
-        movementInput = PlayerInputController.Instance.player.actions.FindAction("Move").ReadValue<Vector2>();
+        movementInput = playerInput.actions.FindAction("Move").ReadValue<Vector2>();
         realMovement = Vector3.zero;
         realMovement += rightDirection * movementInput.x * horizontalMoveSpeed;
         realMovement += upDirection * movementInput.y * verticalMoveSpeed;

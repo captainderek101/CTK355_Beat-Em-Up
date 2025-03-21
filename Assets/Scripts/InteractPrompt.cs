@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class InteractPrompt : MonoBehaviour
 {
@@ -32,9 +33,12 @@ public class InteractPrompt : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(PlayerInputController.Instance.player.actions.FindAction("Interact").inProgress && other.tag == "Player" && interactEvent != null)
+        foreach (PlayerInput player in PlayerInputController.Instance.players)
         {
-            interactEvent.Invoke();
+            if (player.actions.FindAction("Interact").inProgress && other.tag == "Player" && interactEvent != null)
+            {
+                interactEvent.Invoke();
+            }
         }
     }
 }

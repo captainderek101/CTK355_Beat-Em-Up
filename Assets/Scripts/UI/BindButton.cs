@@ -21,22 +21,29 @@ public class BindButton : MonoBehaviour
     {
         if(action == null)
         {
-            action = PlayerInputController.Instance.player.actions.FindAction(input.action.id.ToString());
+            action = PlayerInputController.Instance.players[0].actions.FindAction(input.action.id.ToString());
             //action = PlayerInputController.Instance.inputActions.FindAction(input.action.id.ToString());
         }
         UpdateBindingText();
-        PlayerInputController.Instance.player.onControlsChanged += (input) =>
+
+        foreach (PlayerInput player in PlayerInputController.Instance.players)
         {
-            UpdateBindingText();
-        };
+            player.onControlsChanged += (input) =>
+            {
+                UpdateBindingText();
+            };
+        }
     }
 
     private void OnDisable()
     {
-        PlayerInputController.Instance.player.onControlsChanged -= (input) =>
+        foreach (PlayerInput player in PlayerInputController.Instance.players)
         {
-            UpdateBindingText();
-        };
+            player.onControlsChanged -= (input) =>
+            {
+                UpdateBindingText();
+            };
+        }
     }
 
     private void UpdateBindingText()

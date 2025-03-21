@@ -16,11 +16,15 @@ public class EventPopupScript : MonoBehaviour
         switch (popupType)
         {
             case PopupType.PlayerDeath:
-                HealthController playerHealthController = GameManager.Instance.playerObject.GetComponent<HealthController>();
-                playerHealthController.deathEvents.AddListener(() =>
+
+                foreach (GameObject playerObject in GameManager.Instance.playerObjects)
                 {
-                    popupObject.SetActive(true);
-                });
+                    HealthController playerHealthController = playerObject.GetComponent<HealthController>();
+                    playerHealthController.deathEvents.AddListener(() =>
+                    {
+                        popupObject.SetActive(true);
+                    });
+                }
                 Button transitionButton = null;
                 foreach (Transform child in popupObject.transform)
                 {

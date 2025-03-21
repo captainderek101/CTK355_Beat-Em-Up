@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AudioPlayer))]
 public class PlayerAttackController : AttackController
@@ -28,6 +29,8 @@ public class PlayerAttackController : AttackController
 
     private UIGroupControl abilityUI;
 
+    [SerializeField] private PlayerInput playerInput;
+
     private void Start()
     {
         //actions = PlayerInputController.Instance.inputActions.Player;
@@ -40,7 +43,7 @@ public class PlayerAttackController : AttackController
 
     private void Update()
     {
-        if (PlayerInputController.Instance.player.actions.FindAction("LightAttack").WasPressedThisFrame())
+        if (playerInput.actions.FindAction("LightAttack").WasPressedThisFrame())
         {
             bool success = Attack(lightAttackAttackName);
             if (success)
@@ -49,7 +52,7 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(lightAttackAudioName);
             }
         }
-        else if (PlayerInputController.Instance.player.actions.FindAction("StrongAttack").WasPressedThisFrame())
+        else if (playerInput.actions.FindAction("StrongAttack").WasPressedThisFrame())
         {
             bool success = Attack(strongAttackAttackName);
             if (success)
@@ -58,7 +61,7 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(strongAttackAudioName);
             }
         }
-        else if (PlayerInputController.Instance.player.actions.FindAction("Ability").WasPressedThisFrame() && abilityReady)
+        else if (playerInput.actions.FindAction("Ability").WasPressedThisFrame() && abilityReady)
         {
             bool success = Attack(abilityAttackName);
             if (success)
@@ -74,7 +77,7 @@ public class PlayerAttackController : AttackController
 
     private void FixedUpdate()
     {
-        movementInput = PlayerInputController.Instance.player.actions.FindAction("Move").ReadValue<Vector2>();
+        movementInput = playerInput.actions.FindAction("Move").ReadValue<Vector2>();
         if(facingRight && movementInput.x < 0 && movementController.primaryMovementEnabled && movementController.notBusy)
         {
             facingRight = false;

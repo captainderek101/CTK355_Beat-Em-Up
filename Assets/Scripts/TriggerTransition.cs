@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TriggerTransition : MonoBehaviour
@@ -7,7 +8,9 @@ public class TriggerTransition : MonoBehaviour
     [SerializeField] private StoryProgressionManager.StoryPoint checkpointToComplete;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform == GameManager.Instance.playerObject.GetComponentInChildren<Collider>().transform)
+        if(GameManager.Instance.playerObjects
+            .Where(x => x.transform == other.transform)
+            .Count() > 0)
         {
             StoryProgressionManager.Instance.SetCheckpoint(checkpointToComplete, true);
             UIManager.Instance.ShowLevelCompleteScreen();
@@ -16,7 +19,9 @@ public class TriggerTransition : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform == GameManager.Instance.playerObject.transform)
+        if (GameManager.Instance.playerObjects
+            .Where(x => x.transform == collision.transform)
+            .Count() > 0)
         {
             StoryProgressionManager.Instance.SetCheckpoint(checkpointToComplete, true);
             UIManager.Instance.ShowLevelCompleteScreen();

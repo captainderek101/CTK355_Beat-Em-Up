@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = GameManager.Instance.playerObject.transform;
+        playerTransform = GameManager.Instance.playerObjects[0].transform;
     }
 
     public void StartDialogue(Dialogue dialogue)

@@ -27,9 +27,9 @@ public class EnemyAttackController : AttackController
 
     private void Start()
     {
-        if (GameManager.Instance.playerObject != null)
+        if (GameManager.Instance.playerObjects != null)
         {
-            playerTransform = GameManager.Instance.playerObject.transform;
+            playerTransform = GameManager.Instance.playerObjects[Random.Range(0, GameManager.Instance.playerObjects.Length)].transform;
         }
         else
         {

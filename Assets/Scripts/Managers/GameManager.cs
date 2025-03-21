@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameObject playerObject;
+    public GameObject[] playerObjects;
 
     private Vector3 checkPointPosToLoad;
     private bool useCheckPoint = false;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-        playerObject = FindObjectOfType<PlayerMovementController>().gameObject;
+        LoadPlayer();
         previousLevel = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += RespawnAtCheckpoint;
         //SceneManager.activeSceneChanged
@@ -48,7 +48,10 @@ public class GameManager : MonoBehaviour
         LoadPlayer();
         if (useCheckPoint && scene.buildIndex == previousLevel)
         {
-            playerObject.transform.position = checkPointPosToLoad;
+            foreach(GameObject playerObject in playerObjects)
+            {
+                playerObject.transform.position = checkPointPosToLoad;
+            }
         }
         else if (useCheckPoint)
         {
@@ -59,10 +62,18 @@ public class GameManager : MonoBehaviour
 
     private void LoadPlayer()
     {
-        playerObject = FindObjectOfType<PlayerMovementController>().gameObject;
-        if (playerObject != null)
+        var playerMovementControllers = FindObjectsOfType<PlayerMovementController>();
+        playerObjects = new GameObject[playerMovementControllers.Length];
+        for (int i = 0; i < playerMovementControllers.Length; i++)
         {
-            PlayerStatManager.Instance.ApplyPlayerStats(playerObject);
+            playerObjects[i] = playerMovementControllers[i].gameObject;
+        }
+        if (PlayerStatManager.Instance != null)
+        {
+            foreach (GameObject playerObject in playerObjects)
+            {
+                PlayerStatManager.Instance.ApplyPlayerStats(playerObject);
+            }
         }
     }
 }

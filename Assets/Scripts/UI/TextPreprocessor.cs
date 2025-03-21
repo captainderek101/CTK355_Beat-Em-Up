@@ -25,7 +25,7 @@ public class TextPreprocessor : MonoBehaviour
             int substringStart = input.IndexOf("{control:");
             int substringLength = input.IndexOf("}") - substringStart;
             string controlName = input.Substring(substringStart + "{control:".Length, substringLength - "{control:".Length);
-            InputAction action = PlayerInputController.Instance.player.actions.FindAction(controlName);
+            InputAction action = PlayerInputController.Instance.players[0].actions.FindAction(controlName);
             string keybindName = action.controls[0].displayName;
             if (action.expectedControlType == "Vector2")
             {
