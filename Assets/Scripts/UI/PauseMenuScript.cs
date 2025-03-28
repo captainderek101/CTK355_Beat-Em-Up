@@ -8,4 +8,9 @@ public class PauseMenuScript : Menu
     {
         animator = GetComponent<Animator>();
     }
+    public new void CloseMenu()
+    {
+        UIManager.Instance.paused = false;
+        base.CloseMenu();
+    }
 }

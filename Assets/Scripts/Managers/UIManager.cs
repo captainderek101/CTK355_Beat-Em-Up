@@ -5,16 +5,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 /// <summary>
 /// This component controls how the Water level of the player is displayed
 /// </summary>
-public delegate void UIEvent();
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
-    public UIEvent pauseEvent;
     [SerializeField] private Image blackScreen;
     [SerializeField] private AnimationCurve blackScreenCurve;
     [SerializeField] public TMP_Text coinUI;
@@ -26,6 +25,9 @@ public class UIManager : MonoBehaviour
 
     private GameObject lastSelected;
     public UnityEvent<GameObject, GameObject> selectionChanged;
+    [HideInInspector] public bool paused = false;
+    public UnityEvent pauseEvent;
+    public UnityEvent pauseExitEvent;
 
     private void Awake()
     {
@@ -53,8 +55,12 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if(EventSystem.current.currentSelectedGameObject != lastSelected && selectionChanged != null)
+        if (EventSystem.current.currentSelectedGameObject != lastSelected && selectionChanged != null)
         {
+            foreach (MultiplayerEventSystem eventSystem in FindObjectsOfType<MultiplayerEventSystem>())
+            {
+                eventSystem.SetSelectedGameObject(EventSystem.current.currentSelectedGameObject);
+            }
             selectionChanged.Invoke(lastSelected, EventSystem.current.currentSelectedGameObject);
             lastSelected = EventSystem.current.currentSelectedGameObject;
         }
@@ -93,7 +99,6 @@ public class UIManager : MonoBehaviour
 
     public void SetPlayerActionMap()
     {
-        //Debug.Log("action map set to Player");
         foreach (PlayerInput player in PlayerInputController.Instance.players)
         {
             player.SwitchCurrentActionMap("Player");
@@ -102,7 +107,6 @@ public class UIManager : MonoBehaviour
 
     public void SetUIActionMap()
     {
-        //Debug.Log("action map set to UI");
         foreach (PlayerInput player in PlayerInputController.Instance.players)
         {
             player.SwitchCurrentActionMap("UI");

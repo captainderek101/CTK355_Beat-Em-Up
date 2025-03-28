@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 
 [RequireComponent(typeof(Animator))]
 public class Menu : MonoBehaviour
@@ -50,14 +51,20 @@ public class Menu : MonoBehaviour
     {
         if(firstSelected != null)
         {
-            EventSystem.current.SetSelectedGameObject(firstSelected);
+            foreach (MultiplayerEventSystem eventSystem in FindObjectsOfType<MultiplayerEventSystem>())
+            {
+                eventSystem.SetSelectedGameObject(firstSelected);
+            }
             SetUIActionMap();
         }
     }
 
     public void SelectObject(GameObject selected)
     {
-        EventSystem.current.SetSelectedGameObject(selected);
+        foreach (MultiplayerEventSystem eventSystem in FindObjectsOfType<MultiplayerEventSystem>())
+        {
+            eventSystem.SetSelectedGameObject(selected);
+        }
         SetUIActionMap();
     }
 
@@ -66,6 +73,8 @@ public class Menu : MonoBehaviour
         SetFirstSelected();
         //Debug.Log(PlayerInputController.Instance.player.currentActionMap.name);
     }
+
+
 
     [Serializable]
     public enum ActionMaps

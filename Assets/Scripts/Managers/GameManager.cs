@@ -60,9 +60,9 @@ public class GameManager : MonoBehaviour
         previousLevel = scene.buildIndex;
     }
 
-    private void LoadPlayer()
+    public void LoadPlayer()
     {
-        var playerMovementControllers = FindObjectsOfType<PlayerMovementController>();
+        var playerMovementControllers = FindObjectsOfType<PlayerMovementController>(); // includeInactive: true
         playerObjects = new GameObject[playerMovementControllers.Length];
         for (int i = 0; i < playerMovementControllers.Length; i++)
         {

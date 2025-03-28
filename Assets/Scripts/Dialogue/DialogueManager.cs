@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -49,7 +50,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        EventSystem.current.SetSelectedGameObject(firstSelected);
+        foreach(MultiplayerEventSystem eventSystem in FindObjectsOfType< MultiplayerEventSystem>())
+        {
+            eventSystem.SetSelectedGameObject(firstSelected);
+        }
         UIManager.Instance.SetUIActionMap();
         if (dialogue.endCurrentDialogue)
         {

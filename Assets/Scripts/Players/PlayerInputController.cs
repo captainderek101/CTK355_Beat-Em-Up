@@ -9,15 +9,26 @@ using UnityEngine.Windows;
 public class PlayerInputController : MonoBehaviour
 {
     public static PlayerInputController Instance;
-    public PlayerInput[] players;
+    public static bool player2Enabled = false;
+    public List<PlayerInput> players;
     public UnityAction<string> bindingChanged;
+
+    [SerializeField] private GameObject player2;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            ResetInputActions();
+            if(player2Enabled)
+            {
+                AddPlayer2();
+                UIManager.Instance.SetPlayerActionMap();
+            }
+            else
+            {
+                ResetPlayerInputs();
+            }
         }
         else
         {
@@ -30,22 +41,76 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
-    public void ResetInputActions()
-    {
-        foreach (PlayerInput player in players)
-        {
-            player.actions.FindAction("Pause").started += (e) =>
-            {
-                player.SwitchCurrentActionMap("UI");
-                if (UIManager.Instance.pauseEvent != null)
-                    UIManager.Instance.pauseEvent.Invoke();
-            };
-        }
-    }
-
     public void ChangeInputBinding(InputAction action, string newPath)
     {
         action.ChangeBindingWithGroup(players[0].currentControlScheme).WithPath(newPath);
         bindingChanged.Invoke(action.name);
+    }
+
+    public void AddPlayer2()
+    {
+        player2Enabled = true;
+        player2.SetActive(true);
+        player2.GetComponent<EntityUIManager>().ShowHealthBar(true);
+        players.Add(player2.GetComponent<PlayerInput>());
+        ResetPlayerInputs();
+        GameManager.Instance.LoadPlayer();
+        player2.transform.position = GameManager.Instance.playerObjects[0].transform.position + Vector3.left;
+    }
+
+    public void RemovePlayer2()
+    {
+        player2Enabled = false;
+        player2.GetComponent<EntityUIManager>().ShowHealthBar(false);
+        player2.SetActive(false);
+        players.Remove(player2.GetComponent<PlayerInput>());
+        ResetPlayerInputs();
+        GameManager.Instance.LoadPlayer();
+    }
+
+    public void ResetPlayerInputs()
+    {
+        foreach (PlayerInput player in players)
+        {
+            player.actions.FindAction("Pause").started -= (e) =>
+            {
+                if (UIManager.Instance.paused == false)
+                {
+                    UIManager.Instance.paused = true;
+                    if (UIManager.Instance.pauseEvent != null)
+                        UIManager.Instance.pauseEvent.Invoke();
+                }
+            };
+            player.actions.FindAction("Unpause").started -= (e) =>
+            {
+                if (UIManager.Instance.paused == true)
+                {
+                    UIManager.Instance.paused = false;
+                    if (UIManager.Instance.pauseExitEvent != null)
+                        UIManager.Instance.pauseExitEvent.Invoke();
+                }
+            };
+        }
+        foreach (PlayerInput player in players)
+        {
+            player.actions.FindAction("Pause").started += (e) =>
+            {
+                if (UIManager.Instance.paused == false)
+                {
+                    UIManager.Instance.paused = true;
+                    if (UIManager.Instance.pauseEvent != null)
+                        UIManager.Instance.pauseEvent.Invoke();
+                }
+            };
+            player.actions.FindAction("Unpause").started += (e) =>
+            {
+                if (UIManager.Instance.paused == true)
+                {
+                    UIManager.Instance.paused = false;
+                    if (UIManager.Instance.pauseExitEvent != null)
+                        UIManager.Instance.pauseExitEvent.Invoke();
+                }
+            };
+        }
     }
 }
