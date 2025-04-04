@@ -60,6 +60,7 @@ public class StoryProgressionManager : MonoBehaviour
     {
         None,
         Level1Beaten,
-        Level2Beaten
+        Level2Beaten,
+        Level3Beaten
     }
 }
