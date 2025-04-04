@@ -55,7 +55,16 @@ public class PlayerInputController : MonoBehaviour
         players.Add(player2.GetComponent<PlayerInput>());
         ResetPlayerInputs();
         GameManager.Instance.LoadPlayer();
-        player2.transform.position = GameManager.Instance.playerObjects[0].transform.position + Vector3.left;
+        Transform player1 = null;
+        for (int i = 0; i < GameManager.Instance.playerObjects.Length; i++)
+        {
+            player1 = GameManager.Instance.playerObjects[i].transform;
+            if (player1 != player2.transform)
+            {
+                break;
+            }
+        }
+        player2.GetComponent<Rigidbody>().MovePosition(player1.position + Vector3.left);
     }
 
     public void RemovePlayer2()

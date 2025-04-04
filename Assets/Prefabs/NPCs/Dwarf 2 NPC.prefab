@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].line
-      value: I FUCKING HATE MY JOB!!!
+      value: I HATE MY JOB!!!
       objectReference: {fileID: 0}
     - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].character.name

@@ -36,8 +36,6 @@ public class ItemInventoryManager : MonoBehaviour
                 UIManager.Instance.SetCoinUI(items[coinObject]);
             }
         };
-
-        audioPlayer = Camera.main.GetComponent<AudioPlayer>();
     }
 
 
@@ -64,7 +62,8 @@ public class ItemInventoryManager : MonoBehaviour
         {
             items.Add(item, quantity);
         }
-        switch(item.type)
+        audioPlayer = Camera.main.GetComponent<AudioPlayer>();
+        switch (item.type)
         {
             case Currency:
                 audioPlayer.PlaySound(currencyAudioName);
