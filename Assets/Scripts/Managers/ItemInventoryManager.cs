@@ -12,6 +12,10 @@ public class ItemInventoryManager : MonoBehaviour
     public ItemScriptableObject coinObject;
     [SerializeField] private bool DEBUG_add1000Coins;
 
+    private AudioPlayer audioPlayer;
+    private const string currencyAudioName = "pickupCoin";
+    private const string upgradeAudioName = "purchaseUpgrade";
+
     private void Awake()
     {
         if (Instance == null)
@@ -32,6 +36,8 @@ public class ItemInventoryManager : MonoBehaviour
                 UIManager.Instance.SetCoinUI(items[coinObject]);
             }
         };
+
+        audioPlayer = Camera.main.GetComponent<AudioPlayer>();
     }
 
 
@@ -57,6 +63,17 @@ public class ItemInventoryManager : MonoBehaviour
         else
         {
             items.Add(item, quantity);
+        }
+        switch(item.type)
+        {
+            case Currency:
+                audioPlayer.PlaySound(currencyAudioName);
+                break;
+            case Upgrade:
+                audioPlayer.PlaySound(upgradeAudioName);
+                break;
+            default:
+                break;
         }
         UpdateInventoryUI(item);
         UpdateItemEffects(item);

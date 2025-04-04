@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Miniboss
+  m_Controller: {fileID: 9100000, guid: 08536f8af673af84ca5c1de17af40b74, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d7ff63abd5927364a884a69b39eb4178, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3ca08502defd3124483e18d0fd0781d4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e1acc116233a3e74f8d63420488677cb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b1e6d0693ec8e0343b688107ac348da2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 152199f570061c44b8c882f0bd68d13c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bfbe2943eb123c742bdfd1b79f479cf4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c09ec9186349f95458cc37cf14aae555, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b62300b84ad2bb04a9d1d39e47e51e9d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c83a11ab46c7a6b4ca0d538bbc253a86, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a7fbba5996f02884aa08a3ed815f4f35, type: 2}

@@ -12,6 +12,9 @@ public class Menu : MonoBehaviour
     protected const string animatorShowBool = "Show";
     [SerializeField] protected GameObject firstSelected;
 
+    private AudioPlayer audioPlayer;
+    private const string openAudioName = "openMenu";
+
     public void CloseMenu()
     {
         if (animator == null)
@@ -28,6 +31,12 @@ public class Menu : MonoBehaviour
             animator = GetComponent<Animator>();
         }
         animator.SetBool(animatorShowBool, true);
+
+        if(audioPlayer == null)
+        {
+            audioPlayer = Camera.main.GetComponent<AudioPlayer>();
+        }
+        audioPlayer.PlaySound(openAudioName);
     }
 
     public void LoadScene(string sceneName)

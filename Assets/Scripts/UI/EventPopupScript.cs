@@ -46,15 +46,15 @@ public class EventPopupScript : MonoBehaviour
                 UIManager.Instance.pauseEvent.AddListener(() =>
                 {
                     popupObject.SetActive(true);
-                    popupObject.TryGetComponent(out Animator pauseMenuAnimator);
-                    if (pauseMenuAnimator != null)
-                        pauseMenuAnimator.SetBool(pauseMenuAnimationBool, true);
+                    popupObject.TryGetComponent(out Menu pauseMenu);
+                    if (pauseMenu != null)
+                        pauseMenu.OpenMenu();
                 });
                 UIManager.Instance.pauseExitEvent.AddListener(() =>
                 {
-                    popupObject.TryGetComponent(out Animator pauseMenuAnimator);
-                    if (pauseMenuAnimator != null)
-                        pauseMenuAnimator.SetBool(pauseMenuAnimationBool, false);
+                    popupObject.TryGetComponent(out Menu pauseMenu);
+                    if (pauseMenu != null)
+                        pauseMenu.CloseMenu();
                 });
                 break;
             case PopupType.UpgradeShop:

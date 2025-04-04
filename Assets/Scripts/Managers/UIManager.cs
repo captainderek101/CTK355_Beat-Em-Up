@@ -95,6 +95,7 @@ public class UIManager : MonoBehaviour
     {
         SetUIActionMap();
         upgradeShopScreen.SetActive(true);
+        upgradeShopScreen.GetComponent<Menu>().OpenMenu();
     }
 
     public void SetPlayerActionMap()

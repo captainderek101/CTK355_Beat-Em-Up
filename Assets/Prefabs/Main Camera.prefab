@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6685182769411907976}
   - component: {fileID: 8397864695595586465}
   - component: {fileID: 1245248858448180553}
+  - component: {fileID: 312455912365765191}
+  - component: {fileID: 3978961318959503663}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -250,3 +252,131 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c22a59a23a46f4cb1ceb1d4683e93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &312455912365765191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235076197103876226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2604d8ac5194164e824d76abb7becdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - name: openMenu
+    clips:
+    - {fileID: 8300000, guid: c4a60baa6e53f3a4390071b091c3bd5a, type: 3}
+    pitch: 1
+    volume: 1
+    randomizePitchAndVolume: 0
+  - name: pickupCoin
+    clips:
+    - {fileID: 8300000, guid: a78206e1886f3d446ad07be474e8248f, type: 3}
+    pitch: 1
+    volume: 0.7
+    randomizePitchAndVolume: 0
+  - name: purchaseUpgrade
+    clips:
+    - {fileID: 8300000, guid: acecc90f04027e34cab2e76ee5255b07, type: 3}
+    pitch: 1
+    volume: 0.5
+    randomizePitchAndVolume: 0
+  source: {fileID: 3978961318959503663}
+--- !u!82 &3978961318959503663
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235076197103876226}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2778657972921025727, guid: f578a87cab11826489e15f37371c45b2, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
