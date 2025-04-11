@@ -14,6 +14,10 @@ public class PlayerInputController : MonoBehaviour
     public UnityAction<string> bindingChanged;
 
     [SerializeField] private GameObject player2;
+    [SerializeField] private PlayerInput player2Input;
+    [HideInInspector] public GameObject deathScreen;
+
+    private GameObject deadPlayer;
 
     private void Awake()
     {
@@ -51,9 +55,20 @@ public class PlayerInputController : MonoBehaviour
     {
         player2Enabled = true;
         player2.SetActive(true);
+        player2Input.gameObject.SetActive(true);
         player2.GetComponent<EntityUIManager>().ShowHealthBar(true);
-        players.Add(player2.GetComponentInChildren<PlayerInput>());
+        players.Add(player2Input);
         ResetPlayerInputs();
+
+        PlayerInput player1Input = players[0];
+        if (player1Input.currentControlScheme != "Keyboard&Mouse")
+        {
+            player2Input.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current, Mouse.current);
+        }
+        else
+        {
+            player2Input.SwitchCurrentControlScheme("Gamepad", Gamepad.current);
+        }
         GameManager.Instance.LoadPlayer();
         Transform player1 = null;
         for (int i = 0; i < GameManager.Instance.playerObjects.Length; i++)
@@ -72,9 +87,40 @@ public class PlayerInputController : MonoBehaviour
         player2Enabled = false;
         player2.GetComponent<EntityUIManager>().ShowHealthBar(false);
         player2.SetActive(false);
-        players.Remove(player2.GetComponentInChildren<PlayerInput>());
+        player2Input.gameObject.SetActive(false);
+        players.Remove(player2Input);
         ResetPlayerInputs();
         GameManager.Instance.LoadPlayer();
+    }
+
+    public void ProcessPlayerDeath(GameObject player)
+    {
+        if (player2Enabled && deadPlayer == null)
+        {
+            deadPlayer = player;
+        }
+        else
+        {
+            deathScreen.SetActive(true);
+        }
+    }
+
+    public void RespawnDeadPlayers()
+    {
+        if(deadPlayer != null)
+        {
+            deadPlayer.SetActive(true);
+            if(deadPlayer.TryGetComponent(out Health health))
+            {
+                health.dead = false;
+                health.ChangeHealth(health.maxHealth);
+            }
+            if (deadPlayer.TryGetComponent(out Animator animator))
+            {
+                animator.SetTrigger("Reset");
+            }
+            deadPlayer = null;
+        }
     }
 
     public void ResetPlayerInputs()

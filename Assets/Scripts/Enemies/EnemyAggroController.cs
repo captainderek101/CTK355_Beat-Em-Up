@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,7 +11,9 @@ public class EnemyAggroController : MonoBehaviour
     [SerializeField] private float maxAggroDistance = 2f;
     [SerializeField] private float minDeaggroDistance = 3f;
     public bool aggroed = false;
-    [SerializeField] private MonoBehaviour movementComponent;
+    [SerializeField] private MoveTowardsPlayer movementComponent;
+    [SerializeField] private EnemyAttackController attackController;
+    [SerializeField] private EnemyDirectionController directionController;
     private Wander wanderComponent;
     private Transform playerTransform;
     private HealthController healthController;
@@ -38,13 +41,13 @@ public class EnemyAggroController : MonoBehaviour
         }
         if (GameManager.Instance.playerObjects != null)
         {
-            playerTransform = GameManager.Instance.playerObjects[Random.Range(0, GameManager.Instance.playerObjects.Length)].transform;
+            FindNewPlayerTarget();
         }
     }
 
     private void FixedUpdate()
     {
-        if (playerTransform == null)
+        if (playerTransform == null || playerTransform.gameObject.activeSelf == false)
         {
             aggroed = false;
             movementComponent.enabled = aggroed;
@@ -52,6 +55,8 @@ public class EnemyAggroController : MonoBehaviour
             {
                 wanderComponent.enabled = !aggroed;
             }
+            Debug.Log(gameObject.name + " choosing new player target");
+            FindNewPlayerTarget();
             return;
         }
         if (!aggroed && (playerTransform.position - transform.position).magnitude < maxAggroDistance)
@@ -82,6 +87,18 @@ public class EnemyAggroController : MonoBehaviour
 
     private void OnBecameVisible()
     {
-        // Only allow for aggroing once visible?
+        FindNewPlayerTarget();
+    }
+
+    private void FindNewPlayerTarget()
+    {
+        IEnumerable<GameObject> activePlayers = GameManager.Instance.playerObjects.Where(x => x.activeSelf);
+        if (activePlayers.Any())
+        {
+            playerTransform = activePlayers.ElementAt(Random.Range(0, activePlayers.Count())).transform;
+            attackController.playerTransform = playerTransform;
+            movementComponent.playerTransform = playerTransform;
+            directionController.playerTransform = playerTransform;
+        }
     }
 }

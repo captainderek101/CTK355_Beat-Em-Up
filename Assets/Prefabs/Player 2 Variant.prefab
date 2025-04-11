@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Actions
       value: 
       objectReference: {fileID: -944628639613478452, guid: 45bae148ab8ad64468b2aa59315eca66, type: 3}
+    - target: {fileID: 2195432324632518621, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4679683251455147567, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
       propertyPath: m_MoveAction
       value: 

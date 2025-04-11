@@ -10,6 +10,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.CompareTag(playerTag))
         {
             GameManager.Instance.UpdateCheckpoint(transform.position);
+            PlayerInputController.Instance.RespawnDeadPlayers();
         }
     }
 }

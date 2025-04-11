@@ -14,7 +14,7 @@ public class EnemyAttackController : AttackController
     [SerializeField] private bool billboardFacingRight = false;
     private int currentClockCycle = 0;
 
-    private Transform playerTransform;
+    [HideInInspector] public Transform playerTransform;
 
     private Vector3 toPlayer = Vector3.zero;
     private EnemyAggroController aggroController;
@@ -27,14 +27,6 @@ public class EnemyAttackController : AttackController
 
     private void Start()
     {
-        if (GameManager.Instance.playerObjects != null)
-        {
-            playerTransform = GameManager.Instance.playerObjects[Random.Range(0, GameManager.Instance.playerObjects.Length)].transform;
-        }
-        else
-        {
-            Debug.LogError("Game State Controller's player is null!");
-        }
         TryGetComponent(out aggroController);
         TryGetComponent(out movementController);
         animationController = GetComponent<Animator>();

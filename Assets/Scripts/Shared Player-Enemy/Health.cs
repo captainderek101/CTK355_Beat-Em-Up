@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
         currentHealth += amount;
         if (currentHealth < 0.01f)
         {
+            currentHealth = 0;
             Die();
         }
         else if (currentHealth > maxHealth)

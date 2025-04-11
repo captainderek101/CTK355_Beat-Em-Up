@@ -11,7 +11,7 @@ public class EnemyDirectionController : MonoBehaviour
     private MovementController movementController;
     private EnemyAttackController attackController;
     private EnemyAggroController aggroController;
-    private Transform playerTransform;
+    [HideInInspector] public Transform playerTransform;
     private bool facingRight = true;
 
     private void Start()
@@ -19,7 +19,6 @@ public class EnemyDirectionController : MonoBehaviour
         TryGetComponent(out movementController);
         TryGetComponent(out attackController);
         TryGetComponent(out aggroController);
-        playerTransform = GameManager.Instance.playerObjects[Random.Range(0, GameManager.Instance.playerObjects.Length)].transform;
     }
 
     private void FixedUpdate()
@@ -61,6 +60,10 @@ public class EnemyDirectionController : MonoBehaviour
 
     private void FollowPlayer()
     {
+        if(playerTransform == null)
+        {
+            return;
+        }
         if (facingRight && (playerTransform.position.x < transform.position.x) && movementController.primaryMovementEnabled)
         {
             facingRight = false;

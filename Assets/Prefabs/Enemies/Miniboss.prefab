@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44451bd37e145ec46b3321d5278fcd3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
   distanceToStop: 0.3
   targetDistanceFromPlayer: 1
   distanceToKeepFromEnemies: 1
@@ -222,6 +223,7 @@ MonoBehaviour:
   attacksTargetPlayer: 0
   fixedUpdateClockCycle: 100
   billboardFacingRight: 0
+  playerTransform: {fileID: 0}
   billboard: {fileID: 3434859358122449343}
 --- !u!114 &6110436717163639712
 MonoBehaviour:
@@ -239,6 +241,8 @@ MonoBehaviour:
   minDeaggroDistance: 3
   aggroed: 0
   movementComponent: {fileID: 8643787902521124027}
+  attackController: {fileID: 8410624720415627785}
+  directionController: {fileID: 8679863878929913484}
 --- !u!114 &8494296789745483206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  playerTransform: {fileID: 0}
 --- !u!95 &2450961328916554186
 Animator:
   serializedVersion: 5

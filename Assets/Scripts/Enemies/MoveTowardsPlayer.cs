@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class MoveTowardsPlayer : MonoBehaviour
 {
     private EnemyMovementController controller;
-    private Transform playerTransform;
+    [HideInInspector] public Transform playerTransform;
     private NavMeshAgent movementAgent;
 
     [SerializeField] private float distanceToStop = 2f;
@@ -26,14 +26,6 @@ public class MoveTowardsPlayer : MonoBehaviour
     {
         controller = GetComponent<EnemyMovementController>();
         movementAgent = GetComponent<NavMeshAgent>();
-        if (GameManager.Instance.playerObjects != null)
-        {
-            playerTransform = GameManager.Instance.playerObjects[Random.Range(0, GameManager.Instance.playerObjects.Length)].transform;
-        }
-        else
-        {
-            Debug.LogError("Game State Controller's player is null!");
-        }
         fixedUpdateClockCycle = Mathf.RoundToInt(fixedUpdateClockCycle * Random.Range(0.8f, 1.2f));
     }
 
