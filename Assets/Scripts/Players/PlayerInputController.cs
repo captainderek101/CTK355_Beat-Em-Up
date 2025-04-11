@@ -52,7 +52,7 @@ public class PlayerInputController : MonoBehaviour
         player2Enabled = true;
         player2.SetActive(true);
         player2.GetComponent<EntityUIManager>().ShowHealthBar(true);
-        players.Add(player2.GetComponent<PlayerInput>());
+        players.Add(player2.GetComponentInChildren<PlayerInput>());
         ResetPlayerInputs();
         GameManager.Instance.LoadPlayer();
         Transform player1 = null;
@@ -72,7 +72,7 @@ public class PlayerInputController : MonoBehaviour
         player2Enabled = false;
         player2.GetComponent<EntityUIManager>().ShowHealthBar(false);
         player2.SetActive(false);
-        players.Remove(player2.GetComponent<PlayerInput>());
+        players.Remove(player2.GetComponentInChildren<PlayerInput>());
         ResetPlayerInputs();
         GameManager.Instance.LoadPlayer();
     }

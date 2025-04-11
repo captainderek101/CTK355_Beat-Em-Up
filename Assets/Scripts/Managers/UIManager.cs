@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
 
     private const string loadSceneButtonTagName = "Load Scene Button";
 
-    private GameObject lastSelected;
+    private GameObject lastSelected = null;
     public UnityEvent<GameObject, GameObject> selectionChanged;
     [HideInInspector] public bool paused = false;
     public UnityEvent pauseEvent;
@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject != lastSelected && selectionChanged != null)
+        if (EventSystem.current != null && EventSystem.current.currentSelectedGameObject != lastSelected && selectionChanged != null)
         {
             foreach (MultiplayerEventSystem eventSystem in FindObjectsOfType<MultiplayerEventSystem>())
             {
@@ -102,7 +102,10 @@ public class UIManager : MonoBehaviour
     {
         foreach (PlayerInput player in PlayerInputController.Instance.players)
         {
-            player.SwitchCurrentActionMap("Player");
+            if(player != null)
+            {
+                player.SwitchCurrentActionMap("Player");
+            }
         }
     }
 
@@ -110,7 +113,10 @@ public class UIManager : MonoBehaviour
     {
         foreach (PlayerInput player in PlayerInputController.Instance.players)
         {
-            player.SwitchCurrentActionMap("UI");
+            if (player != null)
+            {
+                player.SwitchCurrentActionMap("UI");
+            }
         }
     }
     public void CloseGame()
