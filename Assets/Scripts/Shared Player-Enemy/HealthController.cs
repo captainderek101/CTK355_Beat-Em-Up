@@ -76,6 +76,12 @@ public class HealthController : MonoBehaviour
             if (other.tag == enemyHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
                 ChangeHealth(otherHitbox.healthEffect);
+                if(otherHitbox.knockbackDuration > 0.001f)
+                {
+                    //bool knockbackLeft = otherHitbox.transform.position.x > transform.position.x;
+                    bool knockbackLeft = otherHitbox.transform.rotation.eulerAngles.y > 1;
+                    GetComponent<MovementController>().ApplyKnockback(otherHitbox.knockbackSpeedCurve, otherHitbox.knockbackDuration, knockbackLeft);
+                }
                 Destroy(other.gameObject);
             }
         }
@@ -84,6 +90,11 @@ public class HealthController : MonoBehaviour
             if (other.tag == playerHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
                 ChangeHealth(otherHitbox.healthEffect);
+                if (otherHitbox.knockbackDuration > 0.001f)
+                {
+                    bool knockbackLeft = otherHitbox.transform.rotation.eulerAngles.y > 1;
+                    GetComponent<MovementController>().ApplyKnockback(otherHitbox.knockbackSpeedCurve, otherHitbox.knockbackDuration, knockbackLeft);
+                }
                 Destroy(other);
             }
         }

@@ -122,6 +122,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthEffect: -1
+  knockbackSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.7
+      inSlope: 2.8463073
+      outSlope: 2.8463073
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.22880214
+    - serializedVersion: 3
+      time: 0.2
+      value: 1
+      inSlope: -0.034752
+      outSlope: -0.034752
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.34955755
+    - serializedVersion: 3
+      time: 0.6298707
+      value: 0.19809815
+      inSlope: -1.1299368
+      outSlope: -1.1299368
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13617669
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0.024006635
+      outSlope: 0.024006635
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26641518
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  knockbackDuration: 0.1
 --- !u!1 &3926296806629705270
 GameObject:
   m_ObjectHideFlags: 0
