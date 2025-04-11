@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPrefabs:
   - name: melee
-    prefab: {fileID: 1107040573827765603, guid: 7e11bf41a66ef4b4f8df1304f11798ea, type: 3}
+    prefab: {fileID: 1107040573827765603, guid: 59204d4de0b25f44687bcd14f9b23b9b, type: 3}
   readyToAttack: 1
   notBusy: 1
   animationController: {fileID: 0}
