@@ -119,6 +119,22 @@ public class PlayerInputController : MonoBehaviour
             {
                 animator.SetTrigger("Reset");
             }
+            if (deadPlayer.TryGetComponent(out Rigidbody rigidbody))
+            {
+                Transform livingPlayer = null;
+                for (int i = 0; i < GameManager.Instance.playerObjects.Length; i++)
+                {
+                    livingPlayer = GameManager.Instance.playerObjects[i].transform;
+                    if (livingPlayer != deadPlayer.transform)
+                    {
+                        break;
+                    }
+                }
+                if(livingPlayer != null)
+                {
+                    rigidbody.MovePosition(livingPlayer.position + Vector3.left);
+                }
+            }
             deadPlayer = null;
         }
     }
