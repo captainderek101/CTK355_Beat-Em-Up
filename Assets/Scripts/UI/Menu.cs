@@ -14,6 +14,7 @@ public class Menu : MonoBehaviour
 
     private AudioPlayer audioPlayer;
     private const string openAudioName = "openMenu";
+    private const string closeAudioName = "closeMenu";
 
     public void CloseMenu()
     {
@@ -22,6 +23,12 @@ public class Menu : MonoBehaviour
             animator = GetComponent<Animator>();
         }
         animator.SetBool(animatorShowBool, false);
+
+        if (audioPlayer == null)
+        {
+            audioPlayer = Camera.main.GetComponent<AudioPlayer>();
+        }
+        audioPlayer.PlaySound(closeAudioName);
     }
 
     public void OpenMenu()

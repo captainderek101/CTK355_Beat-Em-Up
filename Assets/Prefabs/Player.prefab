@@ -189,6 +189,12 @@ MonoBehaviour:
     pitch: 1
     volume: 2
     randomizePitchAndVolume: 1
+  - name: abilityCharged
+    clips:
+    - {fileID: 8300000, guid: 172567b4edc69774b9095c3ccbcd109e, type: 3}
+    pitch: 1
+    volume: 0.5
+    randomizePitchAndVolume: 0
   source: {fileID: 7156533634202135804}
 --- !u!54 &6592542614895908127
 Rigidbody:

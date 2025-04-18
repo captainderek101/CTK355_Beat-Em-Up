@@ -20,6 +20,7 @@ public class PlayerAttackController : AttackController
     private const string abilityAttackName = "ability";
     private const string abilityAudioName = "strongAttack";
     private const string abilityAnimationTrigger = "Ability";
+    private const string abilityChargedAudioName = "abilityCharged";
 
     [SerializeField] private SpriteRenderer billboard;
 
@@ -96,6 +97,7 @@ public class PlayerAttackController : AttackController
         if(currentAbilityCharge >= abilityChargeLimit)
         {
             abilityReady = true;
+            audioPlayer.PlaySound(abilityChargedAudioName);
         }
         UpdateAbilityUI();
     }
@@ -106,6 +108,7 @@ public class PlayerAttackController : AttackController
         if (currentAbilityCharge >= abilityChargeLimit)
         {
             abilityReady = true;
+            audioPlayer.PlaySound(abilityChargedAudioName);
         }
         UpdateAbilityUI();
     }

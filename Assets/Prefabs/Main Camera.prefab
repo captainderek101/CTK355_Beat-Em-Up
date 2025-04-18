@@ -171,19 +171,25 @@ MonoBehaviour:
   events:
   - name: openMenu
     clips:
-    - {fileID: 8300000, guid: c4a60baa6e53f3a4390071b091c3bd5a, type: 3}
+    - {fileID: 8300000, guid: 9685b96fe31bc774985ab4437fb31265, type: 3}
     pitch: 1
-    volume: 1
+    volume: 2
+    randomizePitchAndVolume: 0
+  - name: closeMenu
+    clips:
+    - {fileID: 8300000, guid: 5a4bc3f5a2bf62341b890309625b8624, type: 3}
+    pitch: 1
+    volume: 2
     randomizePitchAndVolume: 0
   - name: pickupCoin
     clips:
-    - {fileID: 8300000, guid: a78206e1886f3d446ad07be474e8248f, type: 3}
+    - {fileID: 8300000, guid: eec07b7040d4aa243b2a9a44df954992, type: 3}
     pitch: 1
     volume: 0.7
     randomizePitchAndVolume: 0
   - name: purchaseUpgrade
     clips:
-    - {fileID: 8300000, guid: acecc90f04027e34cab2e76ee5255b07, type: 3}
+    - {fileID: 8300000, guid: 95b13a6f2de2a6f4c9fc91079cfd9fa3, type: 3}
     pitch: 1
     volume: 0.5
     randomizePitchAndVolume: 0

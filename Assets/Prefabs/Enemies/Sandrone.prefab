@@ -400,6 +400,8 @@ MonoBehaviour:
   - name: hurt
     clips:
     - {fileID: 8300000, guid: 1955ca640cb1a504ca7abc3741c36e34, type: 3}
+    - {fileID: 8300000, guid: b73d5cb9566f4184b9603c3513da0d42, type: 3}
+    - {fileID: 8300000, guid: 0b623907037514e4d85bdf8052f77fce, type: 3}
     pitch: 1
     volume: 1
     randomizePitchAndVolume: 1
