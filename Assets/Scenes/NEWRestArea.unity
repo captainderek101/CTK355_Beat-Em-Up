@@ -27331,6 +27331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrade Shop NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 8824734629118018581, guid: 6f12af3c4e1b569439073da9d093e2e0, type: 3}
+      propertyPath: interactEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38259,6 +38263,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2495951680388976992, guid: 2fb3d5b851941fc4999d1605aa3d96f8, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2660256739727704658, guid: 2fb3d5b851941fc4999d1605aa3d96f8, type: 3}
       propertyPath: m_Name
       value: Player 2 Variant

@@ -22,8 +22,6 @@ public class PlayerAttackController : AttackController
     private const string abilityAnimationTrigger = "Ability";
     private const string abilityChargedAudioName = "abilityCharged";
 
-    [SerializeField] private SpriteRenderer billboard;
-
     private int abilityChargeLimit = 10;
     private int currentAbilityCharge;
     private bool abilityReady = false;

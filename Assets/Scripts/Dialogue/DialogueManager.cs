@@ -48,6 +48,12 @@ public class DialogueManager : MonoBehaviour
         playerTransform = GameManager.Instance.playerObjects[0].transform;
     }
 
+    public void StartDialogue(Dialogue dialogue, Transform actor)
+    {
+        playerTransform = actor;
+        StartDialogue(dialogue);
+    }
+
     public void StartDialogue(Dialogue dialogue)
     {
         foreach(MultiplayerEventSystem eventSystem in FindObjectsOfType< MultiplayerEventSystem>())

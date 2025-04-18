@@ -143,6 +143,7 @@ MonoBehaviour:
   movementController: {fileID: 0}
   damageMultiplier: 1
   billboard: {fileID: 320628664827432212}
+  billboardFacingRight: 0
   playerInput: {fileID: 2195432324632518621}
 --- !u!114 &146691553045232611
 MonoBehaviour:
@@ -731,7 +732,7 @@ MonoBehaviour:
     m_ActionId: 1ec067c5-987e-4e00-9418-82fba6cb791f
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

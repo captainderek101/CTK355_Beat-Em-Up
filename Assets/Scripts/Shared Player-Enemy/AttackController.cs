@@ -19,6 +19,9 @@ public class AttackController : MonoBehaviour
 
     public float damageMultiplier = 1.0f;
 
+    public SpriteRenderer billboard;
+    public bool billboardFacingRight = false;
+
     public bool Attack()
     {
         return AttackTargeted(null, attackPrefabs[0].name);
@@ -36,6 +39,12 @@ public class AttackController : MonoBehaviour
         bool wasReady = readyToAttack && notBusy;
         AttackCoroutine(target, attackPrefabs.Where(x => x.name == attackName).First().prefab);
         return wasReady;
+    }
+
+    public void FacingLeftOrRight(bool facingRight)
+    {
+        this.facingRight = facingRight;
+        billboard.flipX = billboardFacingRight ? !facingRight : facingRight;
     }
 
     private void AttackCoroutine(Transform target, GameObject attackPrefab)

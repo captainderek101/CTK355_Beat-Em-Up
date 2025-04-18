@@ -34,4 +34,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         DialogueManager.Instance.StartDialogue(dialogue);
     }
+    public void TriggerDialogue(Transform actor)
+    {
+        DialogueManager.Instance.StartDialogue(dialogue, actor);
+    }
 }

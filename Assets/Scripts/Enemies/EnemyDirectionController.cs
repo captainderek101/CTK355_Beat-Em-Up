@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementController))]
-[RequireComponent(typeof(EnemyAttackController))]
-[RequireComponent(typeof(EnemyAggroController))]
+[RequireComponent(typeof(AttackController))]
 public class EnemyDirectionController : MonoBehaviour
 {
     [SerializeField] private DirectionType type;
     private MovementController movementController;
-    private EnemyAttackController attackController;
+    private AttackController attackController;
     private EnemyAggroController aggroController;
     [HideInInspector] public Transform playerTransform;
     private bool facingRight = true;

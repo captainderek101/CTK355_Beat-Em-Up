@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 using UnityEngine.Windows;
 
 public class PlayerInputController : MonoBehaviour
@@ -61,6 +63,7 @@ public class PlayerInputController : MonoBehaviour
         ResetPlayerInputs();
 
         PlayerInput player1Input = players[0];
+        GetPlayer2Input(player1Input, player2Input);
         if (player1Input.currentControlScheme != "Keyboard&Mouse")
         {
             player2Input.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current, Mouse.current);
@@ -183,5 +186,26 @@ public class PlayerInputController : MonoBehaviour
                 }
             };
         }
+    }
+
+    private void GetPlayer2Input(PlayerInput player1Input, PlayerInput player2Input)
+    {
+        if(player2Input.inputIsActive)
+        {
+            //Debug.Log("player 2 active");
+            return;
+        }
+        InputSystem.onAnyButtonPress.CallOnce(input => {
+            if (player1Input.devices.Contains(input.device))
+            {
+                //Debug.Log("player 2 controller failed");
+                GetPlayer2Input(player1Input, player2Input);
+            }
+            else
+            {
+                //Debug.Log("player 2 controller succeeded");
+                player2Input.SwitchCurrentControlScheme(input.device);
+            }
+        });
     }
 }

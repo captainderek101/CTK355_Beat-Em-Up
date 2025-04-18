@@ -8,7 +8,7 @@ public class InteractPrompt : MonoBehaviour
 {
     [SerializeField] private GameObject uiObject;
     private PlayerInputs.PlayerActions playerActions;
-    public UnityEvent interactEvent;
+    public UnityEvent<Transform> interactEvent;
 
     private void Start()
     {
@@ -37,7 +37,7 @@ public class InteractPrompt : MonoBehaviour
         {
             if (player.actions.FindAction("Interact").inProgress && other.tag == "Player" && interactEvent != null)
             {
-                interactEvent.Invoke();
+                interactEvent.Invoke(other.transform);
             }
         }
     }
