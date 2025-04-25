@@ -9,17 +9,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 320628664827432212, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 320628664827432212, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7425821
-      objectReference: {fileID: 0}
-    - target: {fileID: 320628664827432212, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
-      propertyPath: m_Color.r
-      value: 0.3443396
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1897001199, guid: 9391aa99fa1700f46ad474d07be758a3, type: 3}
     - target: {fileID: 821329242137431320, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.36
@@ -80,6 +72,10 @@ PrefabInstance:
       propertyPath: m_NeverAutoSwitchControlSchemes
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4468775706077698230, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: fcfc6572897d6364796cad0fb88b7128, type: 2}
     - target: {fileID: 4679683251455147567, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
       propertyPath: m_MoveAction
       value: 
