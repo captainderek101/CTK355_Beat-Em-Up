@@ -43,6 +43,18 @@ public class PlayerMovementController : MovementController
 
     private void FixedUpdate()
     {
+        Vector2 viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
+        if (viewportPosition.x < 0)
+        {
+            viewportPosition.x = 0;
+            transform.position = Camera.main.ViewportToWorldPoint(viewportPosition);
+        }
+        else if (viewportPosition.x > 1)
+        {
+            viewportPosition.x = 1;
+            transform.position = Camera.main.ViewportToWorldPoint(viewportPosition);
+        }
+
         movementInput = playerInput.actions.FindAction("Move").ReadValue<Vector2>();
         realMovement = Vector3.zero;
         realMovement += rightDirection * movementInput.x * horizontalMoveSpeed;
@@ -80,7 +92,10 @@ public class PlayerMovementController : MovementController
         {
             currentSpeed = dodgerollSpeedCurve.Evaluate(timeSinceStart / dodgerollDuration);
             yield return new WaitForFixedUpdate();
-            gameObject.transform.position += realMovement * currentSpeed * Time.fixedDeltaTime;
+            if(primaryMovementEnabled)
+            {
+                gameObject.transform.position += realMovement * currentSpeed * Time.fixedDeltaTime;
+            }
             timeSinceStart += Time.fixedDeltaTime;
         }
     }
