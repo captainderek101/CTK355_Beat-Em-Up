@@ -43,16 +43,20 @@ public class PlayerMovementController : MovementController
 
     private void FixedUpdate()
     {
-        Vector2 viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
-        if (viewportPosition.x < 0)
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        if (screenPosition.x < 0)
         {
-            viewportPosition.x = 0;
-            transform.position = Camera.main.ViewportToWorldPoint(viewportPosition);
+            screenPosition.x = 0;
+            Vector3 newPosition = transform.position;
+            newPosition.x = Camera.main.ScreenToWorldPoint(screenPosition).x;
+            transform.position = newPosition;
         }
-        else if (viewportPosition.x > 1)
+        else if (screenPosition.x > Camera.main.pixelWidth)
         {
-            viewportPosition.x = 1;
-            transform.position = Camera.main.ViewportToWorldPoint(viewportPosition);
+            screenPosition.x = Camera.main.pixelWidth;
+            Vector3 newPosition = transform.position;
+            newPosition.x = Camera.main.ScreenToWorldPoint(screenPosition).x;
+            transform.position = newPosition;
         }
 
         movementInput = playerInput.actions.FindAction("Move").ReadValue<Vector2>();

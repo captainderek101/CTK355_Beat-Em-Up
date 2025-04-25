@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ public class ScreenManager : MonoBehaviour
     public string tagToSpawn = "Enemy";
 
     [SerializeField] private GameObject spawningEffectPrefab;
+
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
 
     private int activeSpawns;
     private int activeWaveIndex;
@@ -44,14 +47,7 @@ public class ScreenManager : MonoBehaviour
         PrepareWaveStart(0);
         if(blockUntilWavesClear)
         {
-            if(TryGetComponent(out ScreenColliders screenColliders))
-            {
-                screenColliders.TurnOnColliders();
-            }
-            else
-            {
-                Debug.LogWarning(gameObject.name + "'s ScreenManager has blockUntilWavesClear set to true, but it has no ScreenColliders component!");
-            }
+
         }
     }
 
@@ -92,9 +88,9 @@ public class ScreenManager : MonoBehaviour
 
     private void WavesClear()
     {
-        if (blockUntilWavesClear && TryGetComponent(out ScreenColliders screenColliders))
+        if (blockUntilWavesClear)
         {
-            screenColliders.TurnOffColliders();
+            CameraManager.SwitchCamera(virtualCamera);
         }
     }
 
