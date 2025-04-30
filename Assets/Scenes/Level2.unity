@@ -3406,6 +3406,7 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
+  virtualCamera: {fileID: 0}
 --- !u!33 &164072605
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13460,6 +13461,7 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
+  virtualCamera: {fileID: 0}
 --- !u!33 &859389679
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17666,6 +17668,7 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
+  virtualCamera: {fileID: 0}
 --- !u!33 &1129288531
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19425,6 +19428,7 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
+  virtualCamera: {fileID: 0}
 --- !u!33 &1278628552
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22842,6 +22846,7 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
+  virtualCamera: {fileID: 0}
 --- !u!33 &1533166301
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25523,6 +25528,7 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
+  virtualCamera: {fileID: 0}
 --- !u!33 &1731461121
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32168,6 +32174,7 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
+  virtualCamera: {fileID: 0}
 --- !u!33 &2139008375
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -59976,6 +59983,10 @@ PrefabInstance:
     - target: {fileID: 2414177933573728688, guid: a610671c98942f949bef9fe66ec14ea6, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414177933573728688, guid: a610671c98942f949bef9fe66ec14ea6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2656234772953374437, guid: a610671c98942f949bef9fe66ec14ea6, type: 3}
       propertyPath: m_Layer

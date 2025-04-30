@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b8a306540fbe74db2366ad31e1e33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 4
-  maxHealth: 4
+  initialHealth: 12
+  maxHealth: 12
   currentHealth: 0
   destroyOnDeath: 1
   dead: 0
@@ -202,15 +202,15 @@ MonoBehaviour:
   animationController: {fileID: 0}
   movementController: {fileID: 0}
   damageMultiplier: 1
+  billboard: {fileID: 3434859358122449343}
+  billboardFacingRight: 0
   targetYDistanceFromPlayer: 0.05
   targetXDistanceFromPlayer: 0.1
   YDistanceNegativeBias: 1
   XDistanceNegativeBias: 0.5
   attacksTargetPlayer: 0
   fixedUpdateClockCycle: 100
-  billboardFacingRight: 0
   playerTransform: {fileID: 0}
-  billboard: {fileID: 3434859358122449343}
 --- !u!114 &6110436717163639712
 MonoBehaviour:
   m_ObjectHideFlags: 0
