@@ -14,10 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 7807df5f8799a374f80ca8bcdf3af869
-  - enabled: 0
-    path: Assets/Scenes/RestAreaBlockout.unity
-    guid: 96a0e9b180f20a04094dc24a5d8157ea
-  - enabled: 0
-    path: Assets/Scenes/MovementTest.unity
-    guid: 968c6c95d59234c4c9ee74d00fd82209
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 45235f8a5213d8341bd5f36500338b75
   m_configObjects: {}
