@@ -17,8 +17,10 @@ public class BossAttackController : AttackController
 
     private Vector3 toPlayer = Vector3.zero;
 
-    private const string lightAttackAnimationTrigger = "Light Attack";
-    private const string lightAttackAudioName = "attack";
+    private const string rangedAttackAnimationTrigger = "Ranged Attack";
+    private const string rangedAttackAudioName = "attack";
+    private const string meleeAttackAnimationTrigger = "Melee Attack";
+    private const string meleeAttackAudioName = "attack";
 
     private AudioPlayer audioPlayer;
 
@@ -52,8 +54,8 @@ public class BossAttackController : AttackController
                 bool success = Attack();
                 if (success)
                 {
-                    animationController.SetTrigger(lightAttackAnimationTrigger);
-                    audioPlayer.PlaySound(lightAttackAudioName);
+                    animationController.SetTrigger(rangedAttackAnimationTrigger);
+                    audioPlayer.PlaySound(rangedAttackAudioName);
                 }
             }
             currentClockCycle = fixedUpdateClockCycle;
