@@ -16,6 +16,11 @@ public class ItemInventoryManager : MonoBehaviour
     private const string currencyAudioName = "pickupCoin";
     private const string upgradeAudioName = "purchaseUpgrade";
 
+    [SerializeField] private ItemScriptableObject hotDog;
+    [SerializeField] private ItemScriptableObject iceCream;
+    [SerializeField] private ItemScriptableObject taco;
+    [SerializeField] private ItemScriptableObject wing;
+
     private void Awake()
     {
         if (Instance == null)
@@ -36,6 +41,18 @@ public class ItemInventoryManager : MonoBehaviour
                 UIManager.Instance.SetCoinUI(items[coinObject]);
             }
         };
+
+        int hotDogLevels = PlayerPrefs.GetInt("HotDogTruck", 0);
+        AddItemToInventory(hotDog, hotDogLevels, false);
+
+        int iceCreamLevels = PlayerPrefs.GetInt("IceCreamTruck", 0);
+        AddItemToInventory(iceCream, iceCreamLevels, false);
+
+        int tacoLevels = PlayerPrefs.GetInt("TacoTruck", 0);
+        AddItemToInventory(taco, tacoLevels, false);
+
+        int wingLevels = PlayerPrefs.GetInt("WingTruck", 0);
+        AddItemToInventory(wing, wingLevels, false);
     }
 
 
@@ -50,7 +67,7 @@ public class ItemInventoryManager : MonoBehaviour
 
     /** Adds the specified item quantity to the inventory
      */
-    public void AddItemToInventory(ItemScriptableObject item, int quantity)
+    public void AddItemToInventory(ItemScriptableObject item, int quantity, bool playAudio = true)
     {
         IEnumerable<ItemScriptableObject> searchedItems = items.Keys.Where(x => x.name == item.name);
         if (searchedItems.Any())
@@ -63,16 +80,19 @@ public class ItemInventoryManager : MonoBehaviour
             items.Add(item, quantity);
         }
         audioPlayer = Camera.main.GetComponent<AudioPlayer>();
-        switch (item.type)
+        if (playAudio)
         {
-            case Currency:
-                audioPlayer.PlaySound(currencyAudioName);
-                break;
-            case Upgrade:
-                audioPlayer.PlaySound(upgradeAudioName);
-                break;
-            default:
-                break;
+            switch (item.type)
+            {
+                case Currency:
+                    audioPlayer.PlaySound(currencyAudioName);
+                    break;
+                case Upgrade:
+                    audioPlayer.PlaySound(upgradeAudioName);
+                    break;
+                default:
+                    break;
+            }
         }
         UpdateInventoryUI(item);
         UpdateItemEffects(item);
@@ -104,6 +124,10 @@ public class ItemInventoryManager : MonoBehaviour
     {
         items = new Dictionary<ItemScriptableObject, int>();
         UIManager.Instance.SetCoinUI(0);
+        PlayerPrefs.DeleteKey("HotDogTruck");
+        PlayerPrefs.DeleteKey("IceCreamTruck");
+        PlayerPrefs.DeleteKey("TacoTruck");
+        PlayerPrefs.DeleteKey("WingTruck");
     }
 
     private void UpdateInventoryUI(ItemScriptableObject item)

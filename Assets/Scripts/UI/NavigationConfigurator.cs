@@ -17,7 +17,7 @@ public class NavigationConfigurator : MonoBehaviour
 
     private void OnSelectionChanged(GameObject previous, GameObject current)
     {
-        if (returnToLastSelected && current == gameObject && previous.activeSelf && previous.TryGetComponent(out Selectable previousSelectable))
+        if (returnToLastSelected && current == gameObject && previous.activeSelf && previous.TryGetComponent(out Selectable previousSelectable) && previous.transform.parent.name != "DialogueBox")
         {
             Navigation newNavigation = new Navigation();
             newNavigation.mode = selectable.navigation.mode;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using UnityEngine;
 
@@ -17,15 +18,19 @@ public static class UpgradeEffects
         {
             case "Taco Truck":
                 PlayerStatManager.Instance.currentMaxHealthMultiplier = upgradeValue;
+                PlayerPrefs.SetInt("TacoTruck", level);
                 break;
             case "Hot Dog Stand":
                 PlayerStatManager.Instance.currentAbilityChargeLimit = Mathf.RoundToInt(upgradeValue);
+                PlayerPrefs.SetInt("HotDogTruck", level);
                 break;
             case "Wing Truck":
                 PlayerStatManager.Instance.currentDamageMultiplier = upgradeValue;
+                PlayerPrefs.SetInt("WingTruck", level);
                 break;
             case "Ice Cream Truck":
                 PlayerStatManager.Instance.currentMoveSpeedMultiplier = upgradeValue;
+                PlayerPrefs.SetInt("IceCreamTruck", level);
                 break;
             default: // upgrade is not programmed here
                 return false;

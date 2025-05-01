@@ -63,6 +63,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinObject: {fileID: 11400000, guid: e824e6482bf15ae478fea6647c6ab65c, type: 2}
   DEBUG_add1000Coins: 0
+  hotDog: {fileID: 11400000, guid: 689b6cd09544cf8418f9b30aa7be3a10, type: 2}
+  iceCream: {fileID: 11400000, guid: 6cd7a045ff14e2c43a2075126dde062d, type: 2}
+  taco: {fileID: 11400000, guid: 0c5d4888d1a65fc4f9331b1623359982, type: 2}
+  wing: {fileID: 11400000, guid: 5d92907a11281884ea87db6839427c2b, type: 2}
 --- !u!114 &3827135792584700910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   player2: {fileID: 0}
+  player2Input: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!114 &4717794431462099431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +206,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   coinUI: {fileID: 0}
   upgradeShopScreen: {fileID: 0}
-  abilityHUD: {fileID: 0}
   selectionChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -235,6 +240,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  sceneLoadEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1765862002976393100
 MonoBehaviour:
   m_ObjectHideFlags: 0

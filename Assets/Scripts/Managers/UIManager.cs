@@ -29,6 +29,8 @@ public class UIManager : MonoBehaviour
     public UnityEvent pauseExitEvent;
     public UnityEvent sceneLoadEvent;
 
+    public GameObject deathScreen;
+
     private void Awake()
     {
         if(Instance == null)

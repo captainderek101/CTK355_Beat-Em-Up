@@ -144,6 +144,7 @@ MonoBehaviour:
   damageMultiplier: 1
   billboard: {fileID: 320628664827432212}
   billboardFacingRight: 0
+  uiManager: {fileID: 4709582478740246797}
   playerInput: {fileID: 2195432324632518621}
 --- !u!114 &146691553045232611
 MonoBehaviour:
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acfea600821f6246922e12a6554bf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
+  isPlayer: 1
   isEnemy: 0
   deathEvents:
     m_PersistentCalls:
@@ -413,6 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  abilityUI: {fileID: 0}
 --- !u!1 &1926904527520315143
 GameObject:
   m_ObjectHideFlags: 0

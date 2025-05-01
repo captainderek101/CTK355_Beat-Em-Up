@@ -17,7 +17,7 @@ public class PlayerInputController : MonoBehaviour
 
     [SerializeField] private GameObject player2;
     [SerializeField] private PlayerInput player2Input;
-    [HideInInspector] public GameObject deathScreen;
+    public GameObject deathScreen; //[HideInInspector] 
 
     private GameObject deadPlayer;
 
@@ -59,19 +59,20 @@ public class PlayerInputController : MonoBehaviour
         player2.SetActive(true);
         player2Input.gameObject.SetActive(true);
         player2.GetComponent<EntityUIManager>().ShowHealthBar(true);
+        player2.GetComponent<EntityUIManager>().ShowAbilityCharge(true);
         players.Add(player2Input);
         ResetPlayerInputs();
 
         PlayerInput player1Input = players[0];
         GetPlayer2Input(player1Input, player2Input);
-        if (player1Input.currentControlScheme != "Keyboard&Mouse")
-        {
-            player2Input.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current, Mouse.current);
-        }
-        else
-        {
-            player2Input.SwitchCurrentControlScheme("Gamepad", Gamepad.current);
-        }
+        //if (player1Input.currentControlScheme != "Keyboard&Mouse")
+        //{
+        //    player2Input.SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current, Mouse.current);
+        //}
+        //else
+        //{
+        //    player2Input.SwitchCurrentControlScheme("Gamepad", Gamepad.current);
+        //}
         GameManager.Instance.LoadPlayer();
         Transform player1 = null;
         for (int i = 0; i < GameManager.Instance.playerObjects.Length; i++)
@@ -89,6 +90,7 @@ public class PlayerInputController : MonoBehaviour
     {
         player2Enabled = false;
         player2.GetComponent<EntityUIManager>().ShowHealthBar(false);
+        player2.GetComponent<EntityUIManager>().ShowAbilityCharge(false);
         player2.SetActive(false);
         player2Input.gameObject.SetActive(false);
         players.Remove(player2Input);
@@ -104,7 +106,7 @@ public class PlayerInputController : MonoBehaviour
         }
         else
         {
-            deathScreen.SetActive(true);
+            UIManager.Instance.deathScreen.SetActive(true);
         }
     }
 

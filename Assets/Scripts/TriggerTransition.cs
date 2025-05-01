@@ -8,8 +8,11 @@ public class TriggerTransition : MonoBehaviour
     [SerializeField] private StoryProgressionManager.StoryPoint checkpointToComplete;
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log(GameManager.Instance.playerObjects
+        //    .Where(x => x.transform == other.transform.parent)
+        //    .Count());
         if(GameManager.Instance.playerObjects
-            .Where(x => x.transform == other.transform)
+            .Where(x => x.transform == other.transform.parent)
             .Count() > 0)
         {
             StoryProgressionManager.Instance.SetCheckpoint(checkpointToComplete, true);

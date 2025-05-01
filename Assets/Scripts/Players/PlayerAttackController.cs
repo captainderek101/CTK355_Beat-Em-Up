@@ -26,7 +26,7 @@ public class PlayerAttackController : AttackController
     private int currentAbilityCharge;
     private bool abilityReady = false;
 
-    [SerializeField] private UIGroupControl abilityUI;
+    [SerializeField] private EntityUIManager uiManager;
 
     [SerializeField] private PlayerInput playerInput;
 
@@ -37,7 +37,7 @@ public class PlayerAttackController : AttackController
         animationController = GetComponent<Animator>();
         TryGetComponent(out movementController);
         currentAbilityCharge = 0;
-        UpdateAbilityUI();
+        uiManager.UpdateAbilityUI(currentAbilityCharge, abilityChargeLimit);
     }
 
     private void Update()
@@ -69,7 +69,7 @@ public class PlayerAttackController : AttackController
                 audioPlayer.PlaySound(abilityAudioName);
                 abilityReady = false;
                 currentAbilityCharge = 0;
-                UpdateAbilityUI();
+                uiManager.UpdateAbilityUI(currentAbilityCharge, abilityChargeLimit);
             }
         }
     }
@@ -97,7 +97,7 @@ public class PlayerAttackController : AttackController
             abilityReady = true;
             audioPlayer.PlaySound(abilityChargedAudioName);
         }
-        UpdateAbilityUI();
+        uiManager.UpdateAbilityUI(currentAbilityCharge, abilityChargeLimit);
     }
 
     public void ChargeAbility(int amount)
@@ -108,12 +108,6 @@ public class PlayerAttackController : AttackController
             abilityReady = true;
             audioPlayer.PlaySound(abilityChargedAudioName);
         }
-        UpdateAbilityUI();
-    }
-
-    private void UpdateAbilityUI()
-    {
-        abilityUI.SetSliderValue(Mathf.Clamp((float)currentAbilityCharge / abilityChargeLimit, 0, 1));
-        abilityUI.SetTextValue((int)Mathf.Min(currentAbilityCharge, abilityChargeLimit) + " / " + abilityChargeLimit);
+        uiManager.UpdateAbilityUI(currentAbilityCharge, abilityChargeLimit);
     }
 }

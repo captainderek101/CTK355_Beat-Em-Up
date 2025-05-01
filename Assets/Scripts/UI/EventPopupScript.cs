@@ -17,13 +17,22 @@ public class EventPopupScript : MonoBehaviour
         {
             case PopupType.PlayerDeath:
                 PlayerInputController.Instance.deathScreen = popupObject;
+                UIManager.Instance.deathScreen = popupObject;
                 Button transitionButton = null;
                 foreach (Transform child in popupObject.transform)
                 {
-                    if (child.tag == loadSceneButtonTagName)
+                    //if (child.tag == loadSceneButtonTagName)
+                    //{
+                    //    child.TryGetComponent(out transitionButton);
+                    //    break;
+                    //}
+                    foreach (Transform child1 in child)
                     {
-                        child.TryGetComponent(out transitionButton);
-                        break;
+                        if (child1.tag == loadSceneButtonTagName)
+                        {
+                            child1.TryGetComponent(out transitionButton);
+                            break;
+                        }
                     }
                 }
                 if (transitionButton != null)

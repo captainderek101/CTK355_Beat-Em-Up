@@ -153,7 +153,8 @@ MonoBehaviour:
   currentHealth: 0
   destroyOnDeath: 1
   dead: 0
-  itemDrops: []
+  itemDrops:
+  - {fileID: 3105946487565396428, guid: cf51512f5f4490143ae6e209980f582e, type: 3}
 --- !u!54 &2354765010468131817
 Rigidbody:
   m_ObjectHideFlags: 0

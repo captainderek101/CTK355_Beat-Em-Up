@@ -98,23 +98,18 @@ MonoBehaviour:
   dialogue:
     dialogueLines:
     - character:
-        name: Game
+        name: Tutorial
         icon: {fileID: 0}
-      line: Welcome to the game! Use {control:Move} to move.
+      line: Welcome to the game! You can move using {control:Move}.
     - character:
-        name: Game
+        name: Tutorial
         icon: {fileID: 0}
-      line: Great work! Now use {control:Dodgeroll} to perform a dodge roll.
+      line: You can use {control:Dodgeroll} to perform a dodge roll.
     - character:
-        name: Game
+        name: Tutorial
         icon: {fileID: 0}
       line: You can press {control:LightAttack} to perform a 'light attack', and
-        press {control:StrongAttack} to perform a 'strong attack'. Try it now!
-    - character:
-        name: Game
-        icon: {fileID: 0}
-      line: You're doing well! Now head over to the right to get teleported to Level
-        1.
+        press {control:StrongAttack} to perform a 'strong attack'.
     endCurrentDialogue: 1
     dialogueEnded:
       m_PersistentCalls:
@@ -132,8 +127,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 3951668488063365386}
-          m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
-          m_MethodName: StartCutscene
+          m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+          m_MethodName: TriggerDialogue
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -160,25 +155,25 @@ MonoBehaviour:
   dialogue:
     dialogueLines:
     - character:
-        name: Game
+        name: Tutorial
         icon: {fileID: 0}
       line: "Now, it\u2019s time to know what you\u2019ve been training for."
     - character:
-        name: God
+        name: Tutorial
         icon: {fileID: 0}
       line: "A mafia dressed as characters from the Commedia Dell\u2019arte and lead
         by the Il Capitano has taken over the city."
     - character:
-        name: God
+        name: Tutorial
         icon: {fileID: 0}
       line: But, more importantly, they stole your sandwich. It is up to you to take
         it back and save the city.
     - character:
-        name: God
+        name: Tutorial
         icon: {fileID: 0}
       line: 'One more thing: you can talk to NPCs just by walking up to them and
         pressing {control:Interact}. Try it out!'
-    endCurrentDialogue: 1
+    endCurrentDialogue: 0
     dialogueEnded:
       m_PersistentCalls:
         m_Calls:

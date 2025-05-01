@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EntityUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject healthBar;
+    [SerializeField] private UIGroupControl abilityUI;
     private Slider healthBarSlider;
 
     private void Awake()
@@ -27,5 +28,16 @@ public class EntityUIManager : MonoBehaviour
         {
             healthBarSlider.value = percentHealth;
         }
+    }
+
+    public void ShowAbilityCharge(bool show)
+    {
+        abilityUI.gameObject.SetActive(show);
+    }
+
+    public void UpdateAbilityUI(int currentAbilityCharge, int abilityChargeLimit)
+    {
+        abilityUI.SetSliderValue(Mathf.Clamp((float)currentAbilityCharge / abilityChargeLimit, 0, 1));
+        abilityUI.SetTextValue((int)Mathf.Min(currentAbilityCharge, abilityChargeLimit) + " / " + abilityChargeLimit);
     }
 }

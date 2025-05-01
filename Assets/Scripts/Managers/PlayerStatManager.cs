@@ -56,7 +56,8 @@ public class PlayerStatManager : MonoBehaviour
         var health = player.GetComponent<Health>();
         float initialMaxHealth = health.maxHealth;
         health.maxHealth = baseMaxHealth * currentMaxHealthMultiplier;
-        health.ChangeHealth(health.maxHealth - initialMaxHealth);
+        if(health.maxHealth - baseMaxHealth > 0.01f)
+            health.ChangeHealth(health.maxHealth - baseMaxHealth);
     }
     private void ApplyAttackEffects(GameObject player)
     {
