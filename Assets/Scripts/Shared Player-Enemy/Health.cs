@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public delegate void DeathEvent();
+public delegate void DeathEvent(GameObject source);
 public class Health : MonoBehaviour
 {
     [SerializeField] private float initialHealth = 5;
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
         TryGetComponent(out entityUI);
     }
 
-    public void ChangeHealth(float amount)
+    public void ChangeHealth(float amount, GameObject source = null)
     {
         if (dead) // we already died
         {
@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
         if (currentHealth < 0.01f)
         {
             currentHealth = 0;
-            Die();
+            Die(source);
         }
         else if (currentHealth > maxHealth)
         {
@@ -50,11 +50,11 @@ public class Health : MonoBehaviour
         return currentHealth;
     }
 
-    private void Die()
+    private void Die(GameObject source)
     {
         if(death != null)
         {
-            death();
+            death(source);
         }
         //Debug.Log(gameObject.name + " died!");
         if(destroyOnDeath)

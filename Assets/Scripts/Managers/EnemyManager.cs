@@ -54,12 +54,16 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void RecordEnemyDeath()
+    public void RecordEnemyDeath(GameObject source)
     {
-        foreach (GameObject playerObject in GameManager.Instance.playerObjects)
+        if(source != null && source.TryGetComponent(out PlayerAttackController attackController))
         {
-            playerObject.GetComponent<PlayerAttackController>().ChargeAbility(1);
+            attackController.ChargeAbility(1);
         }
+        //foreach (GameObject playerObject in GameManager.Instance.playerObjects)
+        //{
+        //    playerObject.GetComponent<PlayerAttackController>().ChargeAbility(1);
+        //}
     }
 
     public bool CanIContinue(GameObject me, GameObject them)

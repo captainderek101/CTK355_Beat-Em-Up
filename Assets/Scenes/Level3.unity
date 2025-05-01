@@ -7667,6 +7667,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 61.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2843494305365851172, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843494305365851172, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3340277520316666491, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_fontSize
       value: 30.75
@@ -7820,6 +7828,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+--- !u!114 &1371185968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 691481909564648899, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+  m_PrefabInstance: {fileID: 1371185967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cf66f1e6bd81049be9ded6c9a016f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1371185969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7136097045602778996, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+  m_PrefabInstance: {fileID: 1371185967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cf66f1e6bd81049be9ded6c9a016f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1429835660
 GameObject:
   m_ObjectHideFlags: 0
@@ -9579,6 +9609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3591415680390208088, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
+      propertyPath: abilityUI
+      value: 
+      objectReference: {fileID: 1371185969}
     - target: {fileID: 4879448011507846752, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
       propertyPath: deathEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
@@ -9881,6 +9915,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 937766101567362277, guid: 2fb3d5b851941fc4999d1605aa3d96f8, type: 3}
+      propertyPath: abilityUI
+      value: 
+      objectReference: {fileID: 1371185968}
     - target: {fileID: 2660256739727704658, guid: 2fb3d5b851941fc4999d1605aa3d96f8, type: 3}
       propertyPath: m_Name
       value: Player 2 Variant

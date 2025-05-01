@@ -26,7 +26,7 @@ public class PlayerAttackController : AttackController
     private int currentAbilityCharge;
     private bool abilityReady = false;
 
-    private UIGroupControl abilityUI;
+    [SerializeField] private UIGroupControl abilityUI;
 
     [SerializeField] private PlayerInput playerInput;
 
@@ -113,10 +113,6 @@ public class PlayerAttackController : AttackController
 
     private void UpdateAbilityUI()
     {
-        if(abilityUI == null)
-        {
-            abilityUI = UIManager.Instance.abilityHUD;
-        }
         abilityUI.SetSliderValue(Mathf.Clamp((float)currentAbilityCharge / abilityChargeLimit, 0, 1));
         abilityUI.SetTextValue((int)Mathf.Min(currentAbilityCharge, abilityChargeLimit) + " / " + abilityChargeLimit);
     }

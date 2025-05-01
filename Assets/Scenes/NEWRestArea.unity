@@ -11507,6 +11507,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2843494305365851172, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843494305365851172, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2877626844029638932, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 45.066895
@@ -12194,6 +12202,17 @@ MonoBehaviour:
 --- !u!114 &547985516 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7136097045602778996, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+  m_PrefabInstance: {fileID: 547985512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cf66f1e6bd81049be9ded6c9a016f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &547985517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 691481909564648899, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
   m_PrefabInstance: {fileID: 547985512}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -35446,6 +35465,10 @@ PrefabInstance:
       propertyPath: m_FirstSelected
       value: 
       objectReference: {fileID: 579539452}
+    - target: {fileID: 3591415680390208088, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
+      propertyPath: abilityUI
+      value: 
+      objectReference: {fileID: 547985516}
     - target: {fileID: 4709582478740246797, guid: a6d53c1a56bc01841a9ef891f845e138, type: 3}
       propertyPath: healthBar
       value: 
@@ -38058,6 +38081,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 937766101567362277, guid: 2fb3d5b851941fc4999d1605aa3d96f8, type: 3}
+      propertyPath: abilityUI
+      value: 
+      objectReference: {fileID: 547985517}
     - target: {fileID: 2495951680388976992, guid: 2fb3d5b851941fc4999d1605aa3d96f8, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
       value: 1

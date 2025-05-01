@@ -10,6 +10,7 @@ public class ScreenClearAttack : MonoBehaviour
     [SerializeField] private float maxScale;
     [SerializeField] private float maxAlpha;
     [SerializeField] private float healthEffect = -10f;
+    [HideInInspector] public GameObject source = null;
 
     private const string enemyTagName = "Enemy";
 
@@ -51,7 +52,7 @@ public class ScreenClearAttack : MonoBehaviour
                 Vector3 screenPosition = Camera.main.WorldToViewportPoint(healthController.transform.position);
                 if (Mathf.Min(screenPosition.x, screenPosition.y) > 0 && Mathf.Max(screenPosition.x, screenPosition.y) < 1)
                 {
-                    healthController.ChangeHealth(healthEffect);
+                    healthController.ChangeHealth(healthEffect, source);
                 }
             }
         }

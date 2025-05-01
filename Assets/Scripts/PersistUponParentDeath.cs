@@ -10,7 +10,7 @@ public class PersistUponParentDeath : MonoBehaviour
         if (parentHealthController != null)
         {
             //Debug.Log("found parent health controller");
-            parentHealthController.deathEvents.AddListener(() =>
+            parentHealthController.deathEvents.AddListener((GameObject source) =>
             {
                 transform.parent = null;
             });

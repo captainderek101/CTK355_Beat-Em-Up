@@ -21,23 +21,23 @@ public class HealthController : MonoBehaviour
     private AudioPlayer audioPlayer;
     private Animator animator;
 
-    public UnityEvent deathEvents;
+    public UnityEvent<GameObject> deathEvents;
 
     private void Awake()
     {
         health = GetComponent<Health>();
 
-        health.death += () =>
+        health.death += (GameObject source) =>
         {
             if(deathEvents != null)
             {
-                deathEvents.Invoke();
+                deathEvents.Invoke(source);
             }
         };
         Animator animator;
         if (TryGetComponent(out animator))
         {
-            deathEvents.AddListener(() => animator.SetTrigger(deadAnimationTrigger));
+            deathEvents.AddListener((GameObject source) => animator.SetTrigger(deadAnimationTrigger));
         }
         if (gameObject.tag == playerTagName)
         {
@@ -49,9 +49,9 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    public void ChangeHealth(float amount)
+    public void ChangeHealth(float amount, GameObject source = null)
     {
-        health.ChangeHealth(amount);
+        health.ChangeHealth(amount, source);
         if (audioPlayer == null)
         {
             TryGetComponent(out audioPlayer);
@@ -75,7 +75,7 @@ public class HealthController : MonoBehaviour
         {
             if (other.tag == enemyHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
-                ChangeHealth(otherHitbox.healthEffect);
+                ChangeHealth(otherHitbox.healthEffect, otherHitbox.source);
                 if(otherHitbox.knockbackDuration > 0.001f)
                 {
                     //bool knockbackLeft = otherHitbox.transform.position.x > transform.position.x;
@@ -89,7 +89,7 @@ public class HealthController : MonoBehaviour
         {
             if (other.tag == playerHitboxTagName && other.TryGetComponent<Hitbox>(out otherHitbox))
             {
-                ChangeHealth(otherHitbox.healthEffect);
+                ChangeHealth(otherHitbox.healthEffect, otherHitbox.source);
                 if (otherHitbox.knockbackDuration > 0.001f)
                 {
                     bool knockbackLeft = otherHitbox.transform.rotation.eulerAngles.y > 1;

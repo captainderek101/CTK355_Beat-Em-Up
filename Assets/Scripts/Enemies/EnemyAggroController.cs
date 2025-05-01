@@ -21,10 +21,10 @@ public class EnemyAggroController : MonoBehaviour
     private void Start()
     {
         healthController = GetComponent<HealthController>();
-        healthController.deathEvents.AddListener(() => EnemyManager.Instance.DeaggroEnemy());
+        healthController.deathEvents.AddListener((GameObject source) => EnemyManager.Instance.DeaggroEnemy());
         if(transform.parent.TryGetComponent(out ScreenManager screenManager)) // are we part of a screen?
         {
-            healthController.deathEvents.AddListener(() => screenManager.SpawnDefeated());
+            healthController.deathEvents.AddListener((GameObject source) => screenManager.SpawnDefeated());
         }
         TryGetComponent(out wanderComponent);
         if(movementComponent == null)
@@ -80,9 +80,9 @@ public class EnemyAggroController : MonoBehaviour
         }
     }
 
-    public void RecordDeath()
+    public void RecordDeath(GameObject source)
     {
-        EnemyManager.Instance.RecordEnemyDeath();
+        EnemyManager.Instance.RecordEnemyDeath(source);
     }
 
     private void OnBecameVisible()

@@ -61,6 +61,10 @@ public class AttackController : MonoBehaviour
             {
                 targeting.target = target;
             }
+            if(projectile.TryGetComponent(out ScreenClearAttack screenClear))
+            {
+                screenClear.source = gameObject;
+            }
             for (int i = 0; i < projectile.transform.childCount; i++)
             {
                 if (projectile.transform.GetChild(i).TryGetComponent(out Hitbox hitbox))
@@ -69,6 +73,7 @@ public class AttackController : MonoBehaviour
                     {
                         hitbox.healthEffect *= damageMultiplier;
                     }
+                    hitbox.source = gameObject;
                 }
             }
         }
