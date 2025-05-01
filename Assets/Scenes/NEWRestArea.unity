@@ -11563,10 +11563,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3286718188441841062, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.045410156
-      objectReference: {fileID: 0}
     - target: {fileID: 3297010413709264428, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11663,6 +11659,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4364911954822020476, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00012207031
+      objectReference: {fileID: 0}
     - target: {fileID: 4429252303805715510, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -11686,6 +11686,14 @@ PrefabInstance:
     - target: {fileID: 4781667412220731987, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808760864622755421, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808760864622755421, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4873506971443878677, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AspectRatio
@@ -11742,6 +11750,10 @@ PrefabInstance:
     - target: {fileID: 5388821465564244271, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_fontSize
       value: 30.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398524673782771843, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5433634988836854228, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11833,7 +11845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartCutscene
+      value: TriggerDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -11841,7 +11853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: CutsceneManager, Assembly-CSharp
+      value: DialogueTrigger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6320530479592637725, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -12079,6 +12091,34 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 547985515}
+    - target: {fileID: 9045005979678982649, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045005979678982649, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045005979678982649, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1844680494}
+    - target: {fileID: 9045005979678982649, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045005979678982649, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045005979678982649, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: CutsceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045005979678982649, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9069045345957209058, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13566,6 +13606,109 @@ Transform:
   m_Children: []
   m_Father: {fileID: 276938926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1001 &609727645
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5548868429272252089, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_Name
+      value: Dwarf 1 NPC (Tanis)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.619
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.282
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.421
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[0].line
+      value: "The mafia went through here last night and stole my dog. I\u2019ve
+        been looking for him all morning."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].line
+      value: Also, I'm sorry if this is a weird question, but are you still a placeholder
+        sprite?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[2].line
+      value: ........
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[3].line
+      value: I'm sorry for asking...?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[0].character.name
+      value: Tanis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].character.name
+      value: Tanis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[2].character.name
+      value: Tanis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[3].character.name
+      value: Tanis
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 761850527}
+    - target: {fileID: 6875574357273761758, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
 --- !u!43 &615964640
 Mesh:
   m_ObjectHideFlags: 0
@@ -24896,7 +25039,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5548868429272252089, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
       propertyPath: m_Name
-      value: Orc NPC
+      value: Orc NPC (Edgar)
       objectReference: {fileID: 0}
     - target: {fileID: 6645367829820288825, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24939,33 +25082,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6785528823320644902, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      propertyPath: dialogue.dialogueLines.Array.data[10].line
+      value: "Phew! The last time that explanation only took three dialogue boxes.
+        I think I can be in the running for the world-record exposition dump. There\u2019s
+        a competition tomorrow, and I\u2019ve been practicing all week."
       objectReference: {fileID: 0}
     - target: {fileID: 6785528823320644902, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      propertyPath: dialogue.dialogueLines.Array.data[10].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 6785528823320644902, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[10].character.name
+      value: Edgar
       objectReference: {fileID: 0}
     - target: {fileID: 6785528823320644902, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
       propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 761850527}
-    - target: {fileID: 6785528823320644902, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetPlayerActionMap
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: 77d9a1c8bd8815b45882fd36cf8a1dd8, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25621,6 +25754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3951668488063365386, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
+      propertyPath: dialogue.endCurrentDialogue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4865425484188540690, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
       propertyPath: players.Array.size
       value: 2
@@ -25632,6 +25769,22 @@ PrefabInstance:
     - target: {fileID: 4865425484188540690, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
       propertyPath: players.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584157309934107789, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584157309934107789, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1285323055}
+    - target: {fileID: 5584157309934107789, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584157309934107789, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CutsceneManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7041686427956102654, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
       propertyPath: m_DefaultActionMap
@@ -25782,6 +25935,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
+--- !u!114 &1285323055 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3951668488063365386, guid: fdc362aafe8a86b4a9f586339b601d93, type: 3}
+  m_PrefabInstance: {fileID: 1285323054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e759384c1bce0b489568deee08c264a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1286636986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31870,7 +32034,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5548868429272252089, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
       propertyPath: m_Name
-      value: Dwarf 1 NPC
+      value: Dwarf 1 NPC (Imelda)
       objectReference: {fileID: 0}
     - target: {fileID: 6645367829820288825, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31913,33 +32077,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
       propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 761850527}
-    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetPlayerActionMap
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: ab0d404c00fb1c64d97c1323a08a27e7, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33572,7 +33712,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5548868429272252089, guid: b43307584fc08ee458624e018d99001b, type: 3}
       propertyPath: m_Name
-      value: Dwarf 2 NPC
+      value: Dwarf 2 NPC (Goodwort)
       objectReference: {fileID: 0}
     - target: {fileID: 6645367829820288825, guid: b43307584fc08ee458624e018d99001b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33615,33 +33755,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6785528823320644902, guid: b43307584fc08ee458624e018d99001b, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: b43307584fc08ee458624e018d99001b, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: b43307584fc08ee458624e018d99001b, type: 3}
       propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 761850527}
-    - target: {fileID: 6785528823320644902, guid: b43307584fc08ee458624e018d99001b, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: b43307584fc08ee458624e018d99001b, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetPlayerActionMap
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: b43307584fc08ee458624e018d99001b, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785528823320644902, guid: b43307584fc08ee458624e018d99001b, type: 3}
-      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38248,6 +38364,7 @@ SceneRoots:
   - {fileID: 2118495035}
   - {fileID: 575149538}
   - {fileID: 1674039832}
+  - {fileID: 609727645}
   - {fileID: 1771812114}
   - {fileID: 1185573001}
   - {fileID: 4918320392389314775}

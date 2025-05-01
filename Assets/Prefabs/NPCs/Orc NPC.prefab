@@ -49,8 +49,64 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].line
-      value: Hey bro, have you heard about Dogecoin?
+      value: Some folks say I am long-winded. To them, I say I am not long-winded
+        enough!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].line
+      value: Three thousand years ago this city was formed from clay that rained
+        upon a desert. Set inside this clay were magical properties that amplified
+        anything crafted from it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[2].line
+      value: "We built with it, forged with it, created all sorts of materials. Until
+        one day, a scientist figured out how to extract the clay\u2019s mysterious
+        power and gave it to the people."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[3].line
+      value: Though, few could harness its power properly.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[4].line
+      value: But when it was granted to the people, the city roared louder with life
+        than ever before. The laws of reality were ours to bend, to fight with, to
+        mold.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[5].line
+      value: "We encumbered a great many battles in centuries before, trying to set
+        a balance of power between all the new mages. They wouldn\u2019t hear us.
+        The pinnacle of power was the only thing in their mind."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[6].line
+      value: "You, fair traveller, seem of these magical properties. Your staff,
+        your posture, I\u2019m sure in other lives you\u2019ve been hero after hero.
+        Oh pray tell, if you are our savior, I welcome you in humble and open arms."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[7].line
+      value: The moon has been ticking wrong ever since he set foot here, that blasted
+        Il Capitano.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[8].line
+      value: The mafia, with their Harlequins and Sandrones and Beltrames all siphon
+        magic through impurities an old fellow like me cannot begin to understand.
+        They are wretched, and they are powerful. Please, you must stop them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[9].line
+      value: "Phew! The last time that explanation only took three dialogue boxes.
+        I think I can be in the running for the world-record exposition dump. There\u2019s
+        a competition tomorrow, and I\u2019ve been practicing all week."
       objectReference: {fileID: 0}
     - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].character.icon
@@ -58,7 +114,103 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
     - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].character.name
-      value: Orc Fellow
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[2].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[2].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[3].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[3].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[4].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[4].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[5].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[5].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[6].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[6].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[7].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[7].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[8].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[8].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[9].character.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 998fbde2b9cddab42b59fe1e64f4dd4c, type: 3}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[9].character.name
+      value: Edgar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetPlayerActionMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5452146948813163671, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: m_Sprite

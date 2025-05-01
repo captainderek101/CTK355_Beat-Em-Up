@@ -49,12 +49,65 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].line
-      value: Bugger off!
+      value: That no good mafia tore through here like a tornado chasing a gazelle.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].line
+      value: Destroying windows, buildings, they even tried to take the food trucks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[2].line
+      value: We tried to stand up to them but they were casting spells left and right,
+        forcing us to hide.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[3].line
+      value: What is this world coming to?
       objectReference: {fileID: 0}
     - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].character.name
-      value: Dwarf Lady
+      value: Imelda
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].character.name
+      value: Imelda
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[2].character.name
+      value: Imelda
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[3].character.name
+      value: Imelda
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetPlayerActionMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397584163859125871, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
+      propertyPath: dialogue.dialogueEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5452146948813163671, guid: 995ddb5ee54b35b4397d3f0aa418a50b, type: 3}
       propertyPath: m_Sprite

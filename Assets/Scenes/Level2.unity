@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0.00024414062
       objectReference: {fileID: 0}
+    - target: {fileID: 4364911954822020476, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4429252303805715510, guid: 3e1a03a04a1ed8c44aa33ef960b3b928, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3354,9 +3358,7 @@ GameObject:
   - component: {fileID: 164072602}
   - component: {fileID: 164072607}
   - component: {fileID: 164072606}
-  - component: {fileID: 164072605}
   - component: {fileID: 164072604}
-  - component: {fileID: 164072603}
   m_Layer: 0
   m_Name: Screen1 (1)
   m_TagString: Untagged
@@ -3382,18 +3384,6 @@ Transform:
   - {fileID: 2131585855}
   m_Father: {fileID: 20020727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &164072603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164072601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea9f6d21457c33499329497f7fc708a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &164072604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3425,15 +3415,22 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
-  virtualCamera: {fileID: 0}
---- !u!33 &164072605
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164072601}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  onWavesCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 670928333}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &164072606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3449,36 +3446,10 @@ MonoBehaviour:
   collisionTag: Player
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1072595586}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 670928333}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerEnterOneShot:
     m_PersistentCalls:
       m_Calls:
@@ -3489,6 +3460,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1072595586}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12233,6 +12217,34 @@ PrefabInstance:
       propertyPath: blackScreen
       value: 
       objectReference: {fileID: 1424338}
+    - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      propertyPath: sceneLoadEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      propertyPath: sceneLoadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      propertyPath: sceneLoadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 775220193}
+    - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      propertyPath: sceneLoadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      propertyPath: sceneLoadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      propertyPath: sceneLoadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CutsceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      propertyPath: sceneLoadEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12240,6 +12252,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 775220191}
+    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 775220193}
   m_SourcePrefab: {fileID: 100100000, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
 --- !u!1 &775220190 stripped
 GameObject:
@@ -12286,6 +12301,62 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db7a1f6033a5df74687e4749a1757f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &775220193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775220190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e759384c1bce0b489568deee08c264a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Harlequin
+        icon: {fileID: 0}
+      line: 'Commander, report: Judging by the staff and plant magic, we may be under
+        attack! Should I commence operation Rat Bucket?'
+    - character:
+        name: Sandrone leader
+        icon: {fileID: 0}
+      line: "We won\u2019t need it. You\u2019ll never make it through!"
+    - character:
+        name: Player
+        icon: {fileID: 0}
+      line: I disagree.
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 775220194}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetPlayerActionMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    distanceToEnd: 10000
+  dialogueID: Level2_Dialogue1
+--- !u!114 &775220194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8935013384111678928, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
+  m_PrefabInstance: {fileID: 775220189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775220190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52ff01db9baf7e40adbd1c2f55c7675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &782508630
@@ -13417,9 +13488,7 @@ GameObject:
   - component: {fileID: 859389676}
   - component: {fileID: 859389681}
   - component: {fileID: 859389680}
-  - component: {fileID: 859389679}
   - component: {fileID: 859389678}
-  - component: {fileID: 859389677}
   m_Layer: 0
   m_Name: Screen5 (1)
   m_TagString: Untagged
@@ -13445,18 +13514,6 @@ Transform:
   - {fileID: 342608205}
   m_Father: {fileID: 20020727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &859389677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859389675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea9f6d21457c33499329497f7fc708a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &859389678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13488,15 +13545,22 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
-  virtualCamera: {fileID: 0}
---- !u!33 &859389679
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859389675}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  onWavesCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 670928333}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &859389680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13512,36 +13576,10 @@ MonoBehaviour:
   collisionTag: Player
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 923563178}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 670928333}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerEnterOneShot:
     m_PersistentCalls:
       m_Calls:
@@ -13552,6 +13590,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1072595586}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -16671,6 +16722,17 @@ PrefabInstance:
       addedObject: {fileID: 249972342}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c335245131b87d47a85dbea026c5ae4, type: 3}
+--- !u!114 &1072381889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6980215225454435651, guid: 4c335245131b87d47a85dbea026c5ae4, type: 3}
+  m_PrefabInstance: {fileID: 1072381888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c22a59a23a46f4cb1ceb1d4683e93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1072595582
 GameObject:
   m_ObjectHideFlags: 0
@@ -17609,9 +17671,7 @@ GameObject:
   - component: {fileID: 1129288528}
   - component: {fileID: 1129288533}
   - component: {fileID: 1129288532}
-  - component: {fileID: 1129288531}
   - component: {fileID: 1129288530}
-  - component: {fileID: 1129288529}
   m_Layer: 0
   m_Name: Screen2 (1)
   m_TagString: Untagged
@@ -17640,18 +17700,6 @@ Transform:
   - {fileID: 1679261924}
   m_Father: {fileID: 20020727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1129288529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129288527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea9f6d21457c33499329497f7fc708a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1129288530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17695,15 +17743,22 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
-  virtualCamera: {fileID: 0}
---- !u!33 &1129288531
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129288527}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  onWavesCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 670928333}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1129288532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17719,36 +17774,10 @@ MonoBehaviour:
   collisionTag: Player
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 124870241}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 670928333}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerEnterOneShot:
     m_PersistentCalls:
       m_Calls:
@@ -17759,6 +17788,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1072595586}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19365,9 +19407,8 @@ GameObject:
   - component: {fileID: 1278628549}
   - component: {fileID: 1278628554}
   - component: {fileID: 1278628553}
-  - component: {fileID: 1278628552}
   - component: {fileID: 1278628551}
-  - component: {fileID: 1278628550}
+  - component: {fileID: 1278628555}
   m_Layer: 0
   m_Name: Screen7 (1)
   m_TagString: Untagged
@@ -19397,18 +19438,6 @@ Transform:
   - {fileID: 1874974602}
   m_Father: {fileID: 20020727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1278628550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278628548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea9f6d21457c33499329497f7fc708a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1278628551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19455,15 +19484,34 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
-  virtualCamera: {fileID: 0}
---- !u!33 &1278628552
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278628548}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  onWavesCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 670928333}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1278628555}
+        m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
+        m_MethodName: StartCutscene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1278628553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19479,36 +19527,10 @@ MonoBehaviour:
   collisionTag: Player
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 249972345}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 670928333}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerEnterOneShot:
     m_PersistentCalls:
       m_Calls:
@@ -19519,6 +19541,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1072595586}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19548,6 +19583,60 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.382834, y: 2.479704, z: 4.03}
   m_Center: {x: 0, y: -0.06, z: 0}
+--- !u!114 &1278628555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278628548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e759384c1bce0b489568deee08c264a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Sandrone leader
+        icon: {fileID: 0}
+      line: We should have commenced operation Rat Bucket.
+    - character:
+        name: Player
+        icon: {fileID: 0}
+      line: Tell me where Il Capitano is! I know you know.
+    - character:
+        name: Sandrone leader
+        icon: {fileID: 0}
+      line: "Oh, the boss? He\u2019s in the industrial district, hard to miss him
+        with how often he boasts about himself."
+    - character:
+        name: Sandrone leader
+        icon: {fileID: 0}
+      line: "You may have torn us down but we mafia are undefeatable. Undefeatable,
+        I say! You\u2019ll never stop us! Certainly not him!"
+    - character:
+        name: Player
+        icon: {fileID: 0}
+      line: "We\u2019ll see about that."
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 775220194}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetPlayerActionMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    distanceToEnd: 10000
+  dialogueID: Level2_DialogueEnd
 --- !u!43 &1285811076
 Mesh:
   m_ObjectHideFlags: 0
@@ -22790,9 +22879,7 @@ GameObject:
   - component: {fileID: 1533166298}
   - component: {fileID: 1533166303}
   - component: {fileID: 1533166302}
-  - component: {fileID: 1533166301}
   - component: {fileID: 1533166300}
-  - component: {fileID: 1533166299}
   m_Layer: 0
   m_Name: Screen6 (1)
   m_TagString: Untagged
@@ -22821,18 +22908,6 @@ Transform:
   - {fileID: 2020796394}
   m_Father: {fileID: 20020727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1533166299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533166297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea9f6d21457c33499329497f7fc708a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1533166300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22873,15 +22948,22 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
-  virtualCamera: {fileID: 0}
---- !u!33 &1533166301
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1533166297}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  onWavesCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 670928333}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1533166302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22897,36 +22979,10 @@ MonoBehaviour:
   collisionTag: Player
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1035157738}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 670928333}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerEnterOneShot:
     m_PersistentCalls:
       m_Calls:
@@ -22937,6 +22993,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1072595586}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -25488,9 +25557,7 @@ GameObject:
   - component: {fileID: 1731461118}
   - component: {fileID: 1731461123}
   - component: {fileID: 1731461122}
-  - component: {fileID: 1731461121}
   - component: {fileID: 1731461120}
-  - component: {fileID: 1731461119}
   m_Layer: 0
   m_Name: Screen3 (1)
   m_TagString: Untagged
@@ -25515,18 +25582,6 @@ Transform:
   - {fileID: 1000345828}
   m_Father: {fileID: 20020727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1731461119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731461117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea9f6d21457c33499329497f7fc708a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1731461120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25555,15 +25610,22 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
-  virtualCamera: {fileID: 0}
---- !u!33 &1731461121
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731461117}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  onWavesCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 670928333}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1731461122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25579,36 +25641,10 @@ MonoBehaviour:
   collisionTag: Player
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1649590122}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 670928333}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerEnterOneShot:
     m_PersistentCalls:
       m_Calls:
@@ -25619,6 +25655,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1072595586}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -32115,9 +32164,7 @@ GameObject:
   - component: {fileID: 2139008372}
   - component: {fileID: 2139008377}
   - component: {fileID: 2139008376}
-  - component: {fileID: 2139008375}
   - component: {fileID: 2139008374}
-  - component: {fileID: 2139008373}
   m_Layer: 0
   m_Name: Screen4 (1)
   m_TagString: Untagged
@@ -32146,18 +32193,6 @@ Transform:
   - {fileID: 546839959}
   m_Father: {fileID: 20020727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2139008373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139008371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea9f6d21457c33499329497f7fc708a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2139008374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32201,15 +32236,22 @@ MonoBehaviour:
     value: 0
   tagToSpawn: Enemy
   spawningEffectPrefab: {fileID: 3807748010929127313, guid: 66baa42e10ed98f41bdc517e696d7b5f, type: 3}
-  virtualCamera: {fileID: 0}
---- !u!33 &2139008375
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139008371}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  onWavesCleared:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 670928333}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2139008376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32225,36 +32267,10 @@ MonoBehaviour:
   collisionTag: Player
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1762347618}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1245248858448180553, guid: 0c0aeb7ee9e02b64c9a10c6fb23465dd, type: 3}
-        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
-        m_MethodName: SwitchCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 670928333}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTriggerEnterOneShot:
     m_PersistentCalls:
       m_Calls:
@@ -32265,6 +32281,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1072381889}
+        m_TargetAssemblyTypeName: CameraManager, Assembly-CSharp
+        m_MethodName: SwitchCamera
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1072595586}
+          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
+            Cinemachine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

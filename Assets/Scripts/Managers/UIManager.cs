@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     [HideInInspector] public bool paused = false;
     public UnityEvent pauseEvent;
     public UnityEvent pauseExitEvent;
+    public UnityEvent sceneLoadEvent;
 
     private void Awake()
     {
@@ -49,6 +50,10 @@ public class UIManager : MonoBehaviour
             screenColor.a = 1;
             blackScreen.color = screenColor;
             ControlBlackScreen(false, TransitionManager.Instance.defaultTransitionTime);
+            if(sceneLoadEvent != null)
+            {
+                sceneLoadEvent.Invoke();
+            }
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
+using System.Net.NetworkInformation;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     private Transform playerTransform;
 
     public bool isDialogueActive = false;
+    private bool typing = false;
 
     public float typingSpeed = 0.2f;
 
@@ -75,6 +77,7 @@ public class DialogueManager : MonoBehaviour
         }
         if (dialogue.endCurrentDialogue || !isDialogueActive)
         {
+            typing = false;
             DisplayNextDialogueLine();
         }
 
@@ -83,7 +86,13 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextDialogueLine()
     {
-        if(currentDialogue == null || currentDialogueLine >= currentDialogue.dialogueLines.Count)
+        if (typing)
+        {
+            typing = false;
+            return;
+        }
+
+        if (currentDialogue == null || currentDialogueLine >= currentDialogue.dialogueLines.Count)
         {
             if(currentDialogue != null && currentDialogue.dialogueEnded != null)
             {
@@ -103,6 +112,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         characterIcon.sprite = currentDialogue.dialogueLines[currentDialogueLine].character.icon;
+        characterIcon.gameObject.SetActive(characterIcon.sprite != null);
         characterName.text = currentDialogue.dialogueLines[currentDialogueLine].character.name;
 
         currentDialogue.dialogueLines[currentDialogueLine].line = TextPreprocessor.Instance.PreprocessText(currentDialogue.dialogueLines[currentDialogueLine].line);
@@ -116,12 +126,15 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator TypeSentence(DialogueLine dialogueLine)
     {
+        typing = true;
         dialogueArea.text = "";
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
             dialogueArea.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            if (typing)
+                yield return new WaitForSeconds(typingSpeed);
         }
+        typing = false;
     }
 
     private void HideDialogue()

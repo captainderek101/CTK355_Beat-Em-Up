@@ -65,16 +65,7 @@ PrefabInstance:
       addedObject: {fileID: 5584157309934107789}
     - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5100314226707925321}
-    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 559346328022402916}
-    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7865924819646331487}
-    - targetCorrespondingSourceObject: {fileID: 4706570429176043575, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3367533493019679114}
+      addedObject: {fileID: 3951668488063365386}
   m_SourcePrefab: {fileID: 100100000, guid: 3088c0f796857114c945b8b13d44f25f, type: 3}
 --- !u!114 &1668883587243987381 stripped
 MonoBehaviour:
@@ -104,133 +95,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e759384c1bce0b489568deee08c264a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogues:
-  - {fileID: 5100314226707925321}
-  - {fileID: 559346328022402916}
-  - {fileID: 7865924819646331487}
-  - {fileID: 3367533493019679114}
---- !u!114 &5100314226707925321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3280735219880782930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b68c07f3ea8e14a92bbddab8f36a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   dialogue:
     dialogueLines:
     - character:
-        name: God
+        name: Game
         icon: {fileID: 0}
       line: Welcome to the game! Use {control:Move} to move.
-    endCurrentDialogue: 1
-    dialogueEnded:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1668883587243987381}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-          m_MethodName: SetPlayerActionMap
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    distanceToEnd: 100000
---- !u!114 &559346328022402916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3280735219880782930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b68c07f3ea8e14a92bbddab8f36a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
     - character:
-        name: God
+        name: Game
         icon: {fileID: 0}
       line: Great work! Now use {control:Dodgeroll} to perform a dodge roll.
-    endCurrentDialogue: 1
-    dialogueEnded:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1668883587243987381}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-          m_MethodName: SetPlayerActionMap
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    distanceToEnd: 100000
---- !u!114 &7865924819646331487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3280735219880782930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b68c07f3ea8e14a92bbddab8f36a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
     - character:
-        name: God
+        name: Game
         icon: {fileID: 0}
       line: You can press {control:LightAttack} to perform a 'light attack', and
         press {control:StrongAttack} to perform a 'strong attack'. Try it now!
-    endCurrentDialogue: 1
-    dialogueEnded:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1668883587243987381}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-          m_MethodName: SetPlayerActionMap
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    distanceToEnd: 100000
---- !u!114 &3367533493019679114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3280735219880782930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b68c07f3ea8e14a92bbddab8f36a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
     - character:
-        name: God
+        name: Game
         icon: {fileID: 0}
       line: You're doing well! Now head over to the right to get teleported to Level
         1.
@@ -250,4 +131,68 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 3951668488063365386}
+          m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
+          m_MethodName: StartCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     distanceToEnd: 100000
+  dialogueID: TutorialDialogue
+--- !u!114 &3951668488063365386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280735219880782930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e759384c1bce0b489568deee08c264a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Game
+        icon: {fileID: 0}
+      line: "Now, it\u2019s time to know what you\u2019ve been training for."
+    - character:
+        name: God
+        icon: {fileID: 0}
+      line: "A mafia dressed as characters from the Commedia Dell\u2019arte and lead
+        by the Il Capitano has taken over the city."
+    - character:
+        name: God
+        icon: {fileID: 0}
+      line: But, more importantly, they stole your sandwich. It is up to you to take
+        it back and save the city.
+    - character:
+        name: God
+        icon: {fileID: 0}
+      line: 'One more thing: you can talk to NPCs just by walking up to them and
+        pressing {control:Interact}. Try it out!'
+    endCurrentDialogue: 1
+    dialogueEnded:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1668883587243987381}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: SetPlayerActionMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    distanceToEnd: 100000
+  dialogueID: Level0_Dialogue1

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.TextCore.Text;
 
 public class ScreenManager : MonoBehaviour
@@ -17,10 +18,10 @@ public class ScreenManager : MonoBehaviour
 
     [SerializeField] private GameObject spawningEffectPrefab;
 
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
-
     private int activeSpawns;
     private int activeWaveIndex;
+
+    public UnityEvent onWavesCleared;
 
     private void OnValidate()
     {
@@ -88,9 +89,9 @@ public class ScreenManager : MonoBehaviour
 
     private void WavesClear()
     {
-        if (blockUntilWavesClear)
+        if(onWavesCleared != null)
         {
-            CameraManager.SwitchCamera(virtualCamera);
+            onWavesCleared.Invoke();
         }
     }
 
